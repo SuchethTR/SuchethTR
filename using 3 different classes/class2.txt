@@ -1,0 +1,121 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.IO;
+using System.Threading;
+using NUnit.Framework;
+
+
+namespace autodemo
+{
+  public class Class2
+    {
+        IWebDriver Driver;
+        public string username, password;
+        public string product, quantity, ppu, discount, custName, street, city, state, zip, card_no, date;
+        [Test]
+        public void TestExecute()
+        {
+            var driver=new Class1().Initialize(Driver);
+            StreamReader reader = new StreamReader(@"d:\example.txt");
+            string line = reader.ReadLine();
+            string[] values = line.Split(',');
+            username = values[0];
+            password = values[1];
+            IWebElement un =driver.FindElement(By.Id("ctl00_MainContent_username"));
+            un.SendKeys(username);
+            Thread.Sleep(1000);
+            Console.WriteLine("username is entered");
+            IWebElement pwd = driver.FindElement(By.Id("ctl00_MainContent_password"));
+            pwd.SendKeys(password);
+            Thread.Sleep(1000);
+            Console.WriteLine("password is entered");
+            IWebElement button = driver.FindElement(By.Id("ctl00_MainContent_login_button"));
+            button.Click();
+            Thread.Sleep(5000);
+            IWebElement ele1 = driver.FindElement(By.XPath("/html/body/form/table/tbody/tr/td[1]/ul/li[1]/a"));
+            ele1.Click();
+            Thread.Sleep(2000);
+            Console.Write("view all order button is clicked");
+            IWebElement ele2 = driver.FindElement(By.Id("ctl00_MainContent_orderGrid_ctl05_OrderSelector"));
+            ele2.Click();
+            Thread.Sleep(2000);
+            Console.Write("one checkbox is clicked");
+            IWebElement ele3 = driver.FindElement(By.Id("ctl00_MainContent_btnDelete"));
+            ele3.Click();
+            Thread.Sleep(2000);
+            Console.Write("delete selected is clicked");
+            IWebElement ele4 = driver.FindElement(By.XPath("/html/body/form/table/tbody/tr/td[1]/ul/li[3]/a"));
+            ele4.Click();
+            Thread.Sleep(2000);
+            Console.Write("oderes button is clicked");
+            StreamReader read = new StreamReader(@"d:\details.txt");
+            string lin = read.ReadLine();
+            string[] value = lin.Split(',');
+            product = value[0];
+            quantity = value[1];
+            ppu = value[2];
+            discount = value[3];
+            custName = value[4];
+            street = value[5];
+            city = value[6];
+            state = value[7];
+            zip = value[8];
+            card_no = value[9];
+            date = value[10];
+            IWebElement pro = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_ddlProduct"));
+            pro.SendKeys(product);
+            Thread.Sleep(1000);
+            IWebElement qua = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_txtQuantity"));
+            qua.Clear();
+            qua.SendKeys(quantity);
+            Thread.Sleep(1000);
+            IWebElement pp = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_txtUnitPrice"));
+            pp.Clear();
+            pp.SendKeys(ppu);
+            Thread.Sleep(1000);
+            IWebElement disc = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_txtDiscount"));
+            disc.Clear();
+            disc.SendKeys(discount);
+            Thread.Sleep(1000);
+            IWebElement cn = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_txtName"));
+            cn.SendKeys(custName);
+            Thread.Sleep(1000);
+            IWebElement st = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox2"));
+            st.SendKeys(street);
+            Thread.Sleep(1000);
+            IWebElement ct = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox3"));
+            ct.SendKeys(city);
+            Thread.Sleep(1000);
+            IWebElement stat = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox4"));
+            stat.SendKeys(state);
+            Thread.Sleep(1000);
+            IWebElement z = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox5"));
+            z.SendKeys(zip);
+            Thread.Sleep(1000);
+            IWebElement ca = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_cardList_0"));
+            ca.Click();
+            Thread.Sleep(1000);
+            IWebElement cardno = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox6"));
+            cardno.SendKeys(card_no);
+            Thread.Sleep(1000);
+            IWebElement dt = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox1"));
+            dt.SendKeys(date);
+            Thread.Sleep(1000);
+            IWebElement ele5 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_InsertButton"));
+            ele5.Click();
+            Thread.Sleep(5000);
+            Console.Write("process button is clicked");
+            IWebElement ele6 = driver.FindElement(By.XPath("/html/body/form/table/tbody/tr/td[1]/ul/li[1]/a"));
+            ele6.Click();
+            Thread.Sleep(3000);
+            Console.Write("view all order button is clicked");
+            driver.Navigate().Refresh();
+            Thread.Sleep(5000);
+            IWebElement ele7 = driver.FindElement(By.Id("ctl00_logout"));
+            ele7.Click();
+            Thread.Sleep(5000);
+            Console.Write("logout is clicked");
+        }
+    }
+}

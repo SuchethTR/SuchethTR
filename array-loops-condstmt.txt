@@ -1,0 +1,6128 @@
+                                                                         LOOPS
+
+
+
+1. Write a program in C# Sharp to display the first 10 natural numbers.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+ {
+    public static void Main()
+    {
+        int i;
+        Console.Write("Display the first 10 natural numbers:\n");
+
+        for (i = 1; i <= 10; i++)
+        {
+           Console.Write("{0} ", i);
+        }
+        Console.Write("\n\n");
+    }
+  }
+}
+Output:
+Display the first 10 natural numbers:
+1 2 3 4 5 6 7 8 9 10
+
+============================================================================================
+2. Write a C# Sharp program to find the sum of first 10 natural numbers.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int j, sum = 0;
+        Console.Write("The first 10 natural number are :\n");
+        for (j = 1; j <= 10; j++)
+        {
+            sum = sum + j;
+            Console.Write("{0} ", j);
+        }
+        Console.Write("\nThe Sum is : {0}\n", sum);
+    }
+  }
+}
+Output:
+The first 10 natural number are :
+1 2 3 4 5 6 7 8 9 10
+The Sum is : 55
+
+=============================================================================================
+3. Write a program in C# Sharp to display n terms of natural number and their sum.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, n, sum = 0;
+        
+        Console.Write("Input Value of terms : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("\nThe first {0} natural number are : ", n);
+        for (i = 1; i <= n; i++)
+        {
+            Console.Write("{0} ", i);
+            sum += i;
+        }
+        Console.Write("\nThe Sum of Natural Number upto {0} terms : {1} ", n, sum);
+    }
+  }
+}
+Output:
+Input Value of terms : 4
+
+The first 4 natural number are : 1 2 3 4
+The Sum of Natural Number upto 4 terms : 10
+
+====================================================================================================
+4. Write a program in C# Sharp to read 10 numbers from keyboard and find their sum and average.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, n, sum = 0;
+        double avg;
+
+        Console.Write("Input the 10 numbers : \n");
+        for (i = 1; i <= 10; i++)
+        {
+            Console.Write("No.{0} :", i);
+
+            n = Convert.ToInt32(Console.ReadLine());
+            sum += n;
+        }
+        avg = sum / 10.0;
+        Console.Write("The sum of 10 no is : {0}\nThe Average is : {1}\n", sum, avg);
+    }
+  }
+}
+Output:
+Input the 10 numbers :
+No.1 :1
+No.2 :2
+No.3 :3
+No.4 :4
+No.5 :5
+No.6 :6
+No.7 :7
+No.8 :8
+No.9 :9
+No.10 :10
+The sum of 10 no is : 55
+The Average is : 5.5
+
+==============================================================================================
+5. Write a program in C# Sharp to display the cube of the number up to given an integer.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, a;
+        Console.Write("Display the cube of the number:\n");
+        Console.Write("Input number of terms : ");
+        a = Convert.ToInt32(Console.ReadLine());
+        for (i = 1; i <= a; i++)
+        {
+            Console.Write("Number is: {0} and cube of the {1} is:{2} \n", i, i, (i*i*i));
+        }
+    }
+  }
+}
+Output:
+Display the cube of the number:
+Input number of terms : 4
+Number is: 1 and cube of the 1 is:1
+Number is: 2 and cube of the 2 is:8
+Number is: 3 and cube of the 3 is:27
+Number is: 4 and cube of the 4 is:64
+
+=================================================================================================
+6. Write a program in C# Sharp to display the multiplication table of a given integer.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, n;
+
+        Console.Write("Display the multiplication table:\n");
+        Console.Write("Multiplication table of number : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("\n");
+        for (i = 1; i <= 10; i++)
+        {
+            Console.Write("{0}X{1}={2} \n", n, i, n * i);
+        }
+    }
+  }
+}
+Output:
+Display the multiplication table:
+Multiplication table of number : 13
+
+13X1=13
+13X2=26
+13X3=39
+13X4=52
+13X5=65
+13X6=78
+13X7=91
+13X8=104
+13X9=117
+13X10=130
+
+===========================================================================================
+7. Write a program in C# Sharp to display the multiplication table vertically from 1 to n.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int j, i, n;
+        Console.Write("Display the multiplication table vertically from 1 to n:\n");
+        Console.Write("Enter the number upto the table number starting from 1 : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Multiplication table from 1 to {0} \n", n);
+        for (i = 1; i <= 10; i++)
+        {
+            for (j = 1; j <= n; j++)
+            {
+                if (j <= n - 1)
+                    Console.Write("{0}x{1} = {2}, ", j, i, i * j);
+                else
+                    Console.Write("{0}x{1} = {2}", j, i, i * j);
+            }
+            Console.Write("\n");
+        }
+    }
+  }
+}
+Output:
+Display the multiplication table vertically from 1 to n:
+Enter the number upto the table number starting from 1 : 4
+Multiplication table from 1 to 4
+1x1 = 1, 2x1 = 2, 3x1 = 3, 4x1 = 4
+1x2 = 2, 2x2 = 4, 3x2 = 6, 4x2 = 8
+1x3 = 3, 2x3 = 6, 3x3 = 9, 4x3 = 12
+1x4 = 4, 2x4 = 8, 3x4 = 12, 4x4 = 16
+1x5 = 5, 2x5 = 10, 3x5 = 15, 4x5 = 20
+1x6 = 6, 2x6 = 12, 3x6 = 18, 4x6 = 24
+1x7 = 7, 2x7 = 14, 3x7 = 21, 4x7 = 28
+1x8 = 8, 2x8 = 16, 3x8 = 24, 4x8 = 32
+1x9 = 9, 2x9 = 18, 3x9 = 27, 4x9 = 36
+1x10 = 10, 2x10 = 20, 3x10 = 30, 4x10 = 40
+
+=========================================================================================================
+8. Write a program in C# Sharp to display the n terms of odd natural number and their sum.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, n, sum = 0;
+        Console.Write("Display the sum of n odd natural number:\n");
+        Console.Write("Input number of terms : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("\nThe odd numbers are :");
+        for (i = 1; i <= n; i++)
+        {
+            Console.Write("{0} ", 2 * i - 1);
+            sum += 2 * i - 1;
+        }
+        Console.Write("\nThe Sum of odd Natural Number upto {0} terms : {1} \n", n, sum);
+    }
+  }
+}
+Output:
+Display the sum of n odd natural number:
+Input number of terms : 4
+
+The odd numbers are :1 3 5 7
+The Sum of odd Natural Number upto 4 terms : 16
+
+===========================================================================================================
+9. Write a program in C# Sharp to display the pattern like right angle triangle using an asterisk.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, j, rows;
+        Console.Write("Display the pattern:\n");
+        Console.Write("Input number of rows : ");
+        rows = Convert.ToInt32(Console.ReadLine());
+        for (i = 1; i <= rows; i++)
+        {
+            for (j = 1; j <= i; j++)
+                Console.Write("*");
+            Console.Write("\n");
+        }
+    }
+  }
+}
+Output:
+Display the pattern:
+Input number of rows : 4
+*
+**
+***
+****
+
+=======================================================================================================
+10. Write a program in C# Sharp to display the pattern like right angle triangle with a number.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, j, rows;
+        Console.Write("Display the pattern using number:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter number of rows : ");
+        rows = Convert.ToInt32(Console.ReadLine());
+        for (i = 1; i <= rows; i++)
+        {
+            for (j = 1; j <= i; j++)
+                Console.Write("{0}", j);
+            Console.Write("\n");
+        }
+    }
+  }
+}
+Output:
+Display the pattern using number:
+
+Enter number of rows : 4
+1
+12
+123
+1234
+
+=========================================================================================================
+11. Write a program in C# Sharp to make such a pattern like right angle triangle with a number which will repeat a number in a row.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, j, rows;
+        Console.Write("Display the pattern triangle:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter number of rows: ");
+        rows = Convert.ToInt32(Console.ReadLine());
+        for (i = 1; i <= rows; i++)
+        {
+            for (j = 1; j <= i; j++)
+                Console.Write("{0}", i);
+            Console.Write("\n");
+        }
+    }
+  }
+}
+Output:
+Display the pattern triangle:
+
+Enter number of rows: 5
+1
+22
+333
+4444
+55555
+
+================================================================================================================
+12. Write a program in C# Sharp to make such a pattern like right angle triangle with number increased by 1.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, j, rows, k = 1;
+        Console.Write("Display the pattern triangle:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter number of rows : ");
+        rows = Convert.ToInt32(Console.ReadLine());
+        for (i = 1; i <= rows; i++)
+        {
+            for (j = 1; j <= i; j++)
+                Console.Write("{0}", k++);
+            Console.Write("\n");
+        }
+    }
+  }
+}
+Output:
+Display the pattern triangle:
+
+Enter number of rows : 6
+1
+23
+456
+78910
+1112131415
+161718192021
+
+====================================================================================================================
+19. Write a program in C# Sharp to display the n terms of harmonic series and their sum.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, n;
+        double s = 0.0;
+        Console.Write("Sum of the harmonic series:\n");
+        Console.Write("\n");
+        Console.Write("Enter the number of terms: ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("\n");
+        for (i = 1; i <= n; i++)
+        {
+            Console.Write("1/{0} + ", i);
+            s += 1 / (float)i;
+        }
+        Console.Write("\nSum of Series upto {0} terms : {1} \n", n, s);
+    }
+  }
+}
+Output:
+Sum of the harmonic series:
+
+Enter the number of terms: 4
+
+1/1 + 1/2 + 1/3 + 1/4 +
+Sum of Series upto 4 terms : 2.083333343267441
+
+==================================================================================================================
+20. Write a program in C# Sharp to display the pattern like pyramid using an asterisk and each row contain an odd number of an asterisks.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, j, n;
+        Console.Write("Display the pyramiod pattern:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter number of rows for this pattern :");
+        n = Convert.ToInt32(Console.ReadLine());
+        for (i = 0; i < n; i++)
+        {
+            for (j = 1; j <= n - i; j++)
+                Console.Write(" ");
+            for (j = 1; j <= 2 * i - 1; j++)
+                Console.Write("*");
+            Console.Write("\n");
+        }
+    }
+  }
+}
+Output:
+Display the pyramiod pattern:
+
+Enter number of rows for this pattern :6
+
+     *
+    ***
+   *****
+  *******
+ *********
+
+==============================================================================================================
+21. Write a program in C# Sharp to display the sum of the series [ 9 + 99 + 999 + 9999 ...].
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int n, i, a = 9;
+        int sum = 0;
+        Console.Write("sum of the series:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter the number or terms :");
+        n = Convert.ToInt32(Console.ReadLine());
+        for (i = 1; i <= n; i++)
+        {
+            sum += a;
+            Console.Write("{0}   ", a);
+            a = a * 10 + 9;
+        }
+        Console.Write("\nThe sum of the saries = {0} \n", sum);
+    }
+  }
+}
+Output:
+sum of the series:
+
+Enter the number or terms :4
+9   99   999   9999
+The sum of the saries = 11106
+
+=========================================================================================================
+22. Write a program in C# Sharp to print the Floyd's Triangle.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, j, a, b, c;
+        Console.Write("Print the Floyd's Triangle:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter number of rows : ");
+        a = Convert.ToInt32(Console.ReadLine());
+        for (i = 1; i <= a; i++)
+        {
+            if (i % 2 == 0)
+            { b = 1; c = 0; }
+            else
+            { b = 0; c = 1; }
+            for (j = 1; j <= i; j++)
+                if (j % 2 == 0)
+                    Console.Write("{0}", b);
+                else
+                    Console.Write("{0}", c);
+            Console.Write("\n");
+        }
+    }
+  }
+}
+Output:
+Print the Floyd's Triangle:
+
+Enter number of rows : 4
+1
+01
+101
+0101
+
+=================================================================================================================
+23. Write a program in C# Sharp to display the sum of the series [ 1+x+x^2/2!+x^3/3!+....].
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        double x, sum, nr;
+        int i, n;
+        Console.Write("sum of the series:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter the value of x :");
+        x = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter number of terms : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        sum = 1; nr = 1;
+        for (i = 1; i < n; i++)
+        {
+            nr = nr * x / (float)i;
+            sum = sum + nr;
+        }
+        Console.Write("\nThe sum  is : {0}\nNumber of terms = {1}\nThe value of x = {2}\n", sum, n, x);
+    }
+  }
+}
+Output:
+sum of the series:
+
+Enter the value of x :4
+Enter number of terms : 2
+
+The sum  is : 5
+Number of terms = 2
+The value of x = 4
+
+=======================================================================================================================
+24. Write a program in C# Sharp to find the sum of the series [ x - x^3 + x^5 - x^7 + x^9 -.....].
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        double x, sum, ctr, p, term;
+        int i, n;
+        Console.Write("Sum of the series:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter the value of x :");
+        x = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter number of terms : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        term = 1;
+        sum = 0;
+        for (i = 1, p = 1; i < n + 1; i++)
+        {
+            ctr = Math.Pow(x, p);
+            sum = sum + ctr * term;
+            term = term * (-1);
+            p = p + 2;
+        }
+        Console.Write("\nThe sum = {0}\nNumber of terms = {1}\n The value of x = {2}\n", sum, n, x);
+    }
+  }
+}
+Output:
+Sum of the series:
+
+Enter the value of x :2
+Enter number of terms : 2
+
+The sum = -6
+Number of terms = 2
+ The value of x = 2
+
+====================================================================================================================================
+25. Write a program in C# Sharp to display the n terms of square natural number and their sum.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, n, sum = 0;
+        Console.Write("Sum of square natural number:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter the number of terms : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("\nThe square natural upto {0} terms are :", n);
+        for (i = 1; i <= n; i++)
+        {
+            Console.Write("{0}  ", i * i);
+            sum += i * i;
+        }
+        Console.Write("\nThe Sum of Square Natural Number upto {0} terms = {1} \n", n, sum);
+    }
+  }
+}
+Output:
+Sum of square natural number:
+
+Enter the number of terms : 6
+
+The square natural upto 6 terms are :1  4  9  16  25  36
+The Sum of Square Natural Number upto 6 terms = 91
+
+======================================================================================================================================
+26. Write a program in C# Sharp to find the sum of the series 1 +11 + 111 + 1111 + .. n terms.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int n, i, sum = 0;
+        int a = 1;
+        Console.Write("sum of the series 1 +11 + 111 + 1111 + .. n terms:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter the numbe of terms : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        for (i = 1; i <= n; i++)
+        {
+            Console.Write("{0} + ", a);
+            sum = sum + a;
+            a = (a * 10) + 1;
+        }
+        Console.Write("\nThe Sum is : {0}\n", sum);
+    }
+  }
+}
+Output:
+sum of the series 1 +11 + 111 + 1111 + .. n terms:
+
+Enter the numbe of terms : 4
+1 + 11 + 111 + 1111 +
+The Sum is : 1234
+
+===========================================================================================================================================
+27. Write a C# Sharp program to check whether a given number is perfect number or not.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int n, i, sum;
+        Console.Write("Check whether a given number is perfect number or not:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter the  number : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        sum = 0;
+        Console.Write("The positive divisor : ");
+        for (i = 1; i < n; i++)
+        {
+            if (n % i == 0)
+            {
+                sum = sum + i;
+                Console.Write("{0}  ", i);
+            }
+        }
+        Console.Write("\nThe sum of the divisor is : {0}", sum);
+        if (sum == n)
+            Console.Write("\nSo, the number is perfect.");
+        else
+            Console.Write("\nSo, the number is not perfect.");
+        Console.Write("\n");
+    }
+  }
+}
+Output:
+Check whether a given number is perfect number or not:
+
+Enter the  number : 12
+The positive divisor : 1  2  3  4  6
+The sum of the divisor is : 16
+So, the number is not perfect.
+
+==============================================================================================================================================
+28. Write a C# Sharp program to find the perfect numbers within a given range of number.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int n, i, sum;
+        int min, max;
+        Console.Write("Find perfect the numbers within a given number of range:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter the starting range or number : ");
+        min = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter the ending range of number : ");
+        max = Convert.ToInt32(Console.ReadLine());
+        Console.Write("The Perfect numbers within the given range : ");
+        for (n = min; n <= max; n++)
+        {
+            i = 1;
+            sum = 0;
+            while (i < n)
+            {
+                if (n % i == 0)
+                    sum = sum + i;
+                i++;
+            }
+            if (sum == n)
+                Console.Write("{0} ", n);
+        }
+        Console.Write("\n");
+    }
+  }
+}
+Output:
+Find perfect the numbers within a given number of range:
+
+Enter the starting range or number : 10
+Enter the ending range of number : 75
+The Perfect numbers within the given range : 28
+
+===============================================================================================================================================
+29. Write a C# Sharp program to check whether a given number is an Armstrong number or not.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int num, a, sum = 0, temp;
+        Console.Write("Check whether a given number is armstrong number or not:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter a number: ");
+        num = Convert.ToInt32(Console.ReadLine());
+
+        for (temp = num; num != 0; num = num / 10)
+        {
+            a = num % 10;
+            sum = sum + (a*a*a);
+        }
+        if (sum == temp)
+            Console.Write("{0} is an Armstrong number.\n", temp);
+        else
+            Console.Write("{0} is not an Armstrong number.\n", temp);
+    }
+  }
+}
+Output:
+Check whether a given number is armstrong number or not:
+
+Enter a number: 477
+477 is not an Armstrong number.
+
+====================================================================================================================================================
+30. Write a C# Sharp program to find the Armstrong number for a given range of number.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int num, a, sum, temp;
+        int stno, enno;
+        Console.Write("Find the Armstrong number for a given range of number:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter starting number of range: ");
+        stno = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter ending number of range : ");
+        enno = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Armstrong numbers in given range are: ");
+        for (num = stno; num <= enno; num++)
+        {
+            temp = num;
+            sum = 0;
+
+            while (temp != 0)
+            {
+                a = temp % 10;
+                temp = temp / 10;
+                sum = sum + (a*a*a);
+            }
+            if (sum == num)
+                Console.Write("{0} ", num);
+        }
+        Console.Write("\n");
+    }
+  }
+}
+Output:
+Find the Armstrong number for a given range of number:
+
+Enter starting number of range: 1
+Enter ending number of range : 1000
+Armstrong numbers in given range are: 1 153 370 371 407
+
+===================================================================================================================================
+31. Write a program in C# Sharp to display the pattern like a diamond.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, j, a;
+        Console.Write("Display the pattern like diamond:\n");
+        Console.Write("\n");
+        Console.Write("Enter number of rows (half of the diamond) :");
+        a = Convert.ToInt32(Console.ReadLine());
+        for (i = 0; i <= a; i++)
+        {
+            for (j = 1; j <= a - i; j++)
+                Console.Write(" ");
+            for (j = 1; j <= 2 * i - 1; j++)
+                Console.Write("*");
+            Console.Write("\n");
+        }
+
+        for (i = a - 1; i >= 1; i--)
+        {
+            for (j = 1; j <= a - i; j++)
+                Console.Write(" ");
+            for (j = 1; j <= 2 * i - 1; j++)
+                Console.Write("*");
+            Console.Write("\n");
+        }
+    }
+  }
+}
+Output:
+Display the pattern like diamond:
+
+Enter number of rows (half of the diamond) :6
+
+     *
+    ***
+   *****
+  *******
+ *********
+***********
+ *********
+  *******
+   *****
+    ***
+     *
+
+========================================================================================================================================
+32. Write a C# Sharp program to determine whether a given number is prime or not.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+
+        int num, i, ctr = 0;
+        Console.Write("Check whether a given number is prime or not:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter a number: ");
+        num = Convert.ToInt32(Console.ReadLine());
+        for (i = 2; i <= num / 2; i++)
+        {
+            if (num % i == 0)
+            {
+                ctr++;
+                break;
+            }
+        }
+        if (ctr == 0 && num != 1)
+            Console.Write("{0} is a prime number.\n", num);
+        else
+            Console.Write("{0} is not a prime number\n", num);
+    }
+  }
+}
+Output:
+Check whether a given number is prime or not:
+
+Enter a number: 13
+13 is a prime number.
+
+==============================================================================================================================================
+33. Write a C# Sharp program to display by Pascal's triangle.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int nr, c = 1, blk, i, j;
+        Console.Write("Display the Pascal's triangle:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter number of rows: ");
+        nr = Convert.ToInt32(Console.ReadLine());
+        for (i = 0; i < nr; i++)
+        {
+            for (blk = 1; blk <= nr - i; blk++)
+                Console.Write("  ");
+            for (j = 0; j <= i; j++)
+            {
+                if (j == 0 || i == 0)
+                    c = 1;
+                else
+                    c = c * (i - j + 1) / j;
+                Console.Write("{0}   ", c);
+            }
+            Console.Write("\n");
+        }
+    }
+  }
+}
+Output:
+Display the Pascal's triangle:
+
+Enter number of rows: 6
+            1
+          1   1
+        1   2   1
+      1   3   3   1
+    1   4   6   4   1
+  1   5   10   10   5   1
+
+================================================================================================================================================
+34. Write a program in C# Sharp to find the prime numbers within a range of numbers.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int num, i, a, stno, enno;
+        Console.Write("Find the prime numbers within a range of numbers:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter starting number of range: ");
+        stno = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter ending number of range : ");
+        enno = Convert.ToInt32(Console.ReadLine());
+        Console.Write("The prime numbers between {0} and {1} are : \n", stno, enno);
+
+        for (num = stno; num <= enno; num++)
+        {
+            a = 0;
+
+            for (i = 2; i <= num / 2; i++)
+            {
+                if (num % i == 0)
+                {
+                    a++;
+                    break;
+                }
+            }
+
+            if (a == 0 && num != 1)
+                Console.Write("{0} ", num);
+        }
+        Console.Write("\n");
+    }
+  }
+}
+Output:
+Find the prime numbers within a range of numbers:
+
+Enter starting number of range: 1
+Enter ending number of range : 50
+The prime numbers between 1 and 50 are :
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47
+
+========================================================================================================================================
+35. Write a program in C# Sharp to display the first n terms of Fibonacci series.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int prv = 0, pre = 1, trm, i, n;
+        Console.Write("Display fibonacci series:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter the number of terms to be display : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("The fibonacci series upto to {0} terms : \n", n);
+        Console.Write("{0}    {1}", prv, pre);
+
+        for (i = 3; i <= n; i++)
+        {
+            trm = prv + pre;
+            Console.Write("  {0}  ", trm);
+            prv = pre;
+            pre = trm;
+        }
+        Console.Write("\n");
+    }
+  }
+}
+Output:
+Display fibonacci series:
+
+Enter the number of terms to be display : 10
+The fibonacci series upto to 10 terms :
+0    1  1    2    3    5    8    13    21    34
+
+====================================================================================================================================================
+36. Write a program in C# Sharp to display the such a pattern for n number of rows using a number which will start with the number 1 and the first and a last number of each row will be 1.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, j, n;
+        Console.Write(" Display the pattern in which first and last number of each row will be 1:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter the number of rows : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        for (i = 0; i <= n; i++)
+        {
+           
+            for (j = 1; j <= n - i; j++)
+                Console.Write(" ");
+           
+            for (j = 1; j <= i; j++)
+                Console.Write("{0}", j);
+
+           
+            for (j = i - 1; j >= 1; j--)
+                Console.Write("{0}", j);
+
+            Console.Write("\n");
+        }
+    }
+  }
+}
+Output:
+Display the pattern in which first and last number of each row will be 1:
+
+Enter the number of rows : 4
+
+   1
+  121
+ 12321
+1234321
+
+==========================================================================================================================================================
+37. Write a program in C# Sharp to display the number in reverse order.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int num, a, sum = 0, t;
+        Console.Write("Display the number in reverse order:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter a number: ");
+        num = Convert.ToInt32(Console.ReadLine());
+
+        for (t = num; t != 0; t = t / 10)
+        {
+            a = t % 10;
+            sum = sum * 10 +a;
+        }
+        Console.Write("The number in reverse order is : {0} \n", sum);
+    }
+  }
+}
+Output:
+Display the number in reverse order:
+
+Enter a number: 13
+The number in reverse order is : 31
+
+=========================================================================================================================================================
+38. Write a program in C# Sharp to check whether a number is a palindrome or not.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int num, a, sum = 0, b;
+        Console.Write("Check whether a number is a palindrome or not:\n");
+        Console.Write("\n");
+
+        Console.Write("Input a number: ");
+        num = Convert.ToInt32(Console.ReadLine());
+
+        for (b = num; num != 0; num = num / 10)
+        {
+            a = num % 10;
+            sum = sum * 10 + a;
+        }
+        if (b == sum)
+            Console.Write("{0} is a palindrome number.\n", b);
+        else
+            Console.Write("{0} is not a palindrome number.\n", b);
+    }
+  }
+}
+Output:
+Check whether a number is a palindrome or not:
+
+Input a number: 121
+121 is a palindrome number.
+
+========================================================================================================================================================
+39. Write a program in C# Sharp to find the number and sum of all integer between 100 and 200 which are divisible by 9.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, sum = 0;
+        Console.Write("Find the number and sum of all integer between 100 and 200, divisible by 9:\n");
+        Console.Write("\n");
+
+        Console.Write("Numbers between 100 and 200, divisible by 9 : \n");
+        for (i = 101; i < 200; i++)
+        {
+            if (i % 9 == 0)
+            {
+                Console.Write("{0}  ", i);
+                sum += i;
+            }
+        }
+        Console.Write("\n\nThe sum : {0} \n", sum);
+    }
+  }
+}
+Output:
+Find the number and sum of all integer between 100 and 200, divisible by 9:
+
+Numbers between 100 and 200, divisible by 9 :
+108  117  126  135  144  153  162  171  180  189  198
+
+The sum : 1683
+
+=====================================================================================================================================================
+40. Write a C# Sharp Program to display the following pattern using the alphabet.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, j;
+        char alph = 'A';
+        int n;
+        int ctr = 1;
+        Console.Write("Display the pattern like pyramid using the alphabet:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter the number of Letters in the Pyramid: ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        for (i = 1; i <= n; i++)
+        {
+            for (j = 0; j <= (ctr / 2); j++)
+            {
+                Console.Write("{0} ", alph++);
+            }
+            alph--;
+            alph--;
+
+            for (j = 0; j < (ctr / 2); j++)
+            {
+                Console.Write("{0} ", alph--);
+            }
+            ctr = ctr + 2;
+            alph = 'A';
+            Console.Write("\n");
+        }
+    }
+  }
+}
+Output:
+Display the pattern like pyramid using the alphabet:
+
+Enter the number of Letters in the Pyramid:6
+A
+A B A
+A B C B A
+A B C D C B A
+A B C D E D C B A
+A B C D E F E D C B A
+
+===========================================================================================================================================================
+41. Write a program in C# Sharp to convert a decimal number into binary without using an array.
+
+using System;
+
+namaespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int n, i, j, binno = 0, dn;
+        Console.Write("Convert a decimal number to binary without using array:\n");
+        Console.Write("\n");
+        Console.Write("Enter a number to convert : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        dn = n;
+        i = 1;
+        for (j = n; j > 0; j = j / 2)
+        {
+            binno = binno + (n % 2) * i;
+            i = i * 10;
+            n = n / 2;
+        }
+
+        Console.Write("\nThe Binary of {0} is {1}.\n\n", dn, binno);
+    }
+  }
+}
+Output:
+Convert a decimal number to binary without using array:
+
+Enter a number to convert : 13
+
+The Binary of 13 is 1101.
+
+============================================================================================================================================================
+42. Write a program in C# Sharp to convert a binary number into a decimal number without using array, function and while loop.
+
+using System;
+
+namespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int n1, n, p = 1;
+        int dec = 0, i = 1, j, d;
+        Console.Write("Convert a binary to decimal using for loop and without using array:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter a binary number :");
+        n = Convert.ToInt32(Console.ReadLine());
+        n1 = n;
+        for (j = n; j > 0; j = j / 10)
+        {
+            d = j % 10;
+            if (i == 1)
+                p *= 1;
+            else
+                p *= 2;
+
+            dec = dec + (d * p);
+            i++;
+        }
+        Console.Write("\nThe Binary Number : {0}\nThe equivalent Decimal  Number : {1} \n\n", n1, dec);
+    }
+  }
+}
+Output:
+Convert a binary to decimal using for loop and without using array:
+
+Enter a binary number :1000001
+
+The Binary Number : 1000001
+The equivalent Decimal  Number : 65
+
+=========================================================================================================================================================
+43. Write a C# Sharp program to find HCF (Highest Common Factor) of two numbers.
+
+using System;
+
+namespace HelloWorld
+{
+class Program
+  {
+    public static void Main()
+    {
+        int i, n1, n2, j, hcf = 1;
+        Console.Write("HCF of two numbers:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter 1st number for HCF: ");
+        n1 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter 2nd number for HCF: ");
+        n2 = Convert.ToInt32(Console.ReadLine());
+        j = (n1 < n2) ? n1 : n2;
+        for (i = 1; i <= j; i++)
+        {
+            if (n1 % i == 0 && n2 % i == 0)
+            {
+                hcf = i;
+            }
+        }
+        Console.Write("\nHCF of {0} and {1} is : {2}\n\n", n1, n2, hcf);
+    }
+  }
+}
+Output:
+HCF of two numbers:
+
+Enter 1st number for HCF: 24
+Enter 2nd number for HCF: 28
+
+HCF of 24 and 28 is : 4
+
+=======================================================================================================================================================
+44. Write a program in C# Sharp to find LCM of any two numbers using HCF.
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int i, n1, n2, j, hcf = 1, lcm;
+            Console.Write("LCM of two numbers using HCF:\n");
+            Console.Write("\n");
+
+            Console.Write("Enter 1st number for LCM: ");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter 2nd number for LCM: ");
+            n2 = Convert.ToInt32(Console.ReadLine());
+
+            j = (n1 < n2) ? n1 : n2;
+
+            for (i = 1; i <= j; i++)
+            {
+
+                if (n1 % i == 0 && n2 % i == 0)
+                {
+                    hcf = i;
+                }
+            }
+            lcm = (n1 * n2) / hcf;
+
+            Console.Write("\nThe LCM of {0} and {1} is : {2}\n\n", n1, n2, lcm);
+        }
+    }
+}
+Output:
+LCM of two numbers using HCF:
+
+Enter 1st number for LCM: 15
+Enter 2nd number for LCM: 20
+
+The LCM of 15 and 20 is : 60
+
+===========================================================================================================================================================
+45. Write a program in C# Sharp to find LCM of any two numbers.
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int i, n1, n2, max, lcm = 1;
+            Console.Write("LCM of two numbers:\n");
+            Console.Write("\n");
+            Console.Write("Enter 1st number for LCM: ");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter 2nd number for LCM: ");
+            n2 = Convert.ToInt32(Console.ReadLine());
+            max = (n1 > n2) ? n1 : n2;
+            for (i = max; ; i += max)
+            {
+                if (i % n1 == 0 && i % n2 == 0)
+                {
+                    lcm = i;
+                    break;
+                }
+            }
+            Console.Write("\nLCM of {0} and {1} = {2}\n\n", n1, n2, lcm);
+        }
+    }
+}
+Output:
+LCM of two numbers:
+
+Enter 1st number for LCM: 6
+Enter 2nd number for LCM: 8
+
+LCM of 6 and 8 = 24
+
+===========================================================================================================================================================
+46. Write a program in C# Sharp to convert a binary number into a decimal number using math function.
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int n1, n;
+            double dec = 0, i = 0, d;
+            Console.Write("Convert a binary number into decimal using math function:\n");
+            Console.Write("\n");
+
+            Console.Write("Enter the binary number:");
+            n = Convert.ToInt32(Console.ReadLine());
+            n1 = n;
+            while (n != 0)
+            {
+                d = n % 10;
+                dec = dec + d * Math.Pow(2, i);
+                n = n / 10;
+                i++;
+            }
+            Console.Write("\nThe Binary Number : {0}\nThe equivalent Decimal  Number is : {1}\n\n", n1, dec);
+        }
+    }
+}
+Output:
+Convert a binary number into decimal using math function:
+
+Enter the binary number:101010101
+
+The Binary Number : 101010101
+The equivalent Decimal  Number is : 341
+
+===========================================================================================================================================================
+47. Write a C# Sharp program to check whether a number is a Strong Number or not.
+
+using System;
+
+namespace HelloWorld
+{ 
+  class Program
+   {
+    public static void Main()
+    {
+        int i, n, n1, s1 = 0, j;
+        int fact;
+        Console.Write("Check whether a number is Strong Number or not:\n");
+        Console.Write("\n");
+
+        Console.Write("Enter a number to check whether it is Strong number: ");
+        n = Convert.ToInt32(Console.ReadLine());
+        n1 = n;
+
+        for (j = n; j > 0; j = j / 10)
+        {
+
+            fact = 1;
+            for (i = 1; i <= j % 10; i++)
+            {
+                fact = fact * i;
+            }
+            s1 = s1 + fact;
+
+        }
+
+        if (s1 == n1)
+        {
+            Console.Write("\n{0} is Strong number.\n", n1);
+        }
+        else
+        {
+            Console.Write("\n{0} is not Strong number.\n", n1);
+        }
+    }
+  }
+}
+Output:
+Check whether a number is Strong Number or not:
+
+Enter a number to check whether it is Strong number: 2
+
+2 is Strong number.
+
+=========================================================================================================================================================
+48. Write a C# Sharp program to find Strong Numbers within a range of numbers.
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int i, n1, s1 = 0, j, k, en, sn;
+            int fact;
+            Console.Write("Find Strong Numbers within a range of numbers:\n");
+            Console.Write("\n");
+
+            Console.Write("Enter starting range of number : ");
+            sn = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter ending range of number: ");
+            en = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\n\nThe Strong numbers are :\n");
+
+            for (k = sn; k <= en; k++)
+            {
+                n1 = k;
+                s1 = 0;
+
+                for (j = k; j > 0; j = j / 10)
+                {
+
+                    fact = 1;
+                    for (i = 1; i <= j % 10; i++)
+                    {
+                        fact = fact * i;
+                    }
+                    s1 = s1 + fact;
+                }
+
+                if (s1 == n1)
+
+                    Console.Write("{0}  ", n1);
+            }
+            Console.Write("\n");
+        }
+    }
+}
+Output:
+Find Strong Numbers within a range of numbers:
+
+Enter starting range of number : 1
+Enter ending range of number: 280
+
+
+The Strong numbers are :
+1  2  145
+
+=============================================================================================================================================================
+49. Write a C# Sharp program to find out the sum of in A.P. series.
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int n1, df, n2, i, ln;
+            {
+                int s1 = 0;
+                Console.Write("Find out the sum of in A.P. series:\n");
+                Console.Write("\n");
+                Console.Write("Enter the starting number of the A.P. series: ");
+                n1 = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter the number of items for  the A.P. series: ");
+                n2 = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Input the common difference of A.P. series: ");
+                df = Convert.ToInt32(Console.ReadLine());
+
+                s1 = (n2 * (2 * n1 + (n2 - 1) * df)) / 2;
+                ln = n1 + (n2 - 1) * df;
+                Console.Write("\nThe Sum of the  A.P. series are : \n");
+
+                for (i = n1; i <= ln; i = i + df)
+                {
+                    if (i != ln)
+                        Console.Write("{0} + ", i);
+                    else
+                        Console.Write("{0} = {1} \n\n", i, s1);
+                }
+            }
+        }
+    }
+}
+Output:
+Find out the sum of in A.P. series:
+
+Enter the starting number of the A.P. series: 1
+Enter the number of items for  the A.P. series: 20
+Input the common difference of A.P. series: 4
+
+The Sum of the  A.P. series are :
+1 + 5 + 9 + 13 + 17 + 21 + 25 + 29 + 33 + 37 + 41 + 45 + 49 + 53 + 57 + 61 + 65 + 69 + 73 + 77 = 780
+
+=================================================================================================================================================================
+50. Write a program in C# Sharp to convert a decimal number into octal without using an array.
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int n, i, j, ocno = 0, dno;
+            Console.Write("Convert decimal number to octal without using array:\n");
+            Console.Write("\n");
+            Console.Write("Enter a number to convert : ");
+            n = Convert.ToInt32(Console.ReadLine());
+            dno = n;
+            i = 1;
+
+            for (j = n; j > 0; j = j / 8)
+            {
+                ocno = ocno + (j % 8) * i;
+                i = i * 10;
+                n = n / 8;
+            }
+
+            Console.Write("\nThe Octal of {0} is {1}.\n\n", dno, ocno);
+        }
+    }
+}
+Output:
+Convert decimal number to octal without using array:
+
+Enter a number to convert : 79
+
+The Octal of 79 is 117.
+
+=============================================================================================================================================================
+51. Write a program in C# Sharp to convert an octal number to decimal without using array.
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int n1, n2, p = 1, k, ch = 1;
+            int dec = 0, i = 1, j, d;
+            Console.Write("Convert Octal number to Decimal number:\n");
+            Console.Write("\n");
+
+            Console.Write("Enter an octal number (using digit 0 - 7) :");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            n2 = n1;
+
+            for (; n1 > 0; n1 = n1 / 10)
+            {
+                k = n1 % 10;
+                if (k >= 8)
+                {
+                    ch = 0;
+                }
+            }
+
+            switch (ch)
+            {
+                case 0:
+                    Console.Write("\nThe number is not an octal number. \n");
+                    break;
+                case 1:
+                    n1 = n2;
+                    for (j = n1; j > 0; j = j / 10)
+                    {
+                        d = j % 10;
+                        if (i == 1)
+                            p = p * 1;
+                        else
+                            p = p * 8;
+
+                        dec = dec + (d * p);
+                        i++;
+                    }
+                    Console.Write("\nThe Octal Number : {0}\nThe equivalent Decimal  Number : {1} \n\n", n2, dec);
+                    break;
+            }
+        }
+    }
+}
+Output:
+Convert Octal number to Decimal number:
+
+Enter an octal number (using digit 0 - 7) :745
+
+The Octal Number : 745
+The equivalent Decimal  Number : 485
+
+============================================================================================================================================================
+52. Write a program in C# Sharp to find the Sum of GP series.
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+
+            int g1, cr, j;
+            int ntrm;
+            double sum = 0, tn, gpn;
+            Console.Write("Find the Sum of GP series:\n");
+            Console.Write("\n");
+
+
+            Console.Write("Enter the first number of the G.P. series: ");
+            g1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter the number or terms in the G.P. series: ");
+            ntrm = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter the common ratio of G.P. series: ");
+            cr = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("\nThe numbers for the G.P. series:\n ");
+            Console.Write("1  ");
+
+            for (j = 1; j <= ntrm; j++)
+            {
+                gpn = Math.Pow(cr, j);
+                Console.Write("{0}  ", gpn);
+            }
+
+
+            sum = (g1 * (1 - (Math.Pow(cr, ntrm + 1)))) / (1 - cr);
+            tn = g1 * (Math.Pow(cr, ntrm - 1));
+
+            Console.Write("\nThe tn terms of G.P. : {0}\n", tn);
+            Console.Write("\nThe Sum of the G.P. series : {0}\n", sum);
+        }
+    }
+}
+Output:
+Find the Sum of GP series:
+
+Enter the first number of the G.P. series: 1
+Enter the number or terms in the G.P. series: 5
+Enter the common ratio of G.P. series: 2
+
+The numbers for the G.P. series:
+ 1  2  4  8  16  32
+The tn terms of G.P. : 16
+
+The Sum of the G.P. series : 63
+
+================================================================================================================================================================
+53. Write a program in C# Sharp to convert a binary number to octal.
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int n1, n, p = 1;
+            int dec = 0, i = 1, j, d;
+            int ocno = 0;
+            Console.Write("Convert binary number into octal:\n");
+            Console.Write("\n");
+
+            Console.Write("Enter a binary number :");
+            n = Convert.ToInt32(Console.ReadLine());
+            n1 = n;
+            for (j = n; j > 0; j = j / 10)
+            {
+                d = j % 10;
+                if (i == 1)
+                    p = p * 1;
+                else
+                    p = p * 2;
+
+                dec = dec + (d * p);
+                i++;
+            }
+
+            i = 1;
+
+            for (j = dec; j > 0; j = j / 8)
+            {
+                ocno = ocno + (j % 8) * i;
+                i = i * 10;
+                n = n / 8;
+            }
+
+            Console.Write("\nThe Binary Number : {0}\nThe equivalent Octal  Number : {1} \n\n", n1, ocno);
+        }
+    }
+}
+Output:
+Convert binary number into octal:
+
+Enter a binary number :1001
+
+The Binary Number : 1001
+The equivalent Octal  Number : 11
+
+================================================================================================================================================================
+54. Write a program in C# Sharp to convert an octal number into binary.
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int n1, n, p = 1;
+            int dec = 0, i = 1, j, d;
+            int binno = 0;
+            Console.Write("Convert Octal to Binary:\n");
+            Console.Write("\n");
+
+            Console.Write("Enter an octal number (using digit 0 - 7) :");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            n = n1;
+
+
+
+            for (j = n1; j > 0; j = j / 10)
+            {
+                d = j % 10;
+                if (i == 1)
+                    p = p * 1;
+                else
+                    p = p * 8;
+
+                dec = dec + (d * p);
+                i++;
+            }
+
+            i = 1;
+
+            for (j = dec; j > 0; j = j / 2)
+            {
+                binno = binno + (dec % 2) * i;
+                i = i * 10;
+                dec = dec / 2;
+            }
+
+            Console.Write("\nThe Octal Number : {0}\nThe equivalent Binary  Number : {1} \n\n", n, binno);
+        }
+    }
+}
+Output:
+Convert Octal to Binary:
+
+Enter an octal number (using digit 0 - 7) :11
+
+The Octal Number : 11
+The equivalent Binary  Number : 1001
+
+===========================================================================================================================================================
+55. Write a program in C# Sharp to convert a decimal number to hexadecimal. .
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int decno, q, dno = 0, m, l;
+            int tmp;
+            int s;
+            Console.Write("Convert a number in decimal to hexadecimal:\n");
+            Console.Write("\n");
+
+            Console.Write("Enter any Decimal number: ");
+            decno = Convert.ToInt32(Console.ReadLine());
+            q = decno;
+            for (l = q; l > 0; l = l / 16)
+            {
+                tmp = l % 16;
+                if (tmp < 10)
+                    tmp = tmp + 48;
+                else
+                    tmp = tmp + 55;
+                dno = dno * 100 + tmp;
+            }
+            Console.Write("\nThe equivalent Hexadecimal Number : ");
+            for (m = dno; m > 0; m = m / 100)
+            {
+                s = m % 100;
+                Console.Write("{0}", (char)s);
+            }
+            Console.Write("\n");
+        }
+    }
+}
+Output:
+Convert a number in decimal to hexadecimal:
+
+Enter any Decimal number: 79
+
+The equivalent Hexadecimal Number : 4F
+
+================================================================================================================================================================
+56. Write a program in C# Sharp to check whether a number can be express as sum of two prime numbers.
+
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int n, i, n1 = 1, n2 = 1, n3 = 0, j;
+            Console.Write("Check whether a number can be express as sum of two prime numbers:\n");
+            Console.Write("\n");
+            Console.Write("Enter a positive integer: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (i = 3; i <= n / 2; i++)
+            {
+                n1 = 1;
+                n2 = 1;
+                for (j = 2; j < i; j++)
+                {
+                    if (i % j == 0)
+                    { n1 = 0; j = i; }
+                }
+                for (j = 2; j < n - i; j++)
+                {
+                    if ((n - i) % j == 0)
+                    { n2 = 0; j = n - i; }
+                }
+                if (n1 == 1 && n2 == 1)
+                {
+                    Console.Write("{0} =  {1} + {2}  \n", n, i, n - i);
+                    n3 = 1;
+                }
+            }
+            if (n3 == 0)
+            { Console.Write("\n{0} can not be expressed as sum of two prime numbers.\n", n); }
+        }
+    }
+}
+Output:
+Check whether a number can be express as sum of two prime numbers:
+
+Enter a positive integer: 16
+16 =  3 + 13
+16 =  5 + 11
+
+===============================================================================================================================================================
+57. Write a program in C# Sharp to print a string in reverse order.using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        public static void Main()
+        {
+            string str, str1 = "";
+            int i, l;
+            Console.Write("Print a string in reverse order:\n");
+            Console.Write("\n");
+
+            Console.Write("Enter a String : ");
+            str = Console.ReadLine();
+
+            l = str.Length - 1;
+            for (i = l; i >= 0; i--)
+            {
+
+                str1 = str1 + str[i];
+
+            }
+
+            Console.WriteLine("The string in Reverse  order is : {0}", str1);
+            Console.Write("\n");
+
+        }
+    }
+}
+Output:
+Print a string in reverse order:
+
+Enter a String : Zensar
+The string in Reverse  order is : rasneZ
+
+=====================================================================================================================================================================
+58. Write a C# Sharp program to display alphabet pattern like A with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (((col == 1 || col == 5) && row != 0) ||((row == 0 || row == 3) && (col > 1 && col < 5)))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ ***
+ *   *
+ *   *
+ *****
+ *   *
+ *   *
+ *   *
+===========================================================================================================================================================
+59. Write a C# Sharp program to display alphabet pattern like B with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || ((row == 0 || row == 3 || row == 6) && (col < 5 && col > 1)) || (col == 5 && (row != 0 && row != 3 && row != 6)))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+
+ ****
+ *   *
+ *   *
+ ****
+ *   *
+ *   *
+ ****
+=============================================================================================================================================================
+60. Write a C# Sharp program to display alphabet pattern like C with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if ((col == 1 && (row != 0 && row != 6)) || ((row == 0 || row == 6) && (col > 1 && col < 5)) || (col == 5 && (row == 1 || row == 5)))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+
+  ***
+ *   *
+ *
+ *
+ *
+ *   *
+  ***
+==============================================================================================================================================================
+61. Write a C# Sharp program to display alphabet pattern like D with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || ((row == 0 || row == 6) && (col > 1 && col < 5)) || (col == 5 && row != 0 && row != 6))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ ****
+ *   *
+ *   *
+ *   *
+ *   *
+ *   *
+ ****
+===============================================================================================================================================================
+62. Write a C# Sharp program to display alphabet pattern like E with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || ((row == 0 || row == 6) && (col > 1 && col < 6)) || (row == 3 && col > 1 && col < 5))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *****
+ *
+ *
+ ****
+ *
+ *
+ *****
+==========================================================================================================================================================
+63. Write a C# Sharp program to display alphabet pattern like F with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || (row == 0 && col > 1 && col < 6) || (row == 3 && col > 1 && col < 5))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *****
+ *
+ *
+ ****
+ *
+ *
+ *
+=============================================================================================================================================================
+64. Write a C# Sharp program to display alphabet pattern like G with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if ((col == 1 && row != 0 && row != 6) || ((row == 0 || row == 6) && col > 1 && col < 5) || (row == 3 && col > 2 && col < 6) || (col == 5 && row != 0 && row != 2 && row != 6))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ ***
+ *   *
+ *
+ * ***
+ *   *
+ *   *
+  ***
+===========================================================================================================================================================
+65. Write a C# Sharp program to display alphabet pattern like H with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if ((col == 1 || col == 5) || (row == 3 && col > 1 && col < 6))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *   *
+ *   *
+ *   *
+ *****
+ *   *
+ *   *
+ *   *
+
+=====================================================================================================================================================
+66. Write a C# Sharp program to display alphabet pattern like I with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 3 || (row == 0 && col > 0 && col < 6) || (row == 6 && col > 0 && col < 6))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+
+ *****
+   *
+   *
+   *
+   *
+   *
+ *****
+=====================================================================================================================================================
+67. Write a C# Sharp program to display alphabet pattern like J with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if ((col == 4 && row != 6) || (row == 0 && col > 2 && col < 6) || (row == 6 && col == 3) || (row == 5 && col == 2))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+   ***
+    *
+    *
+    *
+    *
+  * *
+   *
+=====================================================================================================================================================
+68. Write a C# Sharp program to display alphabet pattern like K with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;int j = 5, i = 0;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || ((row == col + 1) && col != 0))
+                        Console.Write("*");
+                        else if(row == i && col == j)
+                    {
+                        Console.Write("*");
+                        i = i + 1;
+                        j = j - 1;
+                    }
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *   *
+ *  *
+ * *
+ **
+ * *
+ *  *
+ *   *
+=====================================================================================================================================================
+69. Write a C# Sharp program to display alphabet pattern like L with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || (row == 6 && col != 0 && col < 6))
+                        Console.Write("*");
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *
+ *
+ *
+ *
+ *
+ *
+ *****
+=====================================================================================================================================================
+70. Write a C# Sharp program to display alphabet pattern like M with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || col == 5 || (row == 2 && (col == 2 || col == 4)) || (row == 3 && col == 3))
+                        Console.Write("*");
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *   *
+ *   *
+ ** **
+ * * *
+ *   *
+ *   *
+ *   *
+=====================================================================================================================================================
+71. Write a C# Sharp program to display alphabet pattern like N with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || col == 5 || (row == col && col != 0 && col != 6))
+                        Console.Write("*");
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *   *
+ *   *
+ **  *
+ * * *
+ *  **
+ *   *
+ *   *
+=====================================================================================================================================================
+72. Write a C# Sharp program to display alphabet pattern like O with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (((col == 1 || col == 5) && row != 0 && row != 6) || ((row == 0 || row == 6) && col > 1 && col < 5))
+                        Console.Write("*");
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+  ***
+ *   *
+ *   *
+ *   *
+ *   *
+ *   *
+  ***
+=====================================================================================================================================================
+73. Write a C# Sharp program to display alphabet pattern like P with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || ((row == 0 || row == 3) && col > 0 && col < 5) || ((col == 5 || col == 1) && (row == 1 || row == 2)))
+                        Console.Write("*");
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ ****
+ *   *
+ *   *
+ ****
+ *
+ *
+ *
+=====================================================================================================================================================
+74. Write a C# Sharp program to display alphabet pattern like Q with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if ((col == 1 && row != 0 && row != 6) || (row == 0 && col > 1 && col < 5) || (col == 5 && row != 0 && row != 5) || (row == 6 && col > 1 && col < 4) || (col == row - 1 && row > 3))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+  ***
+ *   *
+ *   *
+ *   *
+ * * *
+ *  *
+  ** *
+=====================================================================================================================================================
+75. Write a C# Sharp program to display alphabet pattern like R with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (col == 1 || ((row == 0 || row == 3) && col > 1 && col < 5) || (col == 5 && row != 0 && row < 3) || (col == row - 1 && row > 2))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ ****
+ *   *
+ *   *
+ ****
+ * *
+ *  *
+ *   *
+=====================================================================================================================================================
+76. Write a C# Sharp program to display alphabet pattern like S with an asterisk.
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((row == 0 || row == 3 || row == 6) && col > 1 && col < 5) || (col == 1 && (row == 1 || row == 2 || row == 6)) || (col == 5 && (row == 0 || row == 4 || row == 5)))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+output:
+ ****
+ *
+ *
+  ***
+     *
+     *
+ ****
+=========================================================================================================================================================
+77. Write a C# Sharp program to display alphabet pattern like T with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (col == 3 || (row == 0 && col > 0 && col < 6))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *****
+   *
+   *
+   *
+   *
+   *
+   *
+=====================================================================================================================================================
+78. Write a C# Sharp program to display alphabet pattern like U with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((col == 1 || col == 5) && row != 6) || (row == 6 && col > 1 && col < 5))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *   *
+ *   *
+ *   *
+ *   *
+ *   *
+ *   *
+  ***
+=====================================================================================================================================================
+79. Write a C# Sharp program to display alphabet pattern like V with an asterisk.
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((col == 1 || col == 5) && row < 5) || (row == 6 && col == 3) || (row == 5 && (col == 2 || col == 4)))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *   *
+ *   *
+ *   *
+ *   *
+ *   *
+  * *
+   *
+=====================================================================================================================================================
+80. Write a C# Sharp program to display alphabet pattern like W with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((col == 1 || col == 5) && row < 6) || ((row == 5 || row == 4) && col == 3) || (row == 6 && (col == 2 || col == 4)))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *   *
+ *   *
+ *   *
+ *   *
+ * * *
+ * * *
+  * *
+=====================================================================================================================================================
+81. Write a C# Sharp program to display alphabet pattern like X with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((col == 1 || col == 5) && (row > 4 || row < 2)) || row == col && col > 0 && col < 6 || (col == 2 && row == 4) || (col == 4 && row == 2))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *   *
+ *   *
+  * *
+   *
+  * *
+ *   *
+ *   *
+=====================================================================================================================================================
+82. Write a C# Sharp program to display alphabet pattern like Y with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((col == 1 || col == 5) && row < 2) || row == col && col > 0 && col < 4 || (col == 4 && row == 2) || ((col == 3) && row > 3))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *   *
+ *   *
+  * *
+   *
+   *
+   *
+   *
+=====================================================================================================================================================
+83. Write a C# Sharp program to display alphabet pattern like Z with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((row == 0 || row == 6) && col >= 0 && col <= 6) || row + col == 6)
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+*******
+     *
+    *
+   *
+  *
+ *
+*******
+==============================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+                                                                               ARRAYS
+
+
+
+
+
+
+
+1. Write a program in C# Sharp to store elements in an array and print it.
+
+using System;
+
+class NullablesAtShow
+{
+    static void Main(string[] args)
+    {
+        int[] arr = new int[10];
+        Console.WriteLine("Enter the array elements:");
+        for(int i=0;i<10;i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("Elements in array are:");
+        for(int i=0;i<10;i++)
+        {
+            Console.Write(arr[i]+"\t");
+        }
+        Console.ReadKey();
+    }
+}
+
+output:
+Enter the array elements:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+Elements in array are:
+1       2       3       4       5       6       7       8       9       0
+=====================================================================================================================================================
+2. Write a program in C# Sharp to read n number of values in an array and display it in reverse order.
+
+using System;
+
+class NullablesAtShow
+{
+    static void Main(string[] args)
+    {
+        int n;
+        Console.WriteLine("Enter the size of array:");
+        n = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[n];
+        Console.WriteLine("Enter the array elements:");
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("Array elements in reverse order:");
+        for(int i=arr.Length-1;i>=0;i--)
+        {
+            Console.Write(arr[i]+"\t");
+        }
+        Console.ReadKey();
+    }
+}
+
+output:
+Enter the size of array:
+4
+Enter the array elements:
+1
+2
+3
+4
+Array elements in reverse order:
+4       3       2       1
+=====================================================================================================================================================
+3. Write a program in C# Sharp to find the sum of all elements of the array.
+
+ using System;
+
+class NullablesAtShow
+{
+    static void Main(string[] args)
+    {
+        int n;int sum = 0;
+        Console.WriteLine("Enter the size of array:");
+        n = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[n];
+        Console.WriteLine("Enter the array elements:");
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        for(int i=0;i<arr.Length;i++)
+        {
+            sum = sum + arr[i];
+        }
+        Console.WriteLine("sum of array elements: "+sum);
+        Console.ReadKey();
+    }
+}
+        
+output:
+Enter the size of array:
+4
+Enter the array elements:
+1
+2
+3
+4
+sum of array elements: 10
+=====================================================================================================================================================
+4. Write a program in C# Sharp to copy the elements one array into another array.
+
+ using System;
+
+class NullablesAtShow
+{
+    static void Main(string[] args)
+    {
+        int[] arr1 = new int[5];
+        int[] arr2 = new int[5];
+        Console.WriteLine("Enter the First array elements:");
+        for(int i=0;i<5;i++)
+        {
+            arr1[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("Elements of first array are:");
+        for(int i=0;i<arr1.Length;i++)
+        {
+            Console.Write(arr1[i]+"\t");
+        }
+        Console.WriteLine();
+        arr2 = arr1;
+        Console.WriteLine("Elements of second array are:");
+        for (int i=0;i<arr2.Length;i++)
+        {
+            Console.Write(arr2[i]+"\t");
+        }
+        
+        Console.ReadKey();
+    }
+}
+        
+output:
+Enter the First array elements:
+1
+2
+3
+4
+5
+Elements of first array are:
+1       2       3       4       5
+Elements of second array are:
+1       2       3       4       5
+=====================================================================================================================================================
+5. Write a program in C# Sharp to count a total number of duplicate elements in an array.
+class HelloWorld
+{
+    static void Main(string[] args)
+    {
+        int[] arr= new int[5];
+        int count = 0;
+        Console.WriteLine("Enter the values of array:");
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        for (int i = 0; i < arr.Length; i++)
+        {
+            for (int j = i+1; j < arr.Length; j++)
+            {
+                if (arr[i] == arr[j])
+                {
+                    count++;
+                    break;
+                }
+            }
+        }
+        Console.WriteLine("total no of duplicate elements:"+count);
+        Console.ReadKey();
+    }
+
+}
+
+output:
+Enter the values of array:
+1
+1
+1
+2
+3
+total no of duplicate elements:2
+=====================================================================================================================================================
+6. Write a program in C# Sharp to print all unique elements in an array.
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = new int[100]; ;
+        int i, j, k, size, isUnique;
+        Console.WriteLine("Enter size of the array: ");
+        size = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter elements in the array: ");
+        for (i = 0; i < size; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        for (i = 0; i < size; i++)
+        {
+            isUnique = 1;
+
+            for (j = i + 1; j < size; j++)
+            {
+                if (arr[i] == arr[j])
+                {
+                    for (k = j; k < size - 1; k++)
+                    {
+                        arr[k] = arr[k + 1];
+                    }
+
+                    size--;
+                    j--;
+                    isUnique = 0;
+                }
+            }
+            if (isUnique != 1)
+            {
+                for (j = i; j < size - 1; j++)
+                {
+                    arr[j] = arr[j + 1];
+                }
+
+                size--;
+                i--;
+            }
+        }
+        Console.WriteLine("All unique elements in the array are: ");
+        for (i = 0; i < size; i++)
+        {
+            Console.WriteLine(arr[i] + "\t");
+        }
+        Console.ReadLine();
+    }
+
+}
+
+output:
+Enter size of the array:
+5
+Enter elements in the array:
+1
+1
+2
+2
+3
+All unique elements in the array are:
+3
+=====================================================================================================================================================
+7. Write a program in C# Sharp to merge two arrays of same size sorted in ascending order.
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] arr1 = new int[5];
+        int[] arr2 = new int[5];
+        int[] merge = new int[20];
+        Console.WriteLine("Enter the elements of first array: ");
+        for (int i = 0; i <arr1.Length; i++)
+        {
+            arr1[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("Enter the elements of second array: ");
+        for (int i = 0; i < arr2.Length; i++)
+        {
+            arr2[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        merge = arr1.Concat(arr2).ToArray();
+        Console.WriteLine("Elements of merged array: ");
+        for(int i=0;i<merge.Length;i++)
+        {
+            Console.Write(merge[i]+"\t");
+        }
+        Console.ReadKey();
+    }
+
+}
+
+output:
+Enter the elements of first array:
+1
+1
+1
+1
+1
+Enter the elements of second array:
+2
+2
+2
+2
+2
+Elements of merged array:
+1       1       1       1       1       2       2       2       2       2
+=====================================================================================================================================================
+8. Write a program in C# Sharp to count the frequency of each element of an array.
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] arr1 = new int[5];
+        int[] fre = new int[5];
+        int count;
+        Console.WriteLine("Enter the elements of array: ");
+        for (int i = 0; i <arr1.Length; i++)
+        {
+            arr1[i] = Convert.ToInt32(Console.ReadLine());
+            fre[i] = -1;
+        }
+        for (int i = 0; i < arr1.Length; i++)
+        {
+            count = 1;
+            for (int j = i + 1; j < arr1.Length; j++)
+            {
+                if (arr1[i] == arr1[j])
+                {
+                    count++;
+                    fre[j] = 0;
+                }
+            }
+
+            if (fre[i] != 0)
+            {
+                fre[i] = count;
+            }
+        }
+        Console.WriteLine("Frequency of all elements of the array: ");
+        for(int i=0;i<arr1.Length;i++)
+        {
+            if(fre[i]!=0)
+            {
+                Console.Write("{0}occurs {1} times\n",arr1[i],fre[i]);
+            }
+        }
+        Console.ReadKey();
+    }
+
+}
+
+output:
+Enter the elements of array:
+1
+1
+2
+2
+3
+Frequency of all elements of the array:
+1occurs 2 times
+2occurs 2 times
+3occurs 1 times
+=====================================================================================================================================================
+9. Write a program in C# Sharp to find maximum and minimum element in an array.
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = new int[10];
+        Console.WriteLine("Enter the elements of array: ");
+        for (int i = 0; i <arr.Length; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Array.Sort(arr);
+        Console.WriteLine("{0} is maximum {1} is minimum",arr[9],arr[0]);
+        Console.ReadKey();
+    }
+
+}
+
+output:
+Enter the elements of array:
+6
+5
+4
+3
+2
+1
+7
+8
+9
+0
+9 is maximum 0 is minimum
+=====================================================================================================================================================
+10. Write a program in C# Sharp to separate odd and even integers in separate arrays.
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = new int[10];
+        int[] eve = new int[10];
+        int[] odd = new int[10];
+        int j = 0, k = 0;
+        Console.WriteLine("Enter the elements of array: ");
+        for (int i = 0; i <arr.Length; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        for(int i=0;i<arr.Length;i++)
+        {
+            if(arr[i]%2==0)
+            {
+                eve[j]= arr[i];
+                j++;
+            }
+            else
+            {
+                odd[k] = arr[i];
+                k++;
+            }
+            
+        }
+        Console.WriteLine("Even number in the array are:");
+        for(int i=0;i<j;i++)
+        {
+            Console.Write(eve[i]+"\t");
+        }
+        Console.WriteLine();
+        Console.WriteLine("Odd number in the array are:");
+        for(int i=0;i<k;i++)
+        {
+            Console.Write(odd[i] + "\t");
+        }
+        Console.ReadKey();
+    }
+
+}
+
+output:
+Enter the elements of array:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Even number in the array are:
+2       4       6       8       10
+Odd number in the array are:
+1       3       5       7       9
+=====================================================================================================================================================
+11. Write a program in C# Sharp to sort elements of array in ascending order.
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = new int[10];
+        Console.WriteLine("Enter the elements of array: ");
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Array.Sort(arr);
+        Console.WriteLine("Sorted elements of array are: ");
+        foreach(int i in arr)
+        {
+            Console.Write(i+ "\t");
+        }
+        Console.ReadKey();
+    }
+
+}
+
+output:
+Enter the elements of array:
+5
+4
+3
+2
+1
+0
+9
+8
+7
+6
+Sorted elements of array are:
+0       1       2       3       4       5       6       7       8       9
+=====================================================================================================================================================
+12. Write a program in C# Sharp to sort elements of the array in descending order.
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = new int[10];
+        Console.WriteLine("Enter the elements of array: ");
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Array.Sort(arr);
+        Array.Reverse(arr);
+        Console.WriteLine("Sorted elements of array are: ");
+        foreach(int i in arr)
+        {
+            Console.Write(i+ "\t");
+        }
+        Console.ReadKey();
+    }
+
+}
+
+output:
+Enter the elements of array:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Sorted elements of array are:
+10      9       8       7       6       5       4       3       2       1
+=====================================================================================================================================================
+13. Write a program in C# Sharp to insert New value in the array (sorted list ).
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] arr1 = new int[10];
+        int i, n, p = 0, inval;
+        Console.Write("\n\nInsert New value in the sorted array :\n");
+        Console.Write("Input the size of array : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Input {0} elements in the array in ascending order:\n", n);
+        for (i = 0; i < n; i++)
+        {
+            Console.Write("element - {0} : ", i);
+            arr1[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.Write("Input the value to be inserted : ");
+        inval = Convert.ToInt32(Console.ReadLine());
+        Console.Write("The exist array list is :\n ");
+        for (i = 0; i < n; i++)
+            Console.Write("{0} ", arr1[i]);
+        for (i = 0; i < n; i++)
+            if (inval < arr1[i])
+            {
+                p = i;
+                break;
+            }
+        for (i = n; i >= p; i--)
+            arr1[i] = arr1[i - 1];
+        arr1[p] = inval;
+
+        Console.Write("\n\nAfter Insert the list is :\n ");
+        for (i = 0; i <= n; i++)
+            Console.Write("{0} ", arr1[i]);
+        Console.Write("\n");
+    }
+
+}
+
+output:
+Insert New value in the sorted array :
+Input the size of array : 3
+Input 3 elements in the array in ascending order:
+element - 0 : 1
+element - 1 : 3
+element - 2 : 4
+Input the value to be inserted : 2
+The exist array list is :
+ 1 3 4
+
+After Insert the list is :
+ 1 2 3 4
+=====================================================================================================================================================
+14. Write a program in C# Sharp to insert New value in the array (unsorted list ).
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] arr1 = new int[10];
+        int i, n, p, x;
+        Console.Write("\n\nInsert New value in the unsorted array : \n");
+        Console.Write("Input the size of array : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Input {0} elements in the array in ascending order:\n", n);
+        for (i = 0; i < n; i++)
+        {
+            Console.Write("element - {0} : ", i);
+            arr1[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.Write("Input the value to be inserted : ");
+        x = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Input the Position, where the value to be inserted :");
+        p = Convert.ToInt32(Console.ReadLine());
+        Console.Write("The current list of the array :\n");
+        for (i = 0; i < n; i++)
+            Console.Write("{0} ", arr1[i]);
+        for (i = n; i >= p; i--)
+            arr1[i] = arr1[i - 1];
+        arr1[p - 1] = x;
+        Console.Write("\n\nAfter Insert the element the new list is :\n");
+        for (i = 0; i <= n; i++)
+            Console.Write("{0} ", arr1[i]);
+        Console.Write("\n\n");
+    }
+}
+    
+output:
+Insert New value in the unsorted array :
+Input the size of array : 3
+Input 3 elements in the array in ascending order:
+element - 0 : 1
+element - 1 : 2
+element - 2 : 4
+Input the value to be inserted : 3
+Input the Position, where the value to be inserted :3
+The current list of the array :
+1 2 4
+
+After Insert the element the new list is :
+1 2 3 4
+=====================================================================================================================================================
+15. Write a program in C# Sharp to delete an element at desired position from an array.
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = new int[10];
+        int n, pos;
+        Console.Write("Input the size of array : ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the elements of array:");
+        for (int k = 0; k < n; k++)
+        {
+            arr[k] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("Enter the position to delete the element:");
+        pos = Convert.ToInt32(Console.ReadLine());
+        int i = 0;
+        while (i != pos - 1)
+        {
+            i++;
+        }
+        while (i < n)
+        {
+            arr[i] = arr[i + 1];
+            i++;
+        }
+        n--;
+        Console.WriteLine("The new altered array list:");
+        for(int j=0;j<n;j++)
+        {
+            Console.Write(arr[j]+"\t");
+        }
+    }
+}
+    
+output:
+Input the size of array : 3
+Enter the elements of array:
+1
+2
+3
+Enter the position to delete the element:
+3
+The new altered array list:
+1       2
+=====================================================================================================================================================
+16. Write a program in C# Sharp to find the second largest element in an array.
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = new int[10];
+        Console.WriteLine("Enter the elements of array: ");
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Array.Sort(arr);
+        Console.WriteLine("{0} is second maximum ", arr[arr.Length-2]);
+        Console.ReadKey();
+    }
+}
+    
+output:
+Enter the elements of array:
+1
+2
+3
+9
+8
+7
+6
+5
+4
+0
+8 is second maximum
+
+=====================================================================================================================================================
+17. Write a program in C# Sharp to find the second smallest element in an array.
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = new int[10];
+        Console.WriteLine("Enter the elements of array: ");
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Array.Sort(arr);
+        Console.WriteLine("{0} is second minimum ", arr[1]);
+        Console.ReadKey();
+    }
+}
+    
+output:
+Enter the elements of array:
+9
+1
+4
+2
+3
+5
+6
+7
+8
+0
+1 is second minimum
+=====================================================================================================================================================
+18. Write a program in C# Sharp for a 2D array of size 3x3 and print the matrix.
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[,] arr = new int[3,3];
+        Console.WriteLine("Enter the elements of array: ");
+        for (int i = 0; i <3; i++)
+        {
+            for (int j = 0; j <3; j++)
+            {
+                Console.Write("element - [{0},{1}] : ", i, j);
+                arr[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.WriteLine("entered matrix is:");
+        for(int i=0;i<3;i++)
+        {
+            Console.Write("\n");
+            for(int j=0;j<3;j++)
+            {
+                Console.Write("\t"+arr[i,j]);
+            }
+            Console.Write("\n");
+        }
+        Console.ReadKey();
+    }
+}
+    
+output:
+Enter the elements of array:
+element - [0,0] : 1
+element - [0,1] : 2
+element - [0,2] : 3
+element - [1,0] : 4
+element - [1,1] : 5
+element - [1,2] : 6
+element - [2,0] : 7
+element - [2,1] : 8
+element - [2,2] : 9
+entered matrix is:
+
+        1       2       3
+
+        4       5       6
+
+        7       8       9
+=====================================================================================================================================================
+19. Write a program in C# Sharp for addition of two Matrices of same size.
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[,] arr1 = new int[2, 2];
+        int[,] arr2 = new int[2, 2];
+        int[,] add = new int[2, 2];
+        Console.WriteLine("Enter the elements of  first matrix: ");
+        for (int i = 0; i <2; i++)
+        {
+            for (int j = 0; j <2; j++)
+            {
+                Console.Write("element - [{0},{1}] : ", i, j);
+                arr1[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.WriteLine("Enter the elements of  second matrix: ");
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                Console.Write("element - [{0},{1}] : ", i, j);
+                arr2[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        for(int i=0;i<2;i++)
+        {
+            for(int j=0;j<2;j++)
+            {
+                add[i, j] = arr1[i, j] + arr2[i, j];
+            }
+        }
+        Console.Write("Addition of two matrix is: ");
+        for(int i=0;i<2;i++)
+        {
+            Console.Write("\n");
+            for(int j=0;j<2;j++)
+            {
+                Console.Write("\t"+add[i,j]);
+            }
+            Console.Write("\n");
+        }
+        Console.ReadKey();
+    }
+}
+    
+output:
+Enter the elements of  first matrix:
+element - [0,0] : 1
+element - [0,1] : 2
+element - [1,0] : 3
+element - [1,1] : 4
+Enter the elements of  second matrix:
+element - [0,0] : 1
+element - [0,1] : 2
+element - [1,0] : 3
+element - [1,1] : 4
+Addition of two matrix is:
+        2       4
+
+        6       8
+=====================================================================================================================================================
+20. Write a program in C# Sharp for subtraction of two Matrices.
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        int[,] arr1 = new int[2, 2];
+        int[,] arr2 = new int[2, 2];
+        int[,] add = new int[2, 2];
+        Console.WriteLine("Enter the elements of  first matrix: ");
+        for (int i = 0; i <2; i++)
+        {
+            for (int j = 0; j <2; j++)
+            {
+                Console.Write("element - [{0},{1}] : ", i, j);
+                arr1[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.WriteLine("Enter the elements of  second matrix: ");
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                Console.Write("element - [{0},{1}] : ", i, j);
+                arr2[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        for(int i=0;i<2;i++)
+        {
+            for(int j=0;j<2;j++)
+            {
+                add[i, j] = arr1[i, j] - arr2[i, j];
+            }
+        }
+        Console.Write("Substraction of two matrix is: ");
+        for(int i=0;i<2;i++)
+        {
+            Console.Write("\n");
+            for(int j=0;j<2;j++)
+            {
+                Console.Write("\t"+add[i,j]);
+            }
+            Console.Write("\n");
+        }
+        Console.ReadKey();
+    }
+}
+    
+output:
+Enter the elements of  first matrix:
+element - [0,0] : 5
+element - [0,1] : 6
+element - [1,0] : 7
+element - [1,1] : 8
+Enter the elements of  second matrix:
+element - [0,0] : 1
+element - [0,1] : 2
+element - [1,0] : 3
+element - [1,1] : 4
+Substraction of two matrix is:
+        4       4
+
+        4       4
+=====================================================================================================================================================
+21. Write a program in C# Sharp for multiplication of two square Matrices.
+
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[,] arr1 = new int[50, 50];
+        int[,] arr2 = new int[50, 50];
+        int[,] mul = new int[50, 50];
+        int r1, r2, c1, c2;
+        Console.WriteLine("Enter the rows and colums of first matrix:");
+        Console.Write("Rows:");
+        r1 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Cloumn:");
+        c1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the rows and colums of second matrix:");
+        Console.Write("Rows:");
+        r2 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Cloumn:");
+        c2 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the elements of  first matrix: ");
+        for (int i = 0; i < r1; i++)
+        {
+            for (int j = 0; j < c1; j++)
+            {
+                Console.Write("element - [{0},{1}] : ", i, j);
+                arr1[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.WriteLine("Enter the elements of  second matrix: ");
+        for (int i = 0; i < r2; i++)
+        {
+            for (int j = 0; j < c2; j++)
+            {
+                Console.Write("element - [{0},{1}] : ", i, j);
+                arr2[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.Write("\nThe First matrix is :\n");
+        for (int i = 0; i < r1; i++)
+        {
+            Console.Write("\n");
+            for (int j = 0; j < c1; j++)
+            {
+                Console.Write("{0}\t", arr1[i, j]);
+            }
+        }
+        Console.Write("\nThe Second matrix is :\n");
+        for (int i = 0; i < r2; i++)
+        {
+            Console.Write("\n");
+            for (int j = 0; j < c2; j++)
+            {
+                Console.Write("{0}\t", arr2[i, j]);
+            }
+        }
+        if (c1 != r2)
+        {
+            Console.Write("Mutiplication of Matrix is not possible.");
+            Console.Write("\nColumn of first matrix and row of second matrix must be same.");
+        }
+        else
+        {
+            for (int i = 0; i < r1; i++)
+                for (int j = 0; j < c2; j++)
+                    mul[i, j] = 0;
+            for (int i = 0; i < r1; i++)
+            {
+                for (int j = 0; j < c2; j++)
+                { 
+                    for (int k = 0; k < c1; k++)
+                        mul[i,j]+= arr1[i, k] * arr2[k, j];
+                }
+            }
+
+            Console.Write("\nThe multiplication of two matrix is : \n");
+            for (int i = 0; i < r1; i++)
+            {
+                Console.Write("\n");
+                for (int j = 0; j < c2; j++)
+                {
+                    Console.Write("{0}\t", mul[i, j]);
+                }
+            }
+        }
+        Console.Write("\n\n");
+    }
+}
+
+
+output:
+Enter the rows and colums of first matrix:
+Rows:2
+Cloumn:3
+Enter the rows and colums of second matrix:
+Rows:3
+Cloumn:2
+Enter the elements of  first matrix:
+element - [0,0] : 1
+element - [0,1] : 2
+element - [0,2] : 3
+element - [1,0] : 4
+element - [1,1] : 5
+element - [1,2] : 6
+Enter the elements of  second matrix:
+element - [0,0] : 1
+element - [0,1] : 2
+element - [1,0] : 3
+element - [1,1] : 4
+element - [2,0] : 5
+element - [2,1] : 6
+
+The First matrix is :
+
+1       2       3
+4       5       6
+The Second matrix is :
+
+1       2
+3       4
+5       6
+The multiplication of two matrix is :
+
+22      28
+49      64
+=====================================================================================================================================================
+22. Write a program in C# Sharp to find transpose of a given matrix.
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[,] arr= new int[50, 50];
+        int[,] tra = new int[50, 50];
+        int r, c;
+        Console.WriteLine("Enter the rows and columns size of matrix:");
+        r = int.Parse(Console.ReadLine());
+        c = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter the array elements:");
+        for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+                arr[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+        Console.Write("\nThe entered matrix is :\n");
+        for (int i = 0; i < r; i++)
+        {
+            Console.Write("\n");
+            for (int j = 0; j < c; j++)
+            {
+                Console.Write("{0}\t", arr[i, j]);
+            }
+        }
+        for (int i = 0; i < r; i++)
+        {
+            for (int j = 0; j < c; j++)
+            {
+
+                tra[j, i] = arr[i, j];
+            }
+        }
+        Console.Write("\n\nThe Transpose of a matrix is : ");
+        for (int i = 0; i < c; i++)
+        {
+            Console.Write("\n");
+            for (int j = 0; j < r; j++)
+            {
+                Console.Write("{0}\t", tra[i, j]);
+            }
+        }
+        Console.ReadKey();
+    }
+}
+
+output:
+Enter the rows and columns size of matrix:
+2
+2
+Enter the array elements:
+1
+2
+3
+4
+
+The entered matrix is :
+
+1       2
+3       4
+
+The Transpose of a matrix is :
+1       3
+2       4
+=====================================================================================================================================================
+23. Write a program in C# Sharp to find sum of right diagonals of a matrix.Go to the editor
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[,] arr= new int[50, 50];
+        int n,sum=0;
+        Console.WriteLine("Enter the size of square matrix:");
+        n= int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter the array elements:");
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                arr[i, j] = int.Parse(Console.ReadLine());
+                if(i==j)
+                {
+                    sum += arr[i, j];
+                }
+            }
+        }
+        Console.Write("The matrix is :\n");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+                Console.Write("{0} ", arr[i, j]);
+            Console.Write("\n");
+        }
+
+        Console.Write("Addition of the right Diagonal elements is :{0}\n", sum);
+
+        Console.ReadKey();
+    }
+}
+
+output:
+Enter the size of square matrix:
+3
+Enter the array elements:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+The matrix is :
+1 2 3
+4 5 6
+7 8 9
+Addition of the right Diagonal elements is :15
+=====================================================================================================================================================
+24. Write a program in C# Sharp to find the sum of left diagonals of a matrix.
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[,] arr= new int[50, 50];
+        int n,sum=0,m=0;
+        Console.WriteLine("Enter the size of square matrix:");
+        n= int.Parse(Console.ReadLine());
+        m = n;
+        Console.WriteLine("Enter the array elements:");
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                arr[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+        Console.Write("The matrix is :\n");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+                Console.Write("{0} ", arr[i, j]);
+            Console.Write("\n");
+        }
+        for(int i=0;i<n;i++)
+        {
+            m = m - 1;
+            for(int j=0;j<n;j++)
+            {
+                if (j==m)
+                {
+                    sum += arr[i, j];
+                }
+            }
+        }
+        Console.Write("Addition of the left Diagonal elements is :{0}\n", sum);
+
+        Console.ReadKey();
+    }
+}
+
+output:
+Enter the size of square matrix:
+3
+Enter the array elements:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+The matrix is :
+1 2 3
+4 5 6
+7 8 9
+Addition of the left Diagonal elements is :15
+=====================================================================================================================================================
+25. Write a program in C# Sharp to find sum of rows and columns of a Matrix.Go to the editor
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[,] arr= new int[50, 50];
+        int[] rsum = new int[50];
+        int[] csum = new int[50];
+        int n;
+        Console.WriteLine("Enter the size of square matrix:");
+        n= int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter the array elements:");
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                arr[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+        Console.Write("The matrix is :\n");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+                Console.Write("{0} ", arr[i, j]);
+            Console.Write("\n");
+        }
+        for(int i=0;i<n;i++)
+        {
+            rsum[i] = 0;
+            for(int j=0;j<n;j++)
+                rsum[i] += arr[i, j];
+        }
+        for (int i = 0; i < n; i++)
+        {
+            csum[i] = 0;
+            for (int j = 0; j < n; j++)
+                csum[i] += arr[j, i];
+        }
+        Console.Write("The sum of row and column of the matrix :\n");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+                Console.Write("{0}    ", arr[i, j]);
+            Console.Write("{0}    ", rsum[i]);
+            Console.Write("\n");
+        }
+        Console.Write("\n");
+        for (int j = 0; j < n; j++)
+        {
+            Console.Write("{0}   ", csum[j]);
+        }
+        Console.Write("\n\n");
+        Console.ReadKey();
+    }
+}
+
+output:
+Enter the size of square matrix:
+2
+Enter the array elements:
+1
+2
+3
+4
+The matrix is :
+1 2
+3 4
+The sum of row and column of the matrix :
+1    2    3
+3    4    7
+
+4   6
+
+=====================================================================================================================================================
+26. Write a program in C# Sharp to print or display the lower triangular of a given matrix.
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[,] arr= new int[50,50];
+        int n;
+        Console.WriteLine("Enter the size of square matrix:");
+        n= int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter the array elements:");
+        for(int i=0;i<n;i++)
+        {   
+            for(int j=0;j<n;j++)
+            {
+                arr[i,j] = int.Parse(Console.ReadLine());
+            }
+        }
+        Console.Write("The matrix is :\n");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+                Console.Write("{0} ", arr[i,j]);
+            Console.Write("\n");
+        }
+        Console.Write("\nSetting zero in lower triangular matrix\n");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write("\n");
+            for (int j = 0; j < n; j++)
+                if (i <= j)
+                    Console.Write("{0}  ", arr[i, j]);
+                else
+                    Console.Write("{0}  ", 0);
+        }
+        Console.Write("\n\n");
+        Console.ReadKey();
+    }
+}
+
+output:
+Enter the size of square matrix:
+3
+Enter the array elements:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+The matrix is :
+1 2 3
+4 5 6
+7 8 9
+
+Setting zero in lower triangular matrix
+
+1  2  3
+0  5  6
+0  0  9
+
+=====================================================================================================================================================
+27. Write a program in C# Sharp to print or display the upper triangular of a given matrix.
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[,] arr= new int[50,50];
+        int n;
+        Console.WriteLine("Enter the size of square matrix:");
+        n= int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter the array elements:");
+        for(int i=0;i<n;i++)
+        {   
+            for(int j=0;j<n;j++)
+            {
+                arr[i,j] = int.Parse(Console.ReadLine());
+            }
+        }
+        Console.Write("The matrix is :\n");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+                Console.Write("{0} ", arr[i,j]);
+            Console.Write("\n");
+        }
+        Console.Write("\nSetting zero in lower triangular matrix\n");
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write("\n");
+            for (int j = 0; j < n; j++)
+                if (i >= j)
+                    Console.Write("{0}  ", arr[i, j]);
+                else
+                    Console.Write("{0}  ", 0);
+        }
+        Console.Write("\n\n");
+        Console.ReadKey();
+    }
+}
+
+output:
+Enter the size of square matrix:
+3
+Enter the array elements:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+The matrix is :
+1 2 3
+4 5 6
+7 8 9
+
+Setting zero in lower triangular matrix
+
+1  0  0
+4  5  0
+7  8  9
+=====================================================================================================================================================
+28. Write a program in C# Sharp to calculate determinant of a 3 x 3 matrix.
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[,] arr= new int[50,50];
+        int det=0;
+        Console.WriteLine("Enter the array elements:");
+        for(int i=0;i<3;i++)
+        {   
+            for(int j=0;j<3;j++)
+            {
+                arr[i,j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.Write("The matrix is :\n");
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+                Console.Write("{0} ", arr[i,j]);
+            Console.Write("\n");
+        }
+        for (int i = 0; i < 3; i++)
+            det += (arr[0, i] * (arr[1, (i + 1) % 3] * arr[2, (i + 2) % 3] - arr[1, (i + 2) % 3] * arr[2, (i + 1) % 3]));
+   
+        Console.Write("\nThe Determinant of the matrix is: {0}\n\n", det);
+        Console.ReadKey();
+    }
+}
+
+output:
+Enter the array elements:
+2
+6
+8
+10
+12
+14
+16
+18
+20
+The matrix is :
+2 6 8
+10 12 14
+16 18 20
+
+The Determinant of the matrix is: 24
+
+=====================================================================================================================================================
+29. Write a program in C# Sharp to accept a matrix and determine whether it is a sparse matrix.
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[,] arr = new int[50, 50];
+        int det = 0,r,c;
+        Console.Write("Input the number of rows of the matrix : ");
+        r = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Input the number of columns of the matrix : ");
+        c = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the array elements:");
+        for (int i = 0; i < r; i++)
+        {
+            for (int j = 0; j < c; j++)
+            {
+                arr[i, j] = Convert.ToInt32(Console.ReadLine());
+                if (arr[i, j] == 0)
+                {
+                    ++det;
+                }
+            }
+        }
+        if (det > ((r * c) / 2))
+        {
+            Console.Write("The given matrix is sparse matrix. \n");
+        }
+        else
+        {
+            Console.Write("The given matrix is not a sparse matrix.\n");
+        }
+        Console.Write("There are {0} number of zeros in the matrix.\n\n", det);
+        Console.ReadKey();
+    }
+}
+
+output:
+Input the number of rows of the matrix : 2
+Input the number of columns of the matrix : 2
+Enter the array elements:
+0
+0
+1
+0
+The given matrix is sparse matrix.
+There are 3 number of zeros in the matrix.
+=====================================================================================================================================================
+30. Write a program in C# Sharp to accept two matrices and check whether they are equal.
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[,] arr1 = new int[50, 50];
+        int[,] arr2 = new int[50, 50];
+        int r1,c1,r2,c2;int flag = 1;
+        Console.Write("Input the number of rows size of first matrix : ");
+        r1 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Input the number of columns size  of first matrix : ");
+        c1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the first array elements:");
+        for (int i = 0; i < r1; i++)
+        {
+            for (int j = 0; j < c1; j++)
+            {
+                arr1[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.Write("Input the number of rows size of the second matrix : ");
+        r2 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Input the number of columns size of the second matrix : ");
+        c2 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the second array elements:");
+        for (int i = 0; i < r2; i++)
+        {
+            for (int j = 0; j < c2; j++)
+            {
+                arr2[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        if (r1!=r2 ||c1!=c2)
+        {
+            Console.Write("The given matrixs are not equal. \n");
+        }
+        else
+        {
+            for (int i = 0; i < r1; i++)
+            {
+                for (int j = 0; j < c2; j++)
+                {
+                    if (arr1[i, j] != arr2[i, j])
+                    {
+                        flag = 0;
+                        break;
+                    }
+                }
+            }
+            if (flag == 1)
+                Console.Write("Two matrices are equal.\n\n");
+            else
+                Console.Write("But,two matrices are not equal\n\n");
+        }
+        Console.ReadKey();
+    }
+}
+
+
+output:
+Input the number of rows size of first matrix : 2
+Input the number of columns size  of first matrix : 2
+Enter the first array elements:
+1
+2
+3
+4
+Input the number of rows size of the second matrix : 1
+Input the number of columns size of the second matrix : 2
+Enter the second array elements:
+1
+2
+The given matrixs are not equal.
+
+Input the number of rows size of first matrix : 2
+Input the number of columns size  of first matrix : 2
+Enter the first array elements:
+1
+2
+3
+4
+Input the number of rows size of the second matrix : 2
+Input the number of columns size of the second matrix : 2
+Enter the second array elements:
+1
+2
+3
+4
+Two matrices are equal.
+
+=====================================================================================================================================================
+31. Write a program in C# Sharp to check whether a given matrix is an Identity Matrix.
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[,] arr = new int[50, 50];
+        int r,c;
+        Console.Write("Input the order of square matrix : ");
+        r= Convert.ToInt32(Console.ReadLine());
+        c = r;
+        Console.WriteLine("Enter the array elements:");
+        for (int i = 0; i < r; i++)
+        {
+            for (int j = 0; j < c; j++)
+            {
+                arr[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.Write(" The matrix is :\n");
+        for (int i = 0; i < r; i++)
+        {
+            for (int j = 0; j < c; j++)
+                Console.Write(" {0}  ", arr[i, j]);
+            Console.Write("\n");
+        }
+        for (int i = 0; i < r; i++)
+        {
+            for (int j = 0; j < c; j++)
+            {
+                if ((i == j && arr[i, j] != 1) || (i != j && arr[i, j] != 0))
+                {
+                    goto label;
+                }
+            }
+        }
+        Console.WriteLine(" The matrix is an Identity Matrix.\n\n");
+        return;
+    label:
+        Console.WriteLine("\n The matrix is not an Identity Matrix\n\n");
+
+    }
+
+}
+
+output:
+Input the order of square matrix : 2
+Enter the array elements:
+1
+0
+0
+1
+ The matrix is :
+ 1   0
+ 0   1
+ The matrix is an Identity Matrix.
+
+Input the order of square matrix : 3
+Enter the array elements:
+1
+0
+0
+0
+1
+0
+0
+0
+1
+ The matrix is :
+ 1   0   0
+ 0   1   0
+ 0   0   1
+ The matrix is an Identity Matrix.
+=====================================================================================================================================================
+32. Write a C# Sharp program to get only the odd values from a given array of integers.
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[] arr = new int[50];
+        int r;
+        Console.Write("enter the size of array : ");
+        r= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the array elements:");
+        for (int i = 0; i < r; i++)
+        {
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("odd numbers in array are:");
+        for(int i=0;i<r;i++)
+        {
+            if(arr[i]%2!=0)
+            {
+                Console.Write(arr[i] + "\t");
+            }
+        }
+        Console.ReadKey();
+
+    }
+}
+
+output:
+enter the size of array : 6
+Enter the array elements:
+1
+2
+3
+4
+5
+6
+odd numbers in array are:
+1       3       5
+=====================================================================================================================================================
+34. Write a C# Sharp program to find the missing number in a given array of numbers between 10 and 20.
+
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[] arr = { 10,11,12,13,14,15,17,18,19,20};
+        int a=10, l=20, n=11;int sum = 0;
+        int sn;
+        sn = ((n*(a + l)/2));
+        for(int i=0;i<arr.Length;i++)
+        {
+            sum = sum + arr[i];
+        }
+        int result = sn - sum;
+        Console.WriteLine(result+" is missing");
+        Console.ReadKey();
+    }
+}
+
+output:
+16 is missing
+=====================================================================================================================================================
+35. Write a C# Sharp program to calculate the sum of two lowest negative numbers of a given array of integers.
+
+using System;
+using System.Linq;
+class example
+{
+    static void Main()
+    {
+        int[] arr = new int[50];
+        int n;
+        Console.WriteLine("Enter the size of array:");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the array elements:");
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=Convert.ToInt32(Console.ReadLine());
+        }
+        Array.Sort(arr);
+        int sum = arr[0] + arr[1];
+        Console.WriteLine("sum of two lowest negative numbers of a given array of integers "+sum);
+        Console.ReadKey();
+    }
+}
+
+output:
+Enter the size of array:
+5
+Enter the array elements:
+-4
+3
+2
+8
+-1
+sum of two lowest negative numbers of a given array of integers -5
+=====================================================================================================================================================
+36. Write a C# Sharp program to re-arrange the elements in a given array of numbers and check the numbers are consecutive or not.
+
+using System;
+using System.Linq;
+class example
+{
+    public static bool test(int[] nums)
+    {
+        Array.Sort(nums);
+        for (int i = 1; i < nums.Length; i++)
+            if (nums[i] - nums[i - 1] != 1)
+                return false;
+        return true;
+    }
+    static void Main()
+    {
+        int[] nums = { -10, -11, -12, -13, -14, 15, 16, 17, 18, 19, 20 };
+        Console.WriteLine("Original array elements:");
+        for (int i = 0; i < nums.Length; i++)
+        {
+            Console.Write(nums[i] + " ");
+        }
+        Console.WriteLine("\nCheck the numbers of the said array are consecutive or not! " + test(nums));
+    }
+}
+
+output:
+Original array elements:
+-10 -11 -12 -13 -14 15 16 17 18 19 20
+Check the numbers of the said array are consecutive or not! False
+==========================================================================================================================================================
+
+
+
+
+
+
+
+                                                                            CONDITIONAL STATEMENTS
+
+
+
+
+
+
+1. Write a C# Sharp program to accept two integers and check whether they are equal or not. 
+using System;  
+public class Exercise1  
+{  
+    public static void Main()  
+    {  
+        int int1,int2;
+         Console.Write("\n\n");
+         Console.Write("Check whether two integers are equal or not:\n");
+         Console.Write("\n\n");
+        Console.Write("Input 1st number: ");  
+        int1= Convert.ToInt32(Console.ReadLine());  
+
+        Console.Write("Input 2nd number: ");  
+        int2= Convert.ToInt32(Console.ReadLine());  
+
+    if (int1 == int2)
+        Console.WriteLine("{0} and {1} are equal.\n",int1,int2);
+    else
+        Console.WriteLine("{0} and {1} are not equal.\n",int1,int2);
+   }  
+} 
+ 
+Sample Output:
+Test Data :
+Input 1st number: 5
+Input 2nd number: 5
+Expected Output :
+5 and 5 are equal
+
+===========================================================================================================================================================
+2. Write a C# Sharp program to check whether a given number is even or odd. 
+using System;  
+public class Exercise2  
+{  
+    public static void Main()  
+    {
+    int num1, rem1;
+    Console.Write("\n\n");
+    Console.Write("Check whether a number is even or odd :\n");
+    Console.Write("\n\n");
+    Console.Write("Input an integer : ");
+    num1= Convert.ToInt32(Console.ReadLine()); 
+    rem1 = num1 % 2;
+    if (rem1 == 0)
+ Console.WriteLine("{0} is an even integer.\n",num1);
+    else
+ Console.WriteLine("{0} is an odd integer.\n",num1);
+}
+}
+
+Sample Output:
+Test Data : 15
+Expected Output :
+15 is an odd integer
+
+==========================================================================================================================================================
+3. Write a C# Sharp program to check whether a given number is positive or negative. 
+using System;
+namespace dotnet_sample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //1
+            int n;
+            //2
+            Console.WriteLine("Enter a number : ");
+            //3
+            n = int.Parse(Console.ReadLine());
+            //4
+                       if(n == 0)
+            {
+                Console.WriteLine(n + " is zero.");
+            }
+            else if(n > 0)
+            {
+                //5
+                Console.WriteLine(n + " is a positive number.");
+            }
+            else
+            {
+                //6
+                Console.WriteLine(n + " is a negative number.");
+            }
+
+    }
+}
+out put:
+Enter a number :
+0
+0 is zero.
+
+Enter a number :
+-23
+-23 is a negative number.
+
+==================================================================================================================================================
+4. Write a C# Sharp program to find whether a given year is a leap year or not. 
+   public static void Main() 
+{
+    int chk_year;
+    Console.Write("\n\n");
+    Console.Write("Check whether a given year is leap year or not:\n");
+    Console.Write("\n\n");
+    Console.Write("Input an year : ");
+    chk_year= Convert.ToInt32(Console.ReadLine());
+ 
+    if ((chk_year % 400) == 0)
+ Console.WriteLine("{0} is a leap year.\n", chk_year);
+    else if ((chk_year % 100) == 0)
+ Console.WriteLine("{0} is not a leap year.\n", chk_year);
+    else if ((chk_year % 4) == 0)
+ Console.WriteLine("{0} is a leap year.\n", chk_year);
+    else
+ Console.WriteLine("{0} is not a leap year.\n", chk_year);
+}
+}
+
+Check whether a given year is leap year or not:
+
+Input an year : 2016
+2016 is a leap year.
+
+===============================================================================================================================================================
+5. Write a C# Sharp program to read the age of a candidate and determine whether it is eligible for casting his/her own vote. 
+ static void Main(string[] args)
+    {
+ 
+        int Candiateage;
+ 
+        Console.WriteLine("Input the age of the candidate : ");        
+        Candiateage = Convert.ToInt32(Console.ReadLine());
+ 
+        if (Candiateage < 18)
+        {
+            Console.WriteLine("Sorry, You are not eligible to caste your vote.\n");
+            Console.WriteLine(18 - Candiateage + "You would be able to caste your vote after %d year.\n");
+        }
+ 
+        else
+        {
+            Console.WriteLine("Congratulation! You are eligible for casting your vote.\n");
+        }        
+ 
+        Console.ReadLine();
+    }
+}
+o/p:
+Input the age of the candidate :
+21
+Congratulation! You are eligible for casting your vote.
+
+================================================================================================================================================
+6. Write a C# Sharp program to read the value of an integer m and display the value of n is 1 when m is larger than 0, 0 when m is 0 and -1 when m is less than 0. 
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        public static void Main()
+        {
+
+
+
+            int m, n;
+            Console.Write("\n\n");
+            Console.Write("Display the value of n is 1,0 and -1 for the value of er m:\n");
+            Console.Write("\n\n");
+
+            Console.Write("Input the  value of m :");
+            m = Convert.ToInt32(Console.ReadLine());
+            if (m != 0)
+                if (m > 0)
+                    n = 1;
+                else
+                    n = -1;
+            else
+                n = 0;
+            Console.Write("The value of m = {0} \n", m);
+            Console.Write("The value of n = {0} \n\n", n);
+        }
+    }
+}
+    
+
+
+Display the value of n is 1,0 and -1 for the value of er m:
+
+Input the  value of m :-5
+The value of m = -5
+The value of n = -1
+
+=============================================================================================================================================================
+7. Write a C# Sharp program to accept the height of a person in centimeter and categorize the person according to their height. 
+   public static void Main()
+{
+    float PerHeight;
+    Console.Write("\n\n");
+    Console.Write("Accept the height of a person in centimeter and categorize them:\n");
+    Console.Write("\n\n");
+
+    Console.Write("Input the height of the person (in centimetres):");
+    PerHeight = Convert.ToInt32(Console.ReadLine());
+ 
+    if (PerHeight < 150.0)
+        Console.Write("The person is Dwarf. \n\n");
+    else if ((PerHeight >= 150.0) && (PerHeight <= 165.0))
+       Console.Write("The person is  average heighted. \n\n");
+    else if ((PerHeight >= 165.0) && (PerHeight <= 195.0))
+        Console.Write("The person is taller. \n\n");
+    else
+        Console.Write("Abnormal height.\n\n");
+}   
+  
+}
+
+Accept the height of a person in centimeter and categorize them:
+
+Input the height of the person (in centimetres):135
+The person is Dwarf.
+
+========================================================================================================================================================
+8. Write a C# Sharp program to find the largest of three numbers.
+ 
+    public static void Main()
+{
+    int num1, num2, num3;
+    Console.Write("\n\n");
+    Console.Write("Find the largest of three numbers:\n");
+    Console.Write("\n\n");
+
+    Console.Write("Input the 1st number :");
+    num1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input the  2nd number :");
+    num2 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input the 3rd  number :");
+    num3 = Convert.ToInt32(Console.ReadLine());
+ 
+  if (num1 > num2)
+    {
+        if (num1 > num3)
+        {
+            Console.Write("The 1st Number is the greatest among three. \n\n");
+        }
+        else
+        {
+            Console.Write("The 3rd Number is the greatest among three. \n\n");
+        }
+    }
+    else if (num2 > num3)
+        Console.Write("The 2nd Number is the greatest among three \n\n");
+    else
+        Console.Write("The 3rd Number is the greatest among three \n\n");
+}
+}
+o/p:
+Find the largest of three numbers:
+
+Input the 1st number :25
+Input the  2nd number :63
+Input the 3rd  number :10
+The 2nd Number is the greatest among three
+
+=================================================================================================================================================================
+9. Write a C# Sharp program to accept a coordinate point in an XY coordinate system and determine in which quadrant the coordinate point lies. 
+ 	int co1,co2;
+
+    Console.Write("\n\n");
+    Console.Write("Find the quadrant in which the coordinate point lies:\n");
+    Console.Write("\n\n");
+
+    Console.Write("Input the value for X coordinate :");
+    co1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input the value for Y coordinate :");
+    co2 = Convert.ToInt32(Console.ReadLine());
+
+
+	if( co1 > 0 && co2 > 0)
+	  Console.Write("The coordinate point ({0} {1}) lies in the First quandrant.\n\n",co1,co2);
+	else if( co1 < 0 && co2 > 0)
+	  Console.Write("The coordinate point ({0} {1}) lies in the Second quandrant.\n\n",co1,co2);
+	else if( co1 < 0 && co2 < 0)
+	  Console.Write("The coordinate point ({0} {1}) lies in the Third quandrant.\n\n",co1,co2);
+	else if( co1 > 0 && co2 < 0)
+	  Console.Write("The coordinate point ({0} {1}) lies in the Fourth quandrant.\n\n",co1,co2);
+	else if( co1 == 0 && co2 == 0)
+	  Console.Write("The coordinate point ({0} {1}) lies at the origin.\n\n",co1,co2);
+
+}
+}
+o/p:
+Find the quadrant in which the coordinate point lies:
+
+Input the value for X coordinate :7
+Input the value for Y coordinate :9
+The coordinate point (7 9) lies in the First quandrant.
+
+===============================================================================================================================================================
+10. Write a C# Sharp program to find the eligibility of admission for a professional course based on the following criteria: 
+class Program
+    {
+        public static void Main()
+        {
+            int p, c, m;
+
+            Console.Write("\n\n");
+            Console.Write("Find eligibility for admission :\n");
+            Console.Write("\n\n");
+
+            Console.Write("Eligibility Criteria :\n");
+            Console.Write("Marks in Maths >=65\n");
+            Console.Write("and Marks in Phy >=55\n");
+            Console.Write("and Marks in Chem>=50\n");
+            Console.Write("and Total in all three subject >=180\n");
+            Console.Write("or Total in Maths and Physics >=140\n");
+
+
+            Console.Write("Input the marks obtained in Physics :");
+            p = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Input the marks obtained in Chemistry :");
+            c = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Input the marks obtained in Mathematics :");
+            m = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Total marks of Maths, Physics and Chemistry : {0}\n", m + p + c);
+            Console.Write("Total marks of Maths and  Physics : {0}\n", m + p);
+
+            if (m >= 65)
+                if (p >= 55)
+                    if (c >= 50)
+                        if ((m + p + c) >= 180 || (m + p) >= 140)
+                            Console.Write("The  candidate is eligible for admission.\n");
+                        else
+                            Console.Write("The candidate is not eligible.\n\n");
+                    else
+                        Console.Write("The candidate is not eligible.\n\n");
+                else
+                    Console.Write("The candidate is not eligible.\n\n");
+            else
+                Console.Write("The candidate is not eligible.\n\n");
+        }
+    }
+
+}
+
+
+Find eligibility for admission :
+
+Eligibility Criteria :
+Marks in Maths >=65
+and Marks in Phy >=55
+and Marks in Chem>=50
+and Total in all three subject >=180
+or Total in Maths and Physics >=140
+Input the marks obtained in Physics :65
+Input the marks obtained in Chemistry :51
+Input the marks obtained in Mathematics :72
+Total marks of Maths, Physics and Chemistry : 188
+Total marks of Maths and  Physics : 137
+The  candidate is eligible for admission.
+
+====================================================================================================================================================================
+11. Write a C# Sharp program to calculate root of Quadratic Equation. 
+ int a,b,c;
+
+   double d, x1,x2;
+    Console.Write("\n\n");
+    Console.Write("Calculate root of Quadratic Equation :\n");
+    Console.Write("\n\n");
+ 
+    Console.Write("Input the value of a : ");
+    a = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input the value of b : ");
+    b = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input the value of c : ");
+    c = Convert.ToInt32(Console.ReadLine());
+
+   d=b*b-4*a*c;
+   if(d==0)
+   {
+     Console.Write("Both roots are equal.\n");
+     x1=-b/(2.0*a);
+     x2=x1;
+     Console.Write("First  Root Root1= {0}\n",x1);
+     Console.Write("Second Root Root2= {0}\n",x2);
+   }
+   else if(d>0)
+	{
+	   Console.Write("Both roots are real and diff-2\n");
+
+	   x1=(-b+Math.Sqrt(d))/(2*a);
+	   x2=(-b-Math.Sqrt(d))/(2*a);
+
+	   Console.Write("First  Root Root1= {0}\n",x1);
+	   Console.Write("Second Root root2= {0}\n",x2);
+	}
+	else
+	    Console.Write("Root are imeainary;\nNo Solution. \n\n");
+}
+}
+o/p:
+
+Calculate root of Quadratic Equation :
+
+Input the value of a : 1
+Input the value of b : 5
+Input the value of c : 7
+Root are imeainary;
+No Solution.
+	
+================================================================================================================================================================
+12. Write a C# Sharp program to read roll no, name and marks of three subjects and calculate the total, percentage and division. 
+
+
+ static void Main(string[] args)
+        {
+    double rl,phy,che,ca,total;
+    double per;
+    string nm,div;
+
+    Console.Write("\n\n");
+    Console.Write("Calculate the total, percentage and division to take marks of three subjects:\n");
+    Console.Write("\n\n");
+
+
+    Console.Write("Input the Roll Number of the student :");
+    rl = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Input the Name of the Student :");
+    nm = Console.ReadLine();
+
+    Console.Write("Input  the marks of Physics : ");
+    phy= Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input  the marks of  Chemistry : ");
+    che = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input  the marks of Computer Application : ");
+    ca = Convert.ToInt32(Console.ReadLine());
+
+    total = phy+che+ca;
+    per = total/3.0;
+    if (per>=60)
+	 div="First";
+    else
+	if (per<60&&per>=48)
+	    div="Second";
+	else
+	    if (per<48&&per>=36)
+		div="Pass";
+	     else
+		div="Fail";
+
+       Console.Write("\nRoll No : {0}\nName of Student : {1}\n",rl,nm);
+       Console.Write("Marks in Physics : {0}\nMarks in Chemistry : {1}\nMarks in Computer Application : {2}\n",phy,che,ca);
+       Console.Write("Total Marks = {0}\nPercentage = {1}\nDivision = {2}\n",total,per,div);
+}
+}
+o/p:
+
+Calculate the total, percentage and division to take marks of three subjects:
+
+Input the Roll Number of the student :507
+Input the Name of the Student :vyshu
+Input  the marks of Physics : 70
+Input  the marks of  Chemistry : 80
+Input  the marks of Computer Application : 90
+
+Roll No : 507
+Name of Student : vyshu
+Marks in Physics : 70
+Marks in Chemistry : 80
+Marks in Computer Application : 90
+Total Marks = 240
+Percentage = 80
+Division = First
+
+================================================================================================================================================================
+13. Write a C# Sharp program to read temperature in centigrade and display a suitable message according to temperature state below : 
+ public static void Main()
+{
+     int tmp;
+    Console.Write("\n\n");
+    Console.Write("Accept a temperature in centigrade and display a suitable message:\n");
+    Console.Write("\n\n");
+
+    Console.Write("Input days temperature : ");
+    tmp= Convert.ToInt32(Console.ReadLine());
+   if(tmp<0)
+             Console.Write("Freezing weather.\n");
+   else if(tmp<10)
+            Console.Write("Very cold weather.\n");
+            else if(tmp<20)
+                        Console.Write("Cold weather.\n");
+                    else if(tmp<30)
+                               Console.Write("Normal in temp.\n");
+                            else if(tmp<40)
+                                         Console.Write("Its Hot.\n");
+                                    else
+                                           Console.Write("Its very hot.\n");
+
+}
+}
+o/p:
+Accept a temperature in centigrade and display a suitable message:
+
+Input days temperature : 10
+Cold weather.
+
+================================================================================================================================================================
+14. Write a C# Sharp program to check whether a triangle is Equilateral, Isosceles or Scalene. 
+ public static void Main() 
+{  
+    int sidea, sideb, sidec; 
+    Console.Write("\n\n");
+    Console.Write("Check whether a triangle is Equilateral, Isosceles or Scalene:\n");
+    Console.Write("\n\n");
+
+
+
+    Console.Write("Input side 1 of triangle: ");
+    sidea= Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Input side 2 of triangle: ");
+    sideb= Convert.ToInt32(Console.ReadLine()); 
+
+    Console.Write("Input side 3 of triangle: ");
+    sidec= Convert.ToInt32(Console.ReadLine());  
+ 
+
+  
+    if(sidea==sideb && sideb==sidec) 
+    {  
+        Console.Write("This is an equilateral triangle.\n");  
+    }  
+    else if(sidea==sideb || sidea==sidec || sideb==sidec) 
+    {  
+        Console.Write("This is an isosceles triangle.\n");  
+    }  
+    else 
+    {  
+        Console.Write("This is a scalene triangle.\n");  
+    }  
+ } 
+} 
+o/p:
+
+Check whether a triangle is Equilateral, Isosceles or Scalene:
+
+Input side 1 of triangle: 50
+Input side 2 of triangle: 50
+Input side 3 of triangle: 60
+This is an isosceles triangle.
+
+===============================================================================================================================================
+15. Write a C# Sharp program to check whether a triangle can be formed by the given value for the angles. 
+  public static void Main() 
+{  
+    int anga, angb, angc, sum; //are three angles of a triangle  
+    Console.Write("\n\n");
+    Console.Write("Check whether a triangle can be formed by given value:\n");
+    Console.Write("\n\n");
+
+    Console.Write("Input angle1 of triangle: ");
+    anga= Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Input angle 2 of triangle: ");
+    angb= Convert.ToInt32(Console.ReadLine()); 
+
+    Console.Write("Input angle 3 of triangle: ");
+    angc= Convert.ToInt32(Console.ReadLine()); 
+ 
+    /* Calculate the sum of all angles of triangle */  
+    sum = anga + angb + angc;   
+  
+    /* Check whether sum=180 then its a valid triangle otherwise not */  
+    if(sum == 180)   
+    {  
+        Console.Write("The triangle is valid.\n");  
+    }  
+    else  
+    {  
+        Console.Write("The triangle is not valid.\n");  
+    }  
+  }
+
+} 
+o/p:
+Check whether a triangle can be formed by given value:
+
+Input angle1 of triangle: 40
+Input angle 2 of triangle: 55
+Input angle 3 of triangle: 65
+The triangle is not valid.
+
+==========================================================================================================================================================
+16. Write a C# Sharp program to check whether an alphabet is a vowel or consonant. 
+ static void Main(string[] args)
+       {
+           char ch;
+           Console.Write("\n\n");
+           Console.Write("check whether the input alphabet is a vowel or not:\n");
+           Console.Write("\n\n");
+
+           Console.Write("Input an Alphabet (A-Z or a-z) : ");
+           ch = Convert.ToChar(Console.ReadLine().ToLower());
+           int i=ch;
+           if(i>=48 && i<=57)
+           {
+            Console.Write("You entered a number, Please enter an alpahbet."); 
+            }
+           else
+           {		   
+           switch (ch)
+           {
+                case 'a':
+                   Console.WriteLine("The Alphabet is vowel");
+                   break;
+               case 'i':
+                   Console.WriteLine("The Alphabet is vowel");
+                    break;
+               case 'o':
+                   Console.WriteLine("The Alphabet is vowel");
+                   break;
+               case 'u':
+                   Console.WriteLine("The Alphabet is vowel");
+                   break;
+               case 'e':
+                   Console.WriteLine("The Alphabet is vowel");
+                   break;
+               default:
+                   Console.WriteLine("The Alphabet is not a vowel");
+                   break;
+            }
+			}
+           Console.ReadKey();
+       }
+   }
+o/p:
+check whether the input alphabet is a vowel or not:
+
+Input an Alphabet (A-Z or a-z) : s
+The Alphabet is not a vowel
+
+=====================================================================================================================================================
+17. Write a C# Sharp program to calculate profit and loss on a transaction. 
+{  
+    int cprice,sprice, plamt; 
+
+           Console.Write("\n\n");
+           Console.Write("Calculate profit and loss:\n");
+           Console.Write("\n\n");
+      
+
+     Console.Write("Input Cost Price: ");  
+     cprice= Convert.ToInt32(Console.ReadLine()); 
+     Console.Write("Input Selling Price: ");  
+     sprice= Convert.ToInt32(Console.ReadLine());  
+      
+    if(sprice>cprice) 
+    {  
+        plamt = sprice-cprice;  
+        Console.Write("\nYou can booked your profit amount : {0}\n", plamt);  
+    }  
+    else if(cprice>sprice)  
+    {  
+        plamt = cprice-sprice;  
+        Console.Write("\nYou got a loss of amount : {0}\n", plamt);  
+    }  
+    else   
+    {  
+        Console.Write("\nYou are running in no profit no loss condition.\n");  
+    }  
+}
+}  {  
+    int cprice,sprice, plamt; 
+
+           Console.Write("\n\n");
+           Console.Write("Calculate profit and loss:\n");
+           Console.Write("\n\n");
+      
+
+     Console.Write("Input Cost Price: ");  
+     cprice= Convert.ToInt32(Console.ReadLine()); 
+     Console.Write("Input Selling Price: ");  
+     sprice= Convert.ToInt32(Console.ReadLine());  
+      
+    if(sprice>cprice) 
+    {  
+        plamt = sprice-cprice;  
+        Console.Write("\nYou can booked your profit amount : {0}\n", plamt);  
+    }  
+    else if(cprice>sprice)  
+    {  
+        plamt = cprice-sprice;  
+        Console.Write("\nYou got a loss of amount : {0}\n", plamt);  
+    }  
+    else   
+    {  
+        Console.Write("\nYou are running in no profit no loss condition.\n");  
+    }  
+}
+o/p:Calculate profit and loss:
+
+Input Cost Price: 500
+Input Selling Price: 700
+
+You can booked your profit amount : 200
+
+================================================================================================================================================================
+18. Write a program in C# Sharp to calculate and print the Electricity bill of a given customer. The customer id., name and unit consumed by the user should be taken from the keyboard and display the total amount to pay to the customer. The charge are as follow : 
+
+  static void Main(string[] args)
+{  
+   int custid, conu;
+   double chg, surchg=0, gramt,netamt;
+   string connm;
+
+           Console.Write("\n\n");
+           Console.Write("Calculate Electricity Bill:\n");
+           Console.Write("\n\n");
+
+   Console.Write("Input Customer ID :");
+   custid= Convert.ToInt32(Console.ReadLine());
+   Console.Write("Input the name of the customer :");
+   connm= Console.ReadLine();
+   Console.Write("Input the unit consumed by the customer : ");
+   conu= Convert.ToInt32(Console.ReadLine());
+   if (conu <200 )
+	chg = 1.20;
+   else	if (conu>=200 && conu<400)
+		chg = 1.50;
+	else if (conu>=400 && conu<600)
+			chg = 1.80;
+		else
+			chg = 2.00;
+   gramt = conu*chg;
+   if (gramt>300)
+	surchg = gramt*15/100.0;
+   netamt = gramt+surchg;
+   if (netamt  < 100)
+	netamt =100;
+   Console.Write("\nElectricity Bill\n");
+   Console.Write("Customer IDNO                       :{0}\n",custid);
+   Console.Write("Customer Name                       :{0}\n",connm);
+   Console.Write("unit Consumed                       :{0}\n",conu);
+   Console.Write("Amount Charges @Rs. {0}  per unit :{1}\n",chg,gramt);
+   Console.Write("Surchage Amount                     :{0}\n",surchg);
+   Console.Write("Net Amount Paid By the Customer     :{0}\n",netamt);
+}  
+} 
+o/p:
+
+Input Customer ID :100
+Input the name of the customer :vyshu
+Input the unit consumed by the customer : 800
+
+Electricity Bill
+Customer IDNO                       :100
+Customer Name                       :vyshu
+unit Consumed                       :800
+Amount Charges @Rs. 2  per unit :1600
+Surchage Amount                     :240
+Net Amount Paid By the Customer     :1840
+
+============================================================================================================================================================
+19. Write a program in C# Sharp to accept a grade and declare the equivalent description : 
+ static void Main(string[] args)
+    {
+    string notes;
+    char grd;
+          Console.Write("\n\n");
+           Console.Write("Accept a grade and display equivalent description:\n");
+           Console.Write("\n\n");
+
+ 
+    Console.Write("Input the grade :");
+    grd = Convert.ToChar(Console.ReadLine().ToUpper());
+
+    switch(grd)
+    {
+    case 'E':
+        notes= " Excellent";
+        break;
+    case 'V':
+       notes= " Very Good";
+        break;
+    case 'G':
+        notes= " Good ";
+        break;
+    case 'A':
+        notes= " Average";
+        break;
+    case 'F':
+        notes= " Fails";
+        break;
+    default :
+        notes= "Invalid Grade Found.";
+        break;
+    }
+    Console.Write("You have chosen  : {0}\n", notes);
+} 
+}
+o/p
+
+Accept a grade and display equivalent description:
+---------------------------------------------------
+
+Input the grade :E
+You have chosen  :Excellent  
+
+=================================================================================================================================================================
+20. Write a program in C# Sharp to read any day number in integer and display day name in the word.
+ int dayno;
+
+           Console.Write("\n\n");
+           Console.Write("Accept day number and display its equivalent day name in word:\n");
+           Console.Write("\n\n");
+
+
+   Console.Write("Input Day No : ");
+   dayno = Convert.ToInt32(Console.ReadLine());
+
+   switch(dayno)
+   {
+	case 1:
+	       Console.Write("Monday \n");
+	       break;
+	case 2:
+	       Console.Write("Tuesday \n");
+	       break;
+	case 3:
+	       Console.Write("Wednesday \n");
+	       break;
+	case 4:
+	       Console.Write("Thursday \n");
+	       break;
+	case 5:
+	       Console.Write("Friday \n");
+	       break;
+	case 6:
+	       Console.Write("Saturday \n");
+	       break;
+	case 7:
+	       Console.Write("Sunday  \n");
+	       break;
+	default:
+	       Console.Write("Invalid day number. \nPlease try again ....\n");
+	       break;
+      }
+   }
+} 
+o/p:
+Accept day number and display its equivalent day name in word:
+----------------------------------------------------------------
+
+Input Day No : 4
+Thursday
+
+==============================================================================================================================================================
+21. Write a program in C# Sharp to read any digit, display in the word. 
+ public static void Main()
+{
+   int cdigit;
+
+           Console.Write("\n\n");
+           Console.Write("Accept digit and display in word:\n");
+           Console.Write("\n\n");
+
+
+          Console.Write("Input Digit(0-9) : ");
+          cdigit = Convert.ToInt32(Console.ReadLine());
+
+   switch(cdigit)
+   {
+	 case 0:
+	      Console.Write("Zero\n");
+	       break;
+ 
+	 case 1:
+	       Console.Write("one\n");
+	       break;
+	case 2:
+	       Console.Write("Two\n");
+	       break;
+	case 3:
+	       Console.Write("Three\n");
+	       break;
+	case 4:
+	       Console.Write("Four\n");
+	       break;
+	case 5:
+	       Console.Write("Five\n");
+	       break;
+	case 6:
+	       Console.Write("Six\n");
+	       break;
+	case 7:
+	       Console.Write("Seven\n");
+	       break;
+	case 8:
+	       Console.Write("Eight\n");
+	       break;
+	case 9:
+	       Console.Write("Nine\n");
+	       break;
+	default:
+	       Console.Write("invalid digit. \nPlease try again ....\n");
+	       break;
+      }
+  }
+}
+Accept digit and display in word:
+-----------------------------------
+
+Input Digit(0-9) : 8
+Eight
+
+================================================================================================================================================================
+22. Write a program in C# Sharp to read any Month Number in integer and display Month name in the word. 
+
+ int monno;
+
+
+           Console.Write("\n\n");
+           Console.Write("Read month number and display month name:\n");
+           Console.Write("\n\n");
+
+
+         Console.Write("Input Month No : ");
+         monno = Convert.ToInt32(Console.ReadLine());
+
+   switch(monno)
+   {
+	case 1:
+	       Console.Write("January\n");
+	       break;
+	case 2:
+	       Console.Write("February\n");
+	       break;
+	case 3:
+	       Console.Write("March\n");
+	       break;
+	case 4:
+	       Console.Write("April\n");
+	       break;
+	case 5:
+	       Console.Write("May\n");
+	       break;
+	case 6:
+	       Console.Write("June\n");
+	       break;
+	case 7:
+	       Console.Write("July\n");
+	       break;
+	case 8:
+	       Console.Write("August\n");
+	       break;
+	case 9:
+	       Console.Write("September\n");
+	       break;
+	case 10:
+	       Console.Write("October\n");
+	       break;
+	case 11:
+	       Console.Write("November\n");
+	       break;
+	case 12:
+	       Console.Write("December\n");
+	       break;
+	default:
+	       Console.Write("invalid Month number. \nPlease try again ....\n");
+	       break;
+      }
+   }
+}
+o/p:
+Input Month No : 6
+June
+
+============================================================================================================================================================
+23. Write a program in C# Sharp to read any Month Number in integer and display the number of days for this month. 
+static void Main(string[] args)
+     {
+   int monno;
+
+           Console.Write("\n\n");
+           Console.Write("Read month number and display number of days for that month:\n");
+           Console.Write("\n\n");
+
+   Console.Write("Input Month No : ");
+   monno = Convert.ToInt32(Console.ReadLine());
+   switch(monno)
+   {
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+	       Console.Write("Month  have 31 days. \n");
+	       break;
+	case 2:
+	       Console.Write("The 2nd month is a February and have 28 days. \n");
+	       Console.Write("in leap year The February month  Have 29 days.\n");
+	       break;
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+	       Console.Write("Month have 30 days. \n");
+	       break;
+default:
+	       Console.Write("invalid Month number.\nPlease try again ....\n");
+	       break;
+      }
+  }
+}
+
+0/p:
+Read month number and display number of days for that month:
+
+Input Month No : 1
+Month  have 31 days.
+
+======================================================================================================================================================
+24. Write a program in C# Sharp which is a Menu-Driven Program to compute the area of the various geometrical shape. 
+
+ int choice,r,l,w,b,h;
+      double area=0;
+
+           Console.Write("\n\n");
+           Console.Write("A menu driven program to compute the area of various geometrical shape:\n");
+           Console.Write("\n\n");
+
+
+      Console.Write("Input 1 for area of circle\n");
+      Console.Write("Input 2 for area of rectangle\n");
+      Console.Write("Input 3 for area of triangle\n");
+      Console.Write("Input your choice : ");
+      choice = Convert.ToInt32(Console.ReadLine());
+
+      switch(choice)
+      {
+           case 1:
+                 Console.Write("Input radius of the circle : ");
+                 r = Convert.ToInt32(Console.ReadLine());
+                    area=3.14*r*r;
+                 break;
+            case 2:
+                  Console.Write("Input length  of the rectangle : ");
+                  l = Convert.ToInt32(Console.ReadLine());
+                  Console.Write("Input  width of the rectangle : ");
+                  w = Convert.ToInt32(Console.ReadLine());
+                  area=l*w;
+                  break;
+            case 3:
+                  Console.Write("Input the base of the triangle :");
+                  b = Convert.ToInt32(Console.ReadLine());
+                  Console.Write("Input the hight of the triangle :");
+                  h = Convert.ToInt32(Console.ReadLine());
+                         area=.5*b*h;
+                  break;
+          }
+          Console.Write("The area is : {0}\n",area);
+    }
+}
+
+Sample Output:
+A menu driven program to compute the area of various geometrical shape:                                                       
+Input 1 for area of circle                                                                                    
+Input 2 for area of rectangle                                                                                 
+Input 3 for area of triangle                                                                                  
+Input your choice : 2                                                                                         
+Input length  of the rectangle : 20                                                                           
+Input  width of the rectangle : 30                                                                            
+The area is : 600 
+=====================================================================================================================================================
+25. Write a program in C# Sharp which is a Menu-Driven Program to perform a simple calculation. 
+int num1,num2,opt;
+
+           Console.Write("\n\n");
+           Console.Write("A menu driven program for a simple calculator:\n");
+           Console.Write("\n\n");
+
+
+  Console.Write("Enter the first Integer :");
+  num1 = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Enter the second Integer :");
+  num2 = Convert.ToInt32(Console.ReadLine());
+
+  
+    Console.Write("\nHere are the options :\n");
+    Console.Write("1-Addition.\n2-Substraction.\n3-Multiplication.\n4-Division.\n5-Exit.\n");
+    Console.Write("\nInput your choice :");
+    opt = Convert.ToInt32(Console.ReadLine());
+
+    switch(opt) {
+      case 1:
+        Console.Write("The Addition of  {0} and {1} is: {2}\n",num1,num2,num1+num2);
+        break;
+        
+      case 2:
+        Console.Write("The Substraction of {0}  and {1} is: {2}\n",num1,num2,num1-num2);
+        break;
+        
+      case 3:
+        Console.Write("The Multiplication of {0}  and {1} is: {2}\n",num1,num2,num1*num2);
+        break;  
+      
+      case 4:
+        if(num2==0) {
+          Console.Write("The second integer is zero. Devide by zero.\n");
+        } else {
+          Console.Write("The Division of {0}  and {1} is : {2}\n",num1,num2,num1/num2);
+        }  
+        break;
+        
+      case 5: 
+        break; 
+        
+      default:
+        Console.Write("Input correct option\n");
+        break; 
+    }
+  }
+}
+
+Sample Output:A menu driven program for a simple calculator:                                                                                                   
+Enter the first Integer :20                                                                                   
+Enter the second Integer :4                                                                                   
+                                                                                                              
+Here are the options :                                                                                        
+1-Addition.                                                                                                   
+2-Substraction.                                                                                               
+3-Multiplication.                                                                                             
+4-Division.                                                                                                   
+5-Exit.                                                                                                       
+                                                                                                              
+Input your choice :4                                                                                          
+The Division of 20  and 4 is : 5
+
+
+
+
+
+
+
+
+
+
+
