@@ -1,0 +1,771 @@
+1. Write a program in C# Sharp to create a blank file in the disk newly. 
+Expected Output :
+ A file created with name mytest.txt  
+
+using System;
+using System.IO;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            FileStream f = new FileStream("d:\\example.txt", FileMode.OpenOrCreate,FileAccess.ReadWrite);
+            Console.WriteLine("File is created successfully...!");
+            f.Close();
+        }
+    }
+}
+
+output:
+File is created successfully...!
+---------------------------------------------------------------------------------------------------
+2. Write a program in C# Sharp to remove a file from the disk. 
+Expected Output :
+ Remove a file from the disk (at first create the file ) :                                                    
+--------------------------------------------------------------                                                
+ The file mytest.txt deleted successfully.
+  Remove a file from the disk (at first create the file ) :                                                    
+--------------------------------------------------------------                                                
+ File does not exist 
+
+using System;
+using System.IO;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            DirectoryInfo directory = new DirectoryInfo(@"D:\CSharp");
+            try
+            {
+               
+                File.Delete(@"D:\example.txt");
+                Console.WriteLine("The file is deleted successfully.");
+                directory.Delete();
+                Console.WriteLine("The directory is deleted successfully.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Something went wrong: {0}", e.ToString());
+            }
+        }
+    }
+}
+
+output:
+The file is deleted successfully.
+The directory is deleted successfully.
+
+---------------------------------------------------------------------------------------------------
+3. Write a program in C# Sharp to create a blank file in the disk if the same file already exists. 
+
+using System;
+using System.IO;
+
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "d:\\example.txt";
+	    FileInfo fi = new FileInfo(str);
+
+            try
+            {
+                if(File.Exists(str))
+                {
+                    Console.WriteLine("{0} File name is  already exist",fi.Name);
+                }
+                else
+                {
+                    FileStream f = new FileStream(str, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                    Console.WriteLine("{0} File is created successfully..!",f.Name);
+                    f.Close();
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+           
+        }
+    }
+}
+
+output:
+example.txt File name is  already exist
+---------------------------------------------------------------------------------------------------
+4. Write a program in C# Sharp to create a file and add some text. 
+
+using System;
+using System.IO;
+
+namespace ConsoleApp4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (TextWriter writer = File.CreateText("d:\\example.txt")) 
+            {
+                writer.WriteLine("i'm writing something in the file");
+                writer.WriteLine("inserting some amount of data into file");
+            }
+            Console.WriteLine("Data writen successfully");
+        }
+    }
+}
+
+
+output:
+Data writen successfully
+---------------------------------------------------------------------------------------------------
+5. Write a program in C# Sharp to create a file with text and read the file. 
+
+using System;
+using System.IO;
+
+namespace ConsoleApp4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (TextReader rd= File.OpenText("d:\\example.txt"))
+            {
+                Console.WriteLine(rd.ReadToEnd());
+            }
+        }
+    }
+}
+
+output:
+i'm writing something in the file
+inserting some amount of data into file
+---------------------------------------------------------------------------------------------------
+6. Write a program in C# Sharp to create a file and write an array of strings to the file. 
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string fileName = @"d:\\example.txt";
+            string[] ArrLines;
+            Console.Write(" Input number of lines to write in the file  :");
+            int n = Convert.ToInt32(Console.ReadLine());
+            ArrLines = new string[n];
+            Console.Write(" Input {0} strings below :\n", n);
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(" Input line {0} : ", i + 1);
+                ArrLines[i] = Console.ReadLine();
+            }
+            System.IO.File.WriteAllLines(fileName, ArrLines);
+
+        }
+    }
+}
+
+output:
+ Input number of lines to write in the file  :2
+ Input 2 strings below :
+ Input line 1 : my name sucheth
+ Input line 2 : my brother name is manoj
+---------------------------------------------------------------------------------------------------
+7. Write a program in C# Sharp to create and write some line of text into a file which does not contain a given string in a line
+using System;
+using System.IO;
+
+
+class myapplication
+{
+    static void Main()
+    {
+		string fileName = @"mytest.txt"; 
+		string[] ArrLines;
+		string str;
+		
+		int n,i;
+
+	    Console.Write("\n\n Create and write some line of text which does not contain a given string in a line  :\n");
+		Console.Write("------------------------------------------------------------------------------------------\n"); 
+
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+        Console.Write(" Input the string to ignore the line : ");
+        str = Console.ReadLine();  
+       Console.Write(" Input number of lines to write in the file  : ");
+       n= Convert.ToInt32(Console.ReadLine()); 
+       ArrLines=new string[n];  
+       
+       Console.Write(" Input {0} strings below :\n",n);
+		for(i=0;i<n;i++)
+		{
+		Console.Write(" Input line {0} : ",i+1);
+		ArrLines[i] = Console.ReadLine();	
+		}
+	
+        using (System.IO.StreamWriter file = 
+            new System.IO.StreamWriter(@"mytest.txt"))
+        {
+            foreach (string line in ArrLines)
+            {
+                if (!line.Contains(str)) // write the line to the file If it doesn't contain the string in str
+                {
+                    file.WriteLine(line);
+                }
+            }
+        }		
+        
+	using (StreamReader sr = File.OpenText(fileName)) 
+        {
+            string s = "";
+            Console.Write("\n The line has ignored which contain the string '{0}'. \n",str);
+            while ((s = sr.ReadLine()) != null) 
+            {
+                Console.WriteLine(" {0} ",s);
+            }
+            Console.WriteLine();
+        }        
+    }
+}
+output : 
+
+Input the string to ignore the line : fox
+Input number of lines to write in the file : 2
+Input 2 strings below :
+Input line 1 : the quick brown fox jumps
+Input line 2 : over the lazy dog.
+Expected Output :
+The line have ignored which contain the string 'fox'.                                                        
+ The content of the file is  :                                                                                
+----------------------------------                                                                            
+ over the lazy dog.                                                      
+----------------------------------------------------------------------------------------------------------------------------
+
+8. Write a program in C# Sharp to append some text to an existing file. 
+using System;
+using System.IO;
+using System.Text;
+
+class filexercise3
+{
+    public static void Main()
+    {
+        string fileName = @"mytest.txt"; 
+        try
+        {
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+			
+            using (StreamWriter fileStr = File.CreateText(fileName)) 
+            {
+                fileStr.WriteLine(" Hello and Welcome");
+                fileStr.WriteLine(" It is the first content");
+                fileStr.WriteLine(" of the text file mytest.txt");
+            }	            
+            using (StreamReader sr = File.OpenText(fileName))
+            {
+                string s = "";
+				Console.WriteLine(" Here is the content of the file mytest.txt : ");
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("");
+            }
+        using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"mytest.txt", true))
+        {
+            file.WriteLine(" This is the line appended at last line.");
+        }
+              using (StreamReader sr = File.OpenText(fileName))
+            {
+                string s = "";
+				Console.WriteLine(" Here is the content of the file after appending the text : ");
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("");
+            }          
+            
+        }
+        catch (Exception MyExcep)
+        {
+            Console.WriteLine(MyExcep.ToString());
+        }
+    }
+}
+
+ Here is the content of the file mytest.txt :                                                                 
+ Hello and Welcome                                                                                            
+ It is the first content                                                                                      
+ of the text file mytest.txt                                                                                  
+ Here is the content of the file after appending the text :                                                   
+ Hello and Welcome                                                                                            
+ It is the first content                                                                                      
+ of the text file mytest.txt                                                                                  
+ This is the line appended at last line. 
+
+---------------------------------------------------------------------------------------------------------------------------
+
+9. Write a program in C# Sharp to create and copy the file to another name and display the content. 
+using System;
+using System.IO;
+using System.Text;
+
+
+public class SimpleFileCopy
+{
+    static void Main()
+    {
+        string sfileName = @"mytest.txt";
+        string tfileName = @"mynewtest.txt";
+        
+            if (File.Exists(sfileName))
+            {
+                File.Delete(sfileName);
+            }
+            using (StreamWriter fileStr = File.CreateText(sfileName)) 
+            {
+                fileStr.WriteLine(" Hello and Welcome");
+                fileStr.WriteLine(" It is the first content");
+                fileStr.WriteLine(" of the text file mytest.txt");
+            }	            
+            using (StreamReader sr = File.OpenText(sfileName))
+            {
+                string s = "";
+				Console.WriteLine(" Here is the content of the file {0} : ",sfileName);
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("");
+            }        
+      
+		string targetfolder =  "path"; // you can mention the path of target folder 
+		string sourceFile = System.IO.Path.Combine(sourcefolder, sfileName); // combine the source file with path
+		string targetFile = System.IO.Path.Combine(targetfolder, tfileName);   // combine the target file with path */
+
+        if (!System.IO.Directory.Exists(targetfolder))
+        {
+            System.IO.Directory.CreateDirectory(targetfolder);
+        }
+		System.IO.File.Copy(sourceFile, destFile, true); // overwrite the target file if it already exists. */
+        System.IO.File.Copy(sfileName, tfileName, true);
+        Console.WriteLine(" The file {0} successfully copied to the name {1} in the same directory.",sfileName,tfileName );
+        
+using (StreamReader sr = File.OpenText(tfileName))
+            {
+                string s = "";
+				Console.WriteLine(" Here is the content of the file {0} : ",tfileName);
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("");
+            }       
+        Console.ReadKey();
+    }
+}
+
+
+output : 
+ Here is the content of the file mytest.txt :                                                                 
+ Hello and Welcome                                                                                            
+ It is the first content                                                                                      
+ of the text file mytest.txt                                                                                  
+ The file mytest.txt successfully copied to the name mynewtest.txt in the same directory.                     
+ Here is the content of the file mynewtest.txt :                                                              
+ Hello and Welcome                                                                                            
+ It is the first content                                                                                      
+ of the text file mytest.txt
+
+--------------------------------------------------------------------------------------------------------------------------
+10. Write a program in C# Sharp to create a file and move the file into the same directory to another name. 
+using System;
+using System.IO;
+using System.Text;
+
+        
+public class SimpleFileMove
+{
+    static void Main()
+    {
+
+        string sfileName = @"mytest.txt";
+        string tfileName = @"mynewtest.txt";   	
+	
+		string targetfolder = "path"; // you can mention the path of target folder 
+		string sourceFile = System.IO.Path.Combine(sourcefolder, sfileName); // combine the source file with path
+		string targetFile = System.IO.Path.Combine(targetfolder, tfileName);   // combine the target file with path */
+
+            if (File.Exists(sfileName))
+            {
+                File.Delete(sfileName);
+            }
+			if (File.Exists(tfileName))
+            {
+                File.Delete(tfileName);
+            }	
+            using (StreamWriter fileStr = File.CreateText(sfileName)) 
+            {
+                fileStr.WriteLine(" Hello and Welcome");
+                fileStr.WriteLine(" It is the first content");
+                fileStr.WriteLine(" of the text file mytest.txt");
+            }	            
+            using (StreamReader sr = File.OpenText(sfileName))
+            {
+                string s = "";
+				Console.WriteLine(" Here is the content of the file {0} : ",sfileName);
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("");
+            }        		
+        System.IO.File.Move(sfileName, tfileName); // move a file to another name in same location:
+        Console.WriteLine(" The file {0} successfully moved to the name {1} in the same directory.",sfileName,tfileName );	
+
+using (StreamReader sr = File.OpenText(tfileName))
+            {
+                string s = "";
+				Console.WriteLine(" Here is the content of the file {0} : ",tfileName);
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("");
+            }       
+        Console.ReadKey();		
+    }
+}
+
+output : 
+Here is the content of the file mytest.txt :                                                                 
+ Hello and Welcome                                                                                            
+ It is the first content                                                                                      
+ of the text file mytest.txt                                                                                  
+ The file mytest.txt successfully moved to the name mynewtest.txt in the same directory.                      
+ Here is the content of the file mynewtest.txt :                                                              
+ Hello and Welcome                                                                                            
+ It is the first content                                                                                      
+ of the text file mytest.txt 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+11. Write a program in C# Sharp to read the first line from a file. 
+using System;
+using System.IO;
+using System.Text;
+
+class filexercise11
+{
+    public static void Main()
+    {
+        string fileName = @"mytest.txt"; 
+
+        try
+        {
+            // Delete the file if it exists.
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+	      using (StreamWriter fileStr = File.CreateText(fileName)) 
+            {
+                fileStr.WriteLine(" test line 1");
+                fileStr.WriteLine(" test line 2");
+                fileStr.WriteLine(" Test line 3");
+            }	
+            using (StreamReader sr = File.OpenText(fileName))
+            {
+                string s = "";
+				Console.WriteLine(" Here is the content of the file mytest.txt : ");
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("");
+            }
+
+            Console.Write("\n The content of the first line of the file is :\n");
+			if (File.Exists(fileName))
+				{
+				string[] lines = File.ReadAllLines(fileName);
+				Console.Write(lines[0]);
+				}        
+            Console.WriteLine(); 
+        }
+        catch (Exception MyExcep)
+        {
+            Console.WriteLine(MyExcep.ToString());
+        }
+    }
+}
+
+output : 
+ Here is the content of the file mytest.txt :                                                                 
+ test line 1                                                                                                  
+ test line 2                                                                                                  
+ Test line 3                                                                                                  
+ The content of the first line of the file is :                                                               
+ test line 1 
+--------------------------------------------------------------------------------------------------------------------
+12. Write a program in C# Sharp to create and read the last line of a file. 
+using System;
+using System.IO;
+
+
+class filexercise12
+{
+    static void Main()
+    {
+		string fileName = @"mytest.txt"; 
+		string[] ArrLines ;
+		int n,i;
+
+	   
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+       Console.Write(" Input number of lines to write in the file  :");
+       n= Convert.ToInt32(Console.ReadLine()); 
+       ArrLines=new string[n];      
+       Console.Write(" Input {0} strings below :\n",n);
+		for(i=0;i<n;i++)
+		{
+		Console.Write(" Input line {0} : ",i+1);
+		ArrLines[i] = Console.ReadLine();	
+		}	
+        System.IO.File.WriteAllLines(fileName, ArrLines);
+             Console.Write("\n The content of the last line of the file {0} is  :\n",fileName);
+			if (File.Exists(fileName))
+				{
+				string[] lines = File.ReadAllLines(fileName);
+				Console.WriteLine(" {0}",lines[n-1]);
+				}        
+            Console.WriteLine();       
+    }
+}
+
+
+output : 
+
+Input number of lines to write in the file :3
+Input 3 strings below :
+Input line 1 : line1
+Input line 2 : line2
+Input line 3 : line3
+ The content of the last line of the file mytest.txt is  :                                                    
+ line3  
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+13. Write a program in C# Sharp to read a specific line from a file.  
+using System;
+using System.IO;
+
+
+class filexercise13
+{
+    static void Main()
+    {
+		string fileName = @"mytest.txt"; 
+		string[] ArrLines ;
+		int n,i,l;
+
+	   
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+       Console.Write(" Input number of lines to write in the file  :");
+       n= Convert.ToInt32(Console.ReadLine()); 
+       ArrLines=new string[n];      
+       Console.Write(" Input {0} strings below :\n",n);
+		for(i=0;i<n;i++)
+		{
+		Console.Write(" Input line {0} : ",i+1);
+		ArrLines[i] = Console.ReadLine();	
+		}	
+        System.IO.File.WriteAllLines(fileName, ArrLines);
+		
+            Console.Write("\n Input which line you want to display  :");
+            l = Convert.ToInt32(Console.ReadLine()); 
+            if(l>=1 && l<=n)
+            {
+             Console.Write("\n The content of the line {0} of the file {1} is : \n",l,fileName);
+			if (File.Exists(fileName))
+				{
+				string[] lines = File.ReadAllLines(fileName);
+				Console.WriteLine(" {0}",lines[l-1]);
+				}}
+				else
+				{
+				  Console.WriteLine(" Please input the correct line no.");
+				}
+
+            Console.WriteLine();       
+    }
+}
+
+output : 
+Input number of lines to write in the file  :3                                                               
+ Input 3 strings below:                                                                                      
+ Input line 1 : line1                                                                                         
+ Input line 2 : line2                                                                                         
+ Input line 3 : line3                                                                                         
+  
+ Input which line you want to display  :3                                                                     
+ The content of the line 3 of the file mytest.txt is :                                                        
+ line3          
+------------------------------------------------------------------------------------------------------------------------------------------------
+14. Write a program in C# Sharp to create and read last n number of lines of a file. 
+         
+using System;
+using System.IO;
+
+
+class myapplication
+{
+    static void Main()
+    {
+		string fileName = @"mytest.txt"; 
+		string[] ArrLines ;
+		int n,i,l,m=1;
+
+
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+       Console.Write(" Input number of lines to write in the file  :");
+       n= Convert.ToInt32(Console.ReadLine()); 
+       ArrLines=new string[n];      
+       Console.Write(" Input {0} strings below :\n",n);
+		for(i=0;i<n;i++)
+		{
+		Console.Write(" Input line {0} : ",i+1);
+		ArrLines[i] = Console.ReadLine();	
+		}	
+        System.IO.File.WriteAllLines(fileName, ArrLines);
+		
+            Console.Write("\n Input last how many numbers of lines you want to display  :");
+            l = Convert.ToInt32(Console.ReadLine()); 
+            m=l;
+            if(l>=1 && l<=n)
+            {
+             Console.Write("\n The content of the last {0} lines of the file {1} is : \n",l,fileName);
+			if (File.Exists(fileName))
+				{
+				for(i=n-l;i<n;i++)
+				{
+				string[] lines = File.ReadAllLines(fileName);
+				Console.Write(" The last no {0} line is : {1} \n",m,lines[i]);
+				m--;
+				}
+				}
+				}
+				else
+				{
+				  Console.WriteLine(" Please input the correct line no.");
+				}
+
+            Console.WriteLine();       
+    }
+}
+
+output : 
+
+ Input number of lines to write in the file :5                                                               
+ Input 5 strings below :                                                                                      
+ Input line 1 : line1                                                                                         
+ Input line 2 : line2                                                                                         
+ Input line 3 : line3                                                                                         
+ Input line 4 : line4                                                                                         
+ Input line 5 : line5                                                                                         
+ 
+ Input last how many numbers of lines you want to display  :3                                                  
+ The content of the last 3 lines of the file mytest.txt is :                                                  
+ The last no 3 line is : line3                                                                                
+ The last no 2 line is : line4                                                                                
+ The last no 1 line is : line5 
+
+-------------------------------------------------------------------------------------------------------------------
+
+15. Write a program in C# Sharp to count the number of lines in a file. 
+
+using System;
+using System.IO;
+using System.Text;
+class application
+{
+    public static void Main()
+    {
+        string fileName = @"mytest.txt"; 
+         int count;
+
+        try
+        {
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+            using (StreamWriter fileStr = File.CreateText(fileName)) 
+            {
+                fileStr.WriteLine(" test line 1");
+                fileStr.WriteLine(" test line 2");
+                fileStr.WriteLine(" Test line 3");
+                fileStr.WriteLine(" test line 4");
+                fileStr.WriteLine(" test line 5");
+                fileStr.WriteLine(" Test line 6");
+            }	
+            using (StreamReader sr = File.OpenText(fileName))
+            {
+                string s = "";
+                count=0;
+				Console.WriteLine(" Here is the content of the file mytest.txt : ");
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                    count++;
+                }
+                Console.WriteLine("");
+            }
+            Console.Write(" The number of lines in  the file {0} is : {1} \n\n",fileName,count);
+        }
+        catch (Exception MyExcep)
+        {
+            Console.WriteLine(MyExcep.ToString());
+        }
+    }
+}
+
+
+output : 
+
+ Here is the content of the file mytest.txt :                                                                 
+ test line 1                                                                                                  
+ test line 2                                                                                                  
+ Test line 3                                                                                                  
+ test line 4                                                                                                  
+ test line 5                                                                                                  
+ Test line 6                                                                                                  
+ The number of lines in  the file mytest.txt is : 6         
+

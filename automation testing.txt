@@ -1,0 +1,314 @@
+
+						https://s1.demo.opensourcecms.com/wordpress/
+						https://phptravels.com/demo
+						http://thedemosite.co.uk/
+						http://automationpractice.com/index.php
+
+
+
+
+1.Timesheet automation testing
+
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using NUnit.Framework;
+
+namespace SeleniumTest1
+{
+
+    class Program
+    {
+
+        IWebDriver driver = new ChromeDriver();
+        [SetUp]
+        public void Initialize()
+        {
+	    driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl("https://timesheet.zensar.com/login");
+            Thread.Sleep(1000);
+        }
+        [Test]
+        public void ExecuteTest()
+        {
+            IWebElement  body= driver.FindElement(By.TagName("div"));
+            Assert.IsTrue(body.Text.Contains("Welcome, Sign in to"));
+            Console.WriteLine("Reached login page");
+            IWebElement ele = driver.FindElement(By.Id("userName"));
+            ele.SendKeys("ST65857");
+            Thread.Sleep(1000);
+            Console.Write("username value is entered");
+            IWebElement ele1 = driver.FindElement(By.Name("password"));
+            ele1.SendKeys("Manoj@19");
+            Console.Write("password is entered");
+            IWebElement ele2 = driver.FindElement(By.XPath("/html/body/div[1]/app-root/app-login/div/div[2]/div/form/button"));
+            ele2.Click();
+            Thread.Sleep(10000);
+            Console.Write("login button is clicked");
+            IWebElement head = driver.FindElement(By.TagName("h2"));
+            Assert.IsTrue(head.Text.Contains("Timesheet Entry"));
+            Console.WriteLine("Reached Timesheet Entry page");
+            Thread.Sleep(3000);
+            
+
+        }
+        [TearDown]
+        public void EndTest()
+        {
+            driver.Close();
+        }
+    }
+}
+
+output:successful
+
+
+-----------------------------------------------------------------------------------------------------------------------
+2.
+
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using NUnit.Framework;
+
+namespace SeleniumTest1
+{
+   
+    class Program
+    {
+        
+        IWebDriver driver = new ChromeDriver();
+	[SetUp]
+        public void Initialize()
+        {
+            driver.Navigate().GoToUrl("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Process.aspx");
+            driver.Manage().Window.Maximize();
+            Thread.Sleep(1000);
+        }
+      [Test]
+        public void ExecuteTest()
+        {
+            IWebElement ele = driver.FindElement(By.Id("ctl00_MainContent_username"));
+            ele.SendKeys("Tester");
+            Thread.Sleep(1000);
+            Console.Write("username value is entered");
+            IWebElement ele1 = driver.FindElement(By.Id("ctl00_MainContent_password"));
+            ele1.SendKeys("test");
+            Console.Write("password is entered");
+            IWebElement ele2 = driver.FindElement(By.Id("ctl00_MainContent_login_button"));
+            ele2.Click();
+            Thread.Sleep(5000);
+            Console.Write("login button is clicked");
+            IWebElement ele3 = driver.FindElement(By.XPath("/html/body/form/table/tbody/tr/td[1]/ul/li[1]/a"));
+            ele3.Click();
+            Thread.Sleep(2000);
+            Console.Write("view all order button is clicked");
+            IWebElement ele4 = driver.FindElement(By.Id("ctl00_MainContent_btnCheckAll"));
+            ele4.Click();
+            Thread.Sleep(3000);
+            Console.Write("check all button is clicked");
+            IWebElement ele5 = driver.FindElement(By.Id("ctl00_MainContent_btnUncheckAll"));
+            ele5.Click();
+            Thread.Sleep(3000);
+            Console.Write("uncheck all button is clicked");
+            IWebElement ele6 = driver.FindElement(By.XPath("/html/body/form/table/tbody/tr/td[1]/ul/li[2]/a"));
+            ele6.Click();
+            Thread.Sleep(3000);
+            Console.Write("view all products button is clicked");
+            IWebElement ele7 = driver.FindElement(By.XPath("/html/body/form/table/tbody/tr/td[1]/ul/li[3]/a"));
+            ele7.Click();
+            Thread.Sleep(2000);
+            Console.Write("oderes button is clicked");
+            IWebElement ele8 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_ddlProduct"));
+            ele8.Click();
+            ele8.SendKeys("MyMoney");
+            Thread.Sleep(1000);
+            IWebElement ele9 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_txtQuantity"));
+            ele9.SendKeys("5");
+            Thread.Sleep(1000);
+            IWebElement ele10 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_txtUnitPrice"));
+            ele10.SendKeys("200");
+            Thread.Sleep(1000);
+            IWebElement ele11 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_txtDiscount"));
+            ele11.SendKeys("50");
+            Thread.Sleep(1000);
+            IWebElement ele12 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_txtName"));
+            ele12.SendKeys("Vyshu");
+            Thread.Sleep(1000);
+            IWebElement ele13 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox2"));
+            ele13.SendKeys("ameer pet");
+            Thread.Sleep(1000);
+            IWebElement ele14 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox3"));
+            ele14.SendKeys("Hyderabad");
+            Thread.Sleep(1000);
+            IWebElement ele15 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox4"));
+            ele15.SendKeys("AP");
+            Thread.Sleep(1000);
+            IWebElement ele16 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox5"));
+            ele16.SendKeys("123456");
+            Thread.Sleep(1000);
+            IWebElement ele17 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_cardList_1"));
+            ele17.Click();
+            Thread.Sleep(1000);
+            IWebElement ele18 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox6"));
+            ele18.SendKeys("123456789009");
+            Thread.Sleep(1000);
+            IWebElement ele19 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_TextBox1"));
+            ele19.SendKeys("02/22");
+            Thread.Sleep(1000);
+            IWebElement ele20 = driver.FindElement(By.Id("ctl00_MainContent_fmwOrder_InsertButton"));
+            ele20.Click();
+            Thread.Sleep(10000);
+            IWebElement ele21= driver.FindElement(By.XPath("/html/body/form/table/tbody/tr/td[1]/ul/li[1]/a"));
+            ele21.Click();
+            Thread.Sleep(2000);
+            Console.Write("view all order button is clicked");
+        }
+       [TearDown]
+        public void EndTest()
+        {
+            driver.Close();
+        }
+        
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using NUnit.Framework;
+
+namespace SeleniumTest1
+{
+
+    class Program
+    {
+
+        IWebDriver driver = new ChromeDriver();
+        [SetUp]
+        public void Initialize()
+        {
+            driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+            driver.Manage().Window.Maximize();
+            /*IWebElement head = driver.FindElement(By.TagName("text"));
+            Assert.IsTrue(head.Text.Contains("PHPTRAVELS"));
+            Console.WriteLine("Reached PHPTRAVELS");*/
+            Thread.Sleep(5000);
+        }
+        [TestCase]
+        public void ExecuteTest()
+        {
+            IWebElement ele = driver.FindElement(By.XPath("/html/body/div/div[1]/header/div[2]/div/div/nav/div[1]/a"));
+            ele.Click();
+            Thread.Sleep(1000);
+            Console.Write("Sign-in button is clicked");
+            Thread.Sleep(20000);
+            /*IWebElement head = driver.FindElement(By.TagName("span"));
+            Assert.IsTrue(head.Text.Contains("Register"));
+            Console.WriteLine("Reached Registeration page");*/
+            IWebElement ele1 = driver.FindElement(By.Id("email_create"));
+            ele1.SendKeys("vyshu28@gmail.com");
+            Thread.Sleep(1000);
+            IWebElement sub = driver.FindElement(By.Id("SubmitCreate"));
+            sub.Click();
+            Thread.Sleep(8000);
+            IWebElement ele2 = driver.FindElement(By.Id("id_gender2"));
+            ele2.Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("Gender is selected");
+            IWebElement ele3 = driver.FindElement(By.Id("customer_firstname"));
+            ele3.SendKeys("vyshu");
+            Thread.Sleep(2000);
+            Console.Write("firstname is entered");
+            IWebElement ele4 = driver.FindElement(By.Id("customer_lastname"));
+            ele4.SendKeys("b");
+            Thread.Sleep(2000);
+            Console.Write("lastname is entered");
+            IWebElement ele5 = driver.FindElement(By.Id("passwd"));
+            ele5.SendKeys("vyshu2828");
+            Thread.Sleep(2000);
+            Console.Write("password is entered");
+            IWebElement ele6 = driver.FindElement(By.Id("days"));
+            ele6.SendKeys("28");
+            Thread.Sleep(2000);
+            Console.Write("days is entered");
+            IWebElement ele7 = driver.FindElement(By.Id("months"));
+            ele7.SendKeys("June");
+            Thread.Sleep(2000);
+            Console.Write("month is entered");
+            IWebElement ele8 = driver.FindElement(By.Id("years"));
+            ele8.SendKeys("1998");
+            Thread.Sleep(2000);
+            Console.Write("year is entered");
+            IWebElement ele9 = driver.FindElement(By.Id("newsletter"));
+            ele9.Click();
+            Thread.Sleep(2000);
+            Console.Write("clicked on checkbox");
+            IWebElement ele12 = driver.FindElement(By.Id("company"));
+            ele12.SendKeys("Zensar");
+            Thread.Sleep(2000);
+            Console.Write("company name is entered");
+            IWebElement ele13 = driver.FindElement(By.Id("address1"));
+            ele13.SendKeys("ameerpet");
+            Thread.Sleep(2000);
+            Console.Write("address1 is entered");
+            IWebElement ele14 = driver.FindElement(By.Id("address2"));
+            ele14.SendKeys("hyderabad");
+            Thread.Sleep(2000);
+            Console.Write("address2 is entered");
+            IWebElement ele15 = driver.FindElement(By.Id("city"));
+            ele15.SendKeys("AP");
+            Thread.Sleep(2000);
+            Console.Write("city is entered");
+            IWebElement ele16 = driver.FindElement(By.Id("id_state"));
+            ele16.SendKeys("newyork");
+            Thread.Sleep(2000);
+            Console.Write("state is entered");
+            IWebElement ele17 = driver.FindElement(By.Id("postcode"));
+            ele17.SendKeys("58312");
+            Thread.Sleep(2000);
+            Console.Write("zipcode is entered");
+            IWebElement ele18 = driver.FindElement(By.Id("id_country"));
+            ele18.SendKeys("United states");
+            Thread.Sleep(2000);
+            Console.Write("country is entered");
+            IWebElement ele19 = driver.FindElement(By.Id("other"));
+            ele19.SendKeys("basic details for testing");
+            Thread.Sleep(2000);
+            Console.Write("additional details is entered");
+            IWebElement ele20= driver.FindElement(By.Id("phone_mobile"));
+            ele20.SendKeys("12134567890");
+            Thread.Sleep(2000);
+            Console.Write("phone number is entered");
+            IWebElement ele21 = driver.FindElement(By.Id("alias"));
+            ele21.SendKeys("hyderabad");
+            Thread.Sleep(2000);
+            Console.Write("alias is entered");
+            IWebElement ele22 = driver.FindElement(By.Id("submitAccount"));
+            ele22.Click();
+            Thread.Sleep(15000);
+            Console.Write("register is clicked");
+        }
+        [TearDown]
+        public void EndTest()
+        {
+            driver.Close();
+        }
+        
+    }
+}

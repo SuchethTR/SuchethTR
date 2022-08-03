@@ -1,0 +1,79 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.IO;
+using System.Threading;
+using NUnit.Framework;
+namespace Project
+{
+    class Program
+    {
+        IWebDriver driver = new ChromeDriver();
+        public string username, password;
+        [SetUp]
+        public void Initialize()
+        {
+            driver.Navigate().GoToUrl("https://my-leaves.zensar.com/");
+            driver.Manage().Window.Maximize();
+            Thread.Sleep(1000);
+        }
+        [Test]
+        public void TestExecute()
+        {
+            StreamReader reader = new StreamReader(@"d:\login.txt");
+            string line = reader.ReadLine();
+            string[] values = line.Split('|');
+            username = values[0];
+            password = values[1];
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-login/ion-content/ion-grid/ion-row/ion-col[1]/div/ion-list/div[1]/input")).SendKeys(username);
+            Thread.Sleep(1000);
+            Console.WriteLine("Username is entered");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-login/ion-content/ion-grid/ion-row/ion-col[1]/div/ion-list/div[2]/input")).SendKeys(password);
+            Thread.Sleep(1000);
+            Console.WriteLine("password is entered");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-login/ion-content/ion-grid/ion-row/ion-col[1]/div/ion-list/ion-row/button")).Click();
+            Thread.Sleep(3000);
+            Console.WriteLine("login button is clicked");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/ion-content/ion-grid/ion-row/ion-col[2]/ion-col/div/div/ion-row[1]/ion-col/ion-list/ion-item/ion-select")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("clicked on drop down");
+            driver.FindElement(By.XPath("/html/body/ion-alert/div/div[3]/button[13]/div/div[1]")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("slected Work From Anywhere");
+            driver.FindElement(By.XPath("/html/body/ion-alert/div/div[4]/button[2]/span ")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("ok button is clicked");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/ion-content/ion-grid/ion-row/ion-col[2]/ion-col/div/div/ion-row[2]/ion-col[1]/ion-list/i/img")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("clicked on start date");
+            driver.FindElement(By.XPath("/html/body/ion-modal/div/app-calendar-pop-up/ion-content/ion-calendar/ion-calendar-month/div/div/div[18]/button")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("selected start date");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/ion-content/ion-grid/ion-row/ion-col[2]/ion-col/div/div/ion-row[2]/ion-col[2]/ion-list/i/img")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("clicked on end date");
+            driver.FindElement(By.XPath("/html/body/ion-modal/div/app-calendar-pop-up/ion-content/ion-calendar/ion-calendar-month/div/div/div[18]/button")).Click();
+            Thread.Sleep(10000);
+            Console.WriteLine("selected end date");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/ion-content/ion-grid/ion-row/ion-col[2]/ion-col/div/div/ion-col/div/div/button[2]")).Click();
+            Thread.Sleep(5000);
+            Console.WriteLine("clicked on preview");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/ion-content/ion-grid/ion-row/ion-col[2]/ion-col/div/div/ion-col/div/div/button[2]")).Click();
+            Thread.Sleep(6000);
+            Console.WriteLine("clicked on apply");
+            driver.Navigate().Refresh();
+            Thread.Sleep(2000);
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/app-header/ion-header/ion-toolbar/ion-grid/ion-row/ion-col[2]/ion-row/div[3]/i/img")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("clicked on logout button");
+            driver.FindElement(By.XPath("/html/body/ion-alert/div/div[3]/button[1]/span")).Click();
+            Thread.Sleep(5000);
+            Console.WriteLine("clicked on ok button");
+        }
+        [TearDown]
+        public void EndTest()
+        {
+            driver.Close();
+        }
+    }
+}

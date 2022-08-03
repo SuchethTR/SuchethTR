@@ -1,0 +1,79 @@
+1) on Login Page enter login credentails from a text file.
+
+
+2) Delete one order while using checkbox selection.
+
+
+3) access Edit order page fpr one order using webtable..
+
+
+4) please edit quantity and calculate total on eidt order page
+
+
+5) access sample web table and give me count of all three product types. screen savre = My Money = and Family album =
+
+
+6) state wise product status.
+
+
+7) create 25 orders and take values from excel sheet.
+
+
+8)on List of orders page show the results of addtion and then delete one order from list of orders and save the result on execl.
+
+
+
+
+
+
+
+
+Practice Exercise - 1Launch a new Chrome browser.
+Open Google.com
+Get Page Title name and Title length
+Print Page Title and Title length on the Console.
+Get Page URL and Page Url Length
+Print Page URL and Page Url Length on the Console.
+Get Page Source (HTML Source code) and Page Source length
+Print Page Length on Console.
+Close the Browser.
+
+
+
+
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.Threading;
+
+
+
+namespace Demo
+{
+
+    class Program
+    {
+        [Test]
+        public void MyTestMethod()
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = "https://www.google.com";
+            string title = driver.Title;
+            Console.WriteLine(title);
+            int title_len = driver.Title.Length;
+            Console.WriteLine(title_len);
+            string url = driver.Url;
+            Console.WriteLine(url);
+            int url_len = driver.Url.Length;
+            Console.WriteLine(url_len);
+            string page_source = driver.PageSource;
+            Console.WriteLine(page_source);
+            int page_sou = driver.PageSource.Length;
+            Console.WriteLine(page_sou);
+            driver.Quit();
+
+        }
+
+    }
+}

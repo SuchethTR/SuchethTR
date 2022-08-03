@@ -1,0 +1,943 @@
+83. Write a C# Sharp program to display alphabet pattern like Z with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((row == 0 || row == 6) && col >= 0 && col <= 6) || row + col == 6)
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+*******
+     *
+    *
+   *
+  *
+ *
+*******
+=====================================================================================================================================================
+82. Write a C# Sharp program to display alphabet pattern like Y with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((col == 1 || col == 5) && row < 2) || row == col && col > 0 && col < 4 || (col == 4 && row == 2) || ((col == 3) && row > 3))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *   *
+ *   *
+  * *
+   *
+   *
+   *
+   *
+=====================================================================================================================================================
+81. Write a C# Sharp program to display alphabet pattern like X with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((col == 1 || col == 5) && (row > 4 || row < 2)) || row == col && col > 0 && col < 6 || (col == 2 && row == 4) || (col == 4 && row == 2))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *   *
+ *   *
+  * *
+   *
+  * *
+ *   *
+ *   *
+=====================================================================================================================================================
+80. Write a C# Sharp program to display alphabet pattern like W with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((col == 1 || col == 5) && row < 6) || ((row == 5 || row == 4) && col == 3) || (row == 6 && (col == 2 || col == 4)))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *   *
+ *   *
+ *   *
+ *   *
+ * * *
+ * * *
+  * *
+=====================================================================================================================================================
+79. Write a C# Sharp program to display alphabet pattern like V with an asterisk.
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((col == 1 || col == 5) && row < 5) || (row == 6 && col == 3) || (row == 5 && (col == 2 || col == 4)))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *   *
+ *   *
+ *   *
+ *   *
+ *   *
+  * *
+   *
+=====================================================================================================================================================
+78. Write a C# Sharp program to display alphabet pattern like U with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((col == 1 || col == 5) && row != 6) || (row == 6 && col > 1 && col < 5))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *   *
+ *   *
+ *   *
+ *   *
+ *   *
+ *   *
+  ***
+=====================================================================================================================================================
+77. Write a C# Sharp program to display alphabet pattern like T with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (col == 3 || (row == 0 && col > 0 && col < 6))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ *****
+   *
+   *
+   *
+   *
+   *
+   *
+=====================================================================================================================================================
+76. Write a C# Sharp program to display alphabet pattern like S with an asterisk.
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (((row == 0 || row == 3 || row == 6) && col > 1 && col < 5) || (col == 1 && (row == 1 || row == 2 || row == 6)) || (col == 5 && (row == 0 || row == 4 || row == 5)))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+output:
+ ****
+ *
+ *
+  ***
+     *
+     *
+ ****
+=====================================================================================================================================================
+75. Write a C# Sharp program to display alphabet pattern like R with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if (col == 1 || ((row == 0 || row == 3) && col > 1 && col < 5) || (col == 5 && row != 0 && row < 3) || (col == row - 1 && row > 2))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+ ****
+ *   *
+ *   *
+ ****
+ * *
+ *  *
+ *   *
+=====================================================================================================================================================
+74. Write a C# Sharp program to display alphabet pattern like Q with an asterisk.
+
+using System;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int row, col;
+            for (row = 0; row <= 6; row++)
+            {
+                for (col = 0; col <= 6; col++)
+                {
+                    if ((col == 1 && row != 0 && row != 6) || (row == 0 && col > 1 && col < 5) || (col == 5 && row != 0 && row != 5) || (row == 6 && col > 1 && col < 4) || (col == row - 1 && row > 3))
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
+    }
+}
+
+output:
+  ***
+ *   *
+ *   *
+ *   *
+ * * *
+ *  *
+  ** *
+=====================================================================================================================================================
+73. Write a C# Sharp program to display alphabet pattern like P with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || ((row == 0 || row == 3) && col > 0 && col < 5) || ((col == 5 || col == 1) && (row == 1 || row == 2)))
+                        Console.Write("*");
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ ****
+ *   *
+ *   *
+ ****
+ *
+ *
+ *
+=====================================================================================================================================================
+72. Write a C# Sharp program to display alphabet pattern like O with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (((col == 1 || col == 5) && row != 0 && row != 6) || ((row == 0 || row == 6) && col > 1 && col < 5))
+                        Console.Write("*");
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+  ***
+ *   *
+ *   *
+ *   *
+ *   *
+ *   *
+  ***
+=====================================================================================================================================================
+71. Write a C# Sharp program to display alphabet pattern like N with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || col == 5 || (row == col && col != 0 && col != 6))
+                        Console.Write("*");
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *   *
+ *   *
+ **  *
+ * * *
+ *  **
+ *   *
+ *   *
+=====================================================================================================================================================
+70. Write a C# Sharp program to display alphabet pattern like M with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || col == 5 || (row == 2 && (col == 2 || col == 4)) || (row == 3 && col == 3))
+                        Console.Write("*");
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *   *
+ *   *
+ ** **
+ * * *
+ *   *
+ *   *
+ *   *
+=====================================================================================================================================================
+69. Write a C# Sharp program to display alphabet pattern like L with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || (row == 6 && col != 0 && col < 6))
+                        Console.Write("*");
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *
+ *
+ *
+ *
+ *
+ *
+ *****
+=====================================================================================================================================================
+68. Write a C# Sharp program to display alphabet pattern like K with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;int j = 5, i = 0;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || ((row == col + 1) && col != 0))
+                        Console.Write("*");
+                        else if(row == i && col == j)
+                    {
+                        Console.Write("*");
+                        i = i + 1;
+                        j = j - 1;
+                    }
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *   *
+ *  *
+ * *
+ **
+ * *
+ *  *
+ *   *
+=====================================================================================================================================================
+67. Write a C# Sharp program to display alphabet pattern like J with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if ((col == 4 && row != 6) || (row == 0 && col > 2 && col < 6) || (row == 6 && col == 3) || (row == 5 && col == 2))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+   ***
+    *
+    *
+    *
+    *
+  * *
+   *
+=====================================================================================================================================================
+66. Write a C# Sharp program to display alphabet pattern like I with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 3 || (row == 0 && col > 0 && col < 6) || (row == 6 && col > 0 && col < 6))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+
+ *****
+   *
+   *
+   *
+   *
+   *
+ *****
+=====================================================================================================================================================
+65. Write a C# Sharp program to display alphabet pattern like H with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if ((col == 1 || col == 5) || (row == 3 && col > 1 && col < 6))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *   *
+ *   *
+ *   *
+ *****
+ *   *
+ *   *
+ *   *
+
+=====================================================================================================================================================
+64. Write a C# Sharp program to display alphabet pattern like G with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if ((col == 1 && row != 0 && row != 6) || ((row == 0 || row == 6) && col > 1 && col < 5) || (row == 3 && col > 2 && col < 6) || (col == 5 && row != 0 && row != 2 && row != 6))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ ***
+ *   *
+ *
+ * ***
+ *   *
+ *   *
+  ***
+=====================================================================================================================================================
+63. Write a C# Sharp program to display alphabet pattern like F with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || (row == 0 && col > 1 && col < 6) || (row == 3 && col > 1 && col < 5))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *****
+ *
+ *
+ ****
+ *
+ *
+ *
+=====================================================================================================================================================
+62. Write a C# Sharp program to display alphabet pattern like E with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || ((row == 0 || row == 6) && (col > 1 && col < 6)) || (row == 3 && col > 1 && col < 5))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ *****
+ *
+ *
+ ****
+ *
+ *
+ *****
+=====================================================================================================================================================
+61. Write a C# Sharp program to display alphabet pattern like D with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || ((row == 0 || row == 6) && (col > 1 && col < 5)) || (col == 5 && row != 0 && row != 6))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ ****
+ *   *
+ *   *
+ *   *
+ *   *
+ *   *
+ ****
+=====================================================================================================================================================
+60. Write a C# Sharp program to display alphabet pattern like C with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if ((col == 1 && (row != 0 && row != 6)) || ((row == 0 || row == 6) && (col > 1 && col < 5)) || (col == 5 && (row == 1 || row == 5)))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+
+  ***
+ *   *
+ *
+ *
+ *
+ *   *
+  ***
+=====================================================================================================================================================
+59. Write a C# Sharp program to display alphabet pattern like B with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (col == 1 || ((row == 0 || row == 3 || row == 6) && (col < 5 && col > 1)) || (col == 5 && (row != 0 && row != 3 && row != 6)))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+
+ ****
+ *   *
+ *   *
+ ****
+ *   *
+ *   *
+ ****
+=====================================================================================================================================================
+58. Write a C# Sharp program to display alphabet pattern like A with an asterisk.
+
+    using System;
+
+    namespace test
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int row, col;
+                for (row = 0; row <= 6; row++)
+                {
+                    for (col = 0; col <= 6; col++)
+                    {
+                    if (((col == 1 || col == 5) && row != 0) ||((row == 0 || row == 3) && (col > 1 && col < 5)))
+                        Console.Write("*");
+                    else
+                    Console.Write(" ");
+                    }
+                    Console.Write("\n");
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+
+output:
+ ***
+ *   *
+ *   *
+ *****
+ *   *
+ *   *
+ *   *
+=====================================================================================================================================================

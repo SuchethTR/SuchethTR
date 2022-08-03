@@ -1,0 +1,852 @@
+"Exercise 1:
+Classes Student + Teacher
+Objetive:
+Create a new project, and include in it the class Person that you just created.
+Create a class ""Student"" and another class ""Teacher"", both descendants of ""Person"".
+The class ""Student"" will have a public method ""GoToClasses"", which will write on screen ""I’m going to class.""
+The class ""Teacher"" will have a public method ""Explain"", which will show on screen ""Explanation begins"". Also, it will have a private attribute ""subject"", a string.
+The class Person must have a method ""SetAge (int n)"" which will indicate the value of their age (eg, 20 years old).
+The student will have a public method ""ShowAge"" which will write on the screen ""My age is: 20 years old"" (or the corresponding number).
+You must create another test class called ""StudentAndTeacherTest"" that will contain ""Main"" and:
+Create a Person and make it say hello
+Create a student, set his age to 21, tell him to Greet and display his age
+Create a teacher, 30 years old, ask him to say hello and then explain."
+
+using System;
+
+namespace Ex
+{
+    public class person
+    {
+        public void display()
+        {
+            Console.WriteLine("Hello");
+        }
+      
+    }
+        
+
+    public class Student
+    {
+            private int Age;
+            public void GoToClasses()
+            {
+                Console.WriteLine("I'm going to class");
+            }
+            public int ShowAge()
+            {
+            Console.WriteLine("My age is:"+Age+"years old");
+                return Age;
+            }
+            public void SetAge(int Age)
+            {
+            this.Age=Age;
+            }
+    }
+        public class Teacher
+        {
+            public void Explain(String subject)
+            {
+            //subject = "C#";
+            Console.WriteLine("30 years old");
+            Console.WriteLine("Hello!");
+             Console.WriteLine(subject+"Explanation begins");
+            }
+            
+        }
+        
+
+  
+
+    class StudentAndTeacher
+    {
+        
+        static void Main(string[] args)
+        {
+            person p = new person();
+            p.display();
+            Student st = new Student();
+            st.SetAge(21);
+            st.ShowAge();
+            st.GoToClasses();
+            Teacher t = new Teacher();
+            t.Explain("C#");
+
+
+        }
+    }
+}
+
+output:
+Hello
+My age is:21years old
+I'm going to class
+30 years old
+Hello!
+C#Explanation begins
+=======================================================================================================================
+"Exercise 2:
+Photo Album Tarea
+Objetive:
+Create a class ""PhotoAlbum"" with a private attribute ""numberOfPages.""
+It should also have a public method ""GetNumberOfPages"", which will return the number of pages.
+The default constructor will create an album with 16 pages. There will be an additional constructor, with which we can specify the number of pages we want in the album.
+Create a class ""BigPhotoAlbum"" whose constructor will create an album with 64 pages.
+Create a test class ""AlbumTest"" to create an album with its default constructor, one with 24 pages, a ""BigPhotoAlbum"" and show the number of pages that the three albums have."
+
+
+using System;
+
+public class PhotoAlbum
+{
+    private int numberOfPages;
+    public void GetNumberOfPages()
+    {
+        Console.WriteLine("PhotoAlbum  have "+numberOfPages+" pages");
+        
+    }
+    public PhotoAlbum(int n)
+    {
+        this.numberOfPages = n;
+    }
+}
+public class BigPhotoAlbum
+{
+    public BigPhotoAlbum(int m)
+    {
+        Console.WriteLine("BigPhotoAlbum have "+m+" pages");
+    }
+}
+public class AlbumTest
+{
+    static void Main()
+    {
+        int x = 24;
+        Console.WriteLine("AlbumTest have "+x+" pages");
+        PhotoAlbum p = new PhotoAlbum(16);
+        p.GetNumberOfPages();
+        BigPhotoAlbum b = new BigPhotoAlbum(64);
+        Console.ReadLine();
+    }
+}
+
+output:
+AlbumTest have 24 pages
+PhotoAlbum  have 16 pages
+BigPhotoAlbum have 64 pages
+
+=======================================================================================================================
+"Exercise 3: 
+Square
+Objetive:
+Complete the project named ""Shapes"" (january 8th), adding a class named ""Square"" to it. For each square, we will store its starting X and Y coordinates (the upper left corner, already stored as a ""Location"") and the length of its side.
+You will have to create:
+- A suitable constructor, to assign starting values to X, Y and the side. 
+- A Move method, to change X and Y coordinates.
+- A Scale method, to change its side (for example, a scale factor of 2 would turn a side of 3 into 6). 
+- A method ToString, to return a string with its data (for example: ""Corner (10,5), side 7"". 
+- Redefine ""GetPerimeter"" and ""GetArea"", so that they return the correct values 
+"
+
+=======================================================================================================================
+"Exercise 4:
+Create Muliple Objects of same class and access different methods ."
+
+using System;
+
+public class Animal
+{
+    public void dog()
+    {
+        Console.WriteLine("this is dog class :Bark");
+    }
+    public void cat()
+    {
+        Console.WriteLine("this is cat class :Meow");
+    }
+    public void cow()
+    {
+        Console.WriteLine("this is cow class :Moooo");
+    }
+    public void vyshnavi()
+    {
+        Console.WriteLine("this is Vyshnavi class :shit yaar");
+    }
+}
+class Test
+{
+    static void Main()
+    {
+        Animal d = new Animal();
+        d.dog();
+        Animal c = new Animal();
+        c.cat();
+        Animal o = new Animal();
+        o.cow();
+        Animal v = new Animal();
+        v.vyshnavi();   
+    }
+}
+
+output:
+this is dog class :Bark
+this is cat class :Meow
+this is cow class :Moooo
+this is Vyshnavi class :shit yaar
+=======================================================================================================================
+"Exercise 5:
+Create Muliple Objects of same class in different class with different access modifies. Public private  and internal."
+
+using System;
+
+public class Animal
+{
+    public void dog()
+    {
+        Console.WriteLine("this is dog class :Bark");
+    }
+    /*private void cat()//unable to call this method
+    {
+        Console.WriteLine("this is cat class :Meow");
+    }*/
+    internal void cow()
+    {
+        Console.WriteLine("this is cow class :Moooo");
+    }
+}
+class Test
+{
+    static void Main()
+    {
+        Animal d = new Animal();
+        d.dog();
+        //Animal c = new Animal();
+        //c.cat();
+        Animal o = new Animal();
+        o.cow();
+    }
+}
+
+output:
+this is dog class :Bark
+this is cow class :Moooo
+=======================================================================================================================
+"Exercise 6:
+Catalog
+Objetive:
+Create a project and the corresponding classes for a catalog utility:
+It will be able to store information about music files, films and computer programs.
+For each item, it must store: name, code, category and size. For films it must also hold the director, the main actor and the main actress. For music files, the singer and the length (in seconds).
+For music and movies it must have a method ""Play""  and also a method ""RetrieveInformation""
+Use inheritance . 
+In ""Main"", create arrays of each kind of object.
+"
+
+
+=======================================================================================================================
+"Exercise 7:
+Statistics
+Objetive:
+Create a statistical program which will allow the user to:
+- Add new data
+- See all data entered
+- Find an item, to see whether it has been entered or not
+- View a summary of statistics: amount of data, sum, average, maximum, minimum
+- Exit the program
+These options must appear as a menu. Each option will be chosen by a number or a letter.
+"
+
+using System;
+public class Statistics
+{
+    public static void Main()
+    {
+        float[] numbers = new float[10];
+        int count = 0;
+
+        float max = 0.0f, min = 0.0f, total = 0.0f, searchNumber = 0.0f;
+       
+
+        int option = 0;
+        do
+        {
+            Console.WriteLine("1. Add");
+            Console.WriteLine("2. Show");
+            Console.WriteLine("3. Search");
+            Console.WriteLine("4. Statistics");
+            Console.WriteLine("5. Exit");
+
+            option = Convert.ToInt32(Console.ReadLine());
+            if (option != 5)
+            {
+                switch (option)
+                {
+                    case 1: // Add
+
+                        Console.WriteLine("Enter a number: ");
+                        numbers[count] = Convert.ToSingle(Console.ReadLine());
+
+                        max = numbers[count];
+                        min = numbers[count];
+
+                        total += numbers[count];
+
+                        count++;
+
+                        if (max < numbers[count])
+                            max = numbers[count];
+
+                        if (min > numbers[count])
+                            min = numbers[count];
+
+                        break;
+                    case 2: // Show
+
+                        for (int i = 0; i < count; i++)
+                            Console.WriteLine("{0} ", numbers[i]);
+
+                        break;
+                    case 3: // Search
+
+                        Console.WriteLine("Enter a number for search: ");
+                        searchNumber = Convert.ToInt32(Console.ReadLine());
+
+                        for (int i = 0; i < count; i++)
+                        {
+                            if (searchNumber==numbers[i])
+                            
+                                Console.WriteLine("number found:{0}", numbers[i]);
+                            else
+                                Console.WriteLine("Not found");
+                            
+                        }
+                        break;
+                        case 4: // Statistics
+
+                        Console.WriteLine("Total data: {0}", count + 1);
+                        Console.WriteLine("Sum: {0}", total);
+                        Console.WriteLine("Average: {0}", total / (count + 1));
+                        Console.WriteLine("Min number: {0}", min);
+                        Console.WriteLine("Max number: {0}", max);
+
+                        break;
+                    default:
+
+                        Console.WriteLine("Error, option 1-5");
+                        break;
+                }
+            }
+        }
+        while (option != 5);
+    }
+}
+
+output:
+1. Add
+2. Show
+3. Search
+4. Statistics
+5. Exit
+1
+Enter a number:
+1
+1. Add
+2. Show
+3. Search
+4. Statistics
+5. Exit
+1
+Enter a number:
+2
+1. Add
+2. Show
+3. Search
+4. Statistics
+5. Exit
+2
+1
+2
+1. Add
+2. Show
+3. Search
+4. Statistics
+5. Exit
+3
+Enter a number for search:
+1
+number found:1
+1. Add
+2. Show
+3. Search
+4. Statistics
+5. Exit
+4
+Total data: 3
+Sum: 3
+Average: 1
+Min number: 0
+Max number: 2
+1. Add
+2. Show
+3. Search
+4. Statistics
+5. Exit
+=======================================================================================================================
+"Exercise 8:
+Rectangle
+Objetive:
+Write a C# program to ask the user for his/her name and a size, and display a hollow rectangle with it:
+Enter your name: Yo
+Enter size: 4
+YoYoYoYo
+Yo____Yo
+Yo____Yo
+YoYoYoYo
+(note: the underscores _ should not be displayed on screen; you program should display blank spaces inside the rectangle)"
+
+using System;
+class Nested_Loops_Hollow_Rectangles
+{
+    public static void Main()
+    {
+        Console.WriteLine("Welcome to the HollowRectanglePrinter Program.");
+        Console.WriteLine("Enter your name:");
+        string name = Console.ReadLine();
+        Console.WriteLine("Enter the size:");
+        int n = int.Parse(Console.ReadLine());
+        Console.WriteLine("Here you go:");
+        if (n > 0 )
+        {
+            for (int i = 1; i<=n; i++)
+            {
+                for (int j = 1; j <=n; j++)
+                {
+                    if ((i==1||i==n) || (j==1 ||j==n))
+                    {
+                        Console.Write("\t"+name);
+                    }
+                    else
+                    {
+                        Console.Write("  ");
+                    } 
+                }
+                Console.WriteLine();
+            }
+        }
+        Console.ReadKey();
+    }
+}
+
+output:
+Welcome to the HollowRectanglePrinter Program.
+Enter your name:
+su
+Enter the size:
+4
+Here you go:
+        su      su      su      su
+        su     			su
+        su      		su
+        su      su      su      su
+-----------------------------------------------------------------------------------------------------------------------
+
+"Exercise 8:
+Triangle
+Objetive:
+Write a C# program to ask the user for his/her name and display a triangle with it, starting with 1 letter and growing until it has the full length:
+Enter your name: Juan
+J
+Ju
+Jua
+Juan
+Minium name charcaters should be 15. use first and last name woth space in between."
+
+
+using System;
+class Tri
+{
+    public static void Main()
+    {
+        string name;
+        Console.WriteLine("Enter your name:");
+        name = Console.ReadLine();
+        char[] str = name.ToCharArray();
+        for (int i = 0; str[i]!=0; i++)
+        {
+            for (int j =0; j<=i; j++)
+                    
+            {
+                Console.Write(str[j]);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+output:
+Enter your name:
+sucheth
+s
+su
+suc
+such
+suche
+suchet
+sucheth
+=======================================================================================================================
+"Exercise 9:
+Books database
+Objetive:
+Create a small database, which will be used to store data about books. For a certain book, we want to keep the following information:
+Title
+Author
+The program must be able to store 1000 books, and the user will be allowed to:
+Add data for one book
+Display all the entered books (just title and author, in the same line)
+Search for the book(s) with a certain title
+Delete a book at a known position (for example, book number 6)
+Exit the program"
+
+using System;
+public class BooksDatabase
+{
+    struct book
+    {
+        public string title;
+        public string author;
+    }
+
+    public static void Main()
+    {
+        int capacity = 1000;
+        book[] books = new book[capacity];
+        bool repeat = true;
+        string option;
+        int amount = 0;
+        string search;
+        bool found;
+
+        do
+        {
+            Console.WriteLine();
+            Console.WriteLine("Books database");
+            Console.WriteLine();
+            Console.WriteLine("1- Add a new book");
+            Console.WriteLine("2- Display all books");
+            Console.WriteLine("3- Exact search for any book");
+            Console.WriteLine("4- Partial search");
+            Console.WriteLine("5- Delete a book");
+            Console.WriteLine("0- Exit");
+            Console.Write("Enter an option: ");
+            option = Console.ReadLine();
+
+            switch (option)
+            {
+                case "1": // Add a new book
+                    if (amount < capacity)
+                    {
+                        Console.WriteLine("Enter data for book {0}", amount + 1);
+                        Console.Write("Enter the name of the book: ");
+                        books[amount].title = Console.ReadLine();
+                        Console.Write("Enter the author: ");
+                        books[amount].author = Console.ReadLine();
+                        amount++;
+                        Console.WriteLine();
+                    }
+                    else
+                        Console.WriteLine("Database full");
+                    break;
+
+
+                case "2":  // Display all books
+                    if (amount == 0)
+                    {
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        for (int i = 0; i < amount; i++)
+                            Console.WriteLine("{0}: Title = {1},  Author = {2}",
+                            i + 1, books[i].title, books[i].author);
+                        Console.WriteLine();
+                    }
+                    break;
+                case "3":  // Exact search
+                    Console.WriteLine("Enter the name of the book");
+                    search = Console.ReadLine();
+                    found = false;
+
+                    for (int i = 0; i < amount; i++)
+                        if (books[i].title == search)
+                        {
+                            Console.WriteLine("Book {0} found", books[i].title);
+                            found = true;
+                        }
+
+                    if (!found)
+                        Console.WriteLine("Not found!");
+                    Console.WriteLine();
+                    break;
+                case "4":  // Partial search
+                    Console.WriteLine("Enter the search string");
+                    search = Console.ReadLine();
+                    found = false;
+
+                    for (int i = 0; i < amount; i++)
+                    {
+                        if (books[i].title.ToUpper().Contains(search.ToUpper())&&
+                            books[i].author.ToUpper().Contains(search.ToUpper()))
+                        {
+                        Console.WriteLine("{0} found in {1}", search, books[i].title);
+                        found = true;
+                    }
+            }
+
+                    Console.WriteLine();
+
+                    if (!found)
+                        Console.WriteLine("Not found!");
+                    break;
+                case "5":  // Delete
+                    if (amount == 0)
+                        Console.WriteLine("No data to delete");
+                    else
+                    {
+                        Console.WriteLine(
+                        "Enter the number of book to delete (1 to {0})", amount);
+                        int posToDelete =
+                        Convert.ToInt32(Console.ReadLine()) - 1;
+                        for (int i = posToDelete; i < amount - 1; i++)
+                            books[i] = books[i + 1];
+                        amount--;
+                    }
+                    break;
+                case "0":  // End
+                    repeat = false;
+                    break;
+                default:
+                    Console.WriteLine();
+                    Console.WriteLine("Wrong option. Please re-enter\n");
+                    break;
+            }
+        }
+        while (repeat);
+    }
+}
+
+output:
+
+Books database
+
+1- Add a new book
+2- Display all books
+3- Exact search for any book
+4- Partial search
+5- Delete a book
+0- Exit
+Enter an option: 1
+Enter data for book 1
+Enter the name of the book: my life
+Enter the author: sucheth
+
+
+Books database
+
+1- Add a new book
+2- Display all books
+3- Exact search for any book
+4- Partial search
+5- Delete a book
+0- Exit
+Enter an option: 1
+Enter data for book 2
+Enter the name of the book: thug life
+Enter the author: vyshnavi
+
+
+Books database
+
+1- Add a new book
+2- Display all books
+3- Exact search for any book
+4- Partial search
+5- Delete a book
+0- Exit
+Enter an option: 2
+1: Title = my life,  Author = sucheth
+2: Title = thug life,  Author = vyshnavi
+
+
+Books database
+
+1- Add a new book
+2- Display all books
+3- Exact search for any book
+4- Partial search
+5- Delete a book
+0- Exit
+Enter an option: 3
+Enter the name of the book
+my life
+Book my life found
+
+
+Books database
+
+1- Add a new book
+2- Display all books
+3- Exact search for any book
+4- Partial search
+5- Delete a book
+0- Exit
+Enter an option: 4
+Enter the search string
+life
+
+Not found!
+
+Books database
+
+1- Add a new book
+2- Display all books
+3- Exact search for any book
+4- Partial search
+5- Delete a book
+0- Exit
+Enter an option: 4
+Enter the search string
+thug life
+
+Not found!
+
+Books database
+
+1- Add a new book
+2- Display all books
+3- Exact search for any book
+4- Partial search
+5- Delete a book
+0- Exit
+Enter an option: 3
+Enter the name of the book
+thug ife
+Not found!
+
+
+Books database
+
+1- Add a new book
+2- Display all books
+3- Exact search for any book
+4- Partial search
+5- Delete a book
+0- Exit
+Enter an option: 3
+Enter the name of the book
+thug life
+Book thug life found
+
+
+Books database
+
+1- Add a new book
+2- Display all books
+3- Exact search for any book
+4- Partial search
+5- Delete a book
+0- Exit
+Enter an option: 2
+1: Title = my life,  Author = sucheth
+2: Title = thug life,  Author = vyshnavi
+
+
+Books database
+
+1- Add a new book
+2- Display all books
+3- Exact search for any book
+4- Partial search
+5- Delete a book
+0- Exit
+Enter an option:
+
+
+=======================================================================================================================
+"Exercise 10: Create a constructor
+Goal
+Create a constructor on the base type Atom that accepts an integer named protons and an integer electrons. The constructor should set the values to the associated properties Protons and Electrons.
+Implement a derived type Hydrogen that inherits from Atom and provides the correct arguments for protons and electrons to the base constructor."
+
+using System;
+public class Atom
+{
+
+    public Atom(int protons, int electrons)
+    {
+        Protons = protons;
+        Electrons = electrons;
+        Console.WriteLine("hydrogen protons:{0} electons:{1}", protons,electrons);
+    }
+
+    public int Protons { get; set; }
+
+    public int Electrons { get; set; }
+}
+
+
+public class Hydrogen : Atom
+{
+    public Hydrogen() : base(1, 1) 
+    {
+        
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        var Nucleus = new Hydrogen();
+
+    }
+}
+output:
+hydrogen protons:1 electons:1
+=======================================================================================================================
+Exercise 11: Create a program to demonstarte Static method and static variable changing values functionality.
+
+using System;
+namespace staticexample
+{
+class Program
+{
+public static int i;
+public static void display()
+{
+i=10;
+Console.WriteLine(i);
+}
+public void demo()
+{
+int j=20;
+Console.WriteLine(j);
+}
+
+
+static void Main(string[] args)
+{
+Program obj = new Program();
+Program.display();
+obj.demo();
+Console.Read();
+}
+}
+}
+
+
+
+OUTPUT:
+10
+20
+=======================================================================================================================
+

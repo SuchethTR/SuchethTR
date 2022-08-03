@@ -1,0 +1,771 @@
+using System;
+namespace AccessSpecifiers
+{
+    class PublicTest
+    {
+        string firstname = "Suchethkumar", lastname = "T R",company_name="Zensar";
+        int age = 24;
+        public static void Msg(string msg)
+        {
+            Console.WriteLine("Hello " + msg);
+        }
+        public void Display_details()
+        {
+            Console.WriteLine("FirstName: "+firstname);
+            Console.WriteLine("Second Name: "+lastname);
+            Console.WriteLine("Age: "+age);
+            Console.WriteLine("Organisation: "+company_name);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            PublicTest pt = new PublicTest();
+            PublicTest.Msg("Suchetakumar T R");
+            pt.Display_details();
+
+        }
+    }
+}
+=======================================================================================================================
+using System;
+namespace AccessSpecifiers
+{
+    class PrivateTest
+    {
+        private string firstname = "Suchethkumar", lastname = "T R",company_name="Zensar";
+        private int age = 24;
+        public static void Msg(string msg)
+        {
+            Console.WriteLine("Hello " + msg);
+        }
+       public void Display_details()
+        {
+            Console.WriteLine("FirstName: "+firstname);
+            Console.WriteLine("Second Name: "+lastname);
+            Console.WriteLine("Age: "+age);
+            Console.WriteLine("Organisation: "+company_name);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            PrivateTest pt = new PrivateTest();
+            PrivateTest.Msg("Suchetakumar T R");
+            pt.Display_details();
+
+        }
+    }
+}
+=======================================================================================================================
+using System;
+namespace AccessSpecifiers
+{
+    class InternalTest
+    {
+        internal string firstname = "Suchethkumar", lastname = "T R",company_name="Zensar";
+       internal int age = 24;
+        internal void Msg(string msg)
+        {
+            Console.WriteLine("Hello " + msg);
+        }
+       internal void Display_details()
+        {
+            Console.WriteLine("FirstName: "+firstname);
+            Console.WriteLine("Second Name: "+lastname);
+            Console.WriteLine("Age: "+age);
+            Console.WriteLine("Organisation: "+company_name);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            InternalTest pt = new InternalTest();
+            pt.Msg("Suchetakumar T R");
+            pt.Display_details();
+
+        }
+    }
+}
+=======================================================================================================================
+using System;
+namespace AccessSpecifiers
+{
+    class ProtectedTest
+    {
+        protected string firstname = "Suchethkumar", lastname = "T R",company_name="Zensar";
+       protected int age = 24;
+        public void Msg(string msg)
+        {
+            Console.WriteLine("Hello " + msg);
+        }
+       public void Display_details()
+        {
+            Console.WriteLine("FirstName: "+firstname);
+            Console.WriteLine("Second Name: "+lastname);
+            Console.WriteLine("Age: "+age);
+            Console.WriteLine("Organisation: "+company_name);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ProtectedTest pt = new ProtectedTest();
+            pt.Msg("Suchetakumar T R");
+            pt.Display_details();
+
+        }
+    }
+}
+=======================================================================================================================
+using System;
+namespace AccessSpecifiers
+{
+    class InternalProtectedTest
+    {
+        internal protected string firstname = "Suchethkumar", lastname = "T R",company_name="Zensar";
+       internal protected int age = 24;
+        public void Msg(string msg)
+        {
+            Console.WriteLine("Hello " + msg);
+        }
+       public void Display_details()
+        {
+            Console.WriteLine("FirstName: "+firstname);
+            Console.WriteLine("Second Name: "+lastname);
+            Console.WriteLine("Age: "+age);
+            Console.WriteLine("Organisation: "+company_name);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            InternalProtectedTest pt = new InternalProtectedTest();
+            pt.Msg("Suchetakumar T R");
+            pt.Display_details();
+
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+1. Write a C# program to accept a string from keyboard and print it
+using System;
+    class program
+    {
+        static void Main()
+        {
+            string str;
+            Console.WriteLine("Enter the string:");
+            str = Console.ReadLine();
+            Console.WriteLine(str);
+        }
+
+    }
+
+output:
+---------------------------------------------------------------------------------------------------
+2. Write a C# program to Separate the individual characters from a string
+using System;
+    class program
+    {
+        public static void Main()
+        {
+            string str;
+            Console.WriteLine("Enter the string:");
+            str = Console.ReadLine();
+            char[] ch = str.ToCharArray();
+            Console.WriteLine("character array:");
+            foreach(char i in ch)
+            {   
+                Console.WriteLine(i);
+            }
+        }
+
+    }
+    
+output:
+Enter the string:
+sucheth
+sucheth
+character array:
+s
+u
+c
+h
+e
+t
+h
+---------------------------------------------------------------------------------------------------
+3. Write a C# program to find the length of a string without using library function
+    
+using System;
+    class program
+    {
+        public static void Main()
+        {
+            string str;
+            Console.WriteLine("Enter the string:");
+            str = Console.ReadLine();
+            char[] ch = str.ToCharArray();
+            Console.WriteLine("String length:"+ch.Length);
+        }
+
+    }
+    
+output:
+Enter the string:
+sucheth
+String length:7
+---------------------------------------------------------------------------------------------------
+4. Write a C# program to count a total number of alphabets, digits and special characters in a string
+
+using System;
+    class program
+    {
+        public static void Main()
+        {
+            string str;
+            int al=0,di=0,sp=0,l=0,i=0;
+            Console.WriteLine("Enter the string:");
+            str = Console.ReadLine();
+            l = str.Length;
+            while(i<l)
+                {
+            if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+            {
+                al++;
+            }
+            else if (str[i] >= '0' && str[i] <= '9')
+            {
+                di++;
+            }
+            else
+            {
+                sp++;
+            }
+
+            i++;
+        }
+
+        Console.Write("Number of Alphabets in the string is : {0}\n", al);
+        Console.Write("Number of Digits in the string is : {0}\n", di);
+        Console.Write("Number of Special characters in the string is : {0}\n\n", sp);
+
+    }
+
+}
+    
+output:
+Enter the string:
+$ucheth@18
+Number of Alphabets in the string is : 6
+Number of Digits in the string is : 2
+Number of Special characters in the string is : 2
+---------------------------------------------------------------------------------------------------
+5. Write a C# program to print individual characters of the string in reverse order
+
+using System;
+    class program
+    {
+        public static void Main()
+        {
+        string str;
+        Console.WriteLine("Enter the string:");
+        str = Console.ReadLine();
+        char[] ch = str.ToCharArray();
+        Array.Reverse(ch);
+        foreach(char c in ch)
+        {
+            Console.WriteLine(c);
+        }
+    	}
+
+    }
+    
+output:
+Enter the string:
+sucheth
+h
+t
+e
+h
+c
+u
+s
+---------------------------------------------------------------------------------------------------
+6. Write a C# program to copy one string to another string
+using System;
+    class program
+    {
+        public static void Main()
+        {
+        string s1 = "Hello ";
+        string s2 = string.Copy(s1);
+        Console.WriteLine(s1);
+        Console.WriteLine(s2);
+    }
+
+}
+    
+output:
+Hello
+Hello
+---------------------------------------------------------------------------------------------------
+7. Write a C# program to count a total number of vowel or consonant in a string
+
+using System;
+    class program
+    {
+        public static void Main()
+        {
+        string str;int count1 = 0, count2 = 0;
+        Console.WriteLine("Enter the string:");
+        str = Console.ReadLine();
+        str = str.ToUpper();
+        char[] ch = str.ToCharArray();
+        for(int i=0;i<ch.Length;i++)
+        {
+            if(ch[i]=='A'|| ch[i] == 'E' || ch[i] == 'I' || ch[i] == 'O' || ch[i] == 'U')
+            {
+                count1++;
+            }
+            else
+            {
+                count2++;
+            }
+            
+        }
+        Console.WriteLine("Vowels count:"+count1);
+        Console.WriteLine("consonant count:"+count2);
+        Console.ReadKey();
+    }
+
+}
+    
+output:
+Enter the string:
+sucheth
+Vowels count:2
+consonant count:5
+---------------------------------------------------------------------------------------------------
+8. Write a C# program to find maximum occurring character in a string
+
+using System;
+class program
+{
+    static int ASCII_SIZE = 256;
+    public static void Main()
+    {
+        string str;
+        Console.WriteLine("Enter the string:");
+        str = Console.ReadLine();
+        int l = str.Length;
+        int[] ch = new int[ASCII_SIZE];
+        for (int i = 0; i < l; i++)
+        {
+            ch[str[i]]++;
+        }
+        int max = -1;
+        char result = ' ';
+        for (int i = 0; i < l; i++)
+        {
+            if (max < ch[str[i]])
+            {
+                max = ch[str[i]];
+                result = str[i];
+            }
+        }
+        Console.Write("Max occurring character is " + result);
+    }
+}
+
+output:
+Enter the string:
+suchethkumar
+Max occurring character is u
+---------------------------------------------------------------------------------------------------
+9. Write a C# program to read a string through the keyboard and sort it using bubble sort
+
+using System;
+class program
+{
+    static int ASCII_SIZE = 256;
+    public static void Main()
+    {
+        string temp;int n;
+        Console.WriteLine("Enter the  number of strings:");
+        n = Convert.ToInt32(Console.ReadLine());
+        string[] str = new string[n];
+        Console.WriteLine("Enter the string:");
+        for (int i = 0; i < str.Length; i++)
+        {
+            str[i] = Console.ReadLine();
+        }
+        int len = str.Length;
+        for (int i = 0; i < len; i++)
+        {
+            for (int j = 0; j < len - 1; j++)
+            {
+                if (str[j].CompareTo(str[j + 1]) > 0)
+                {
+                    temp = str[j];
+                    str[j] = str[j + 1];
+                    str[j + 1] = temp;
+                }
+            }
+        }
+        Console.Write("\n\nAfter sorting the array appears like : \n");
+        for (int i = 0; i < len; i++)
+        {
+            Console.WriteLine(str[i] + " ");
+        }
+
+        Console.ReadLine();
+
+    }
+}
+
+output:
+Enter the  number of strings:
+3
+Enter the string:
+sucheth
+manoj
+ravi
+
+
+After sorting the array appears like :
+manoj
+ravi
+sucheth
+---------------------------------------------------------------------------------------------------
+10. Write a C# program to sort a string array in ascending order
+
+using System;
+class program
+{
+    
+    public static void Main()
+    {
+        int n;
+        Console.WriteLine("Enter the  number of strings:");
+        n = Convert.ToInt32(Console.ReadLine());
+        string[] str = new string[n];
+        Console.WriteLine("Enter the string:");
+        for (int i = 0; i < n; i++)
+        {
+            str[i] = Console.ReadLine();
+        }
+        Array.Sort(str);
+        Console.Write("\n\nAfter sorting the array appears like : \n");
+        foreach(string i in str)
+        {
+            Console.WriteLine(i);
+        }
+
+        Console.ReadLine();
+
+    }
+}
+
+output:
+Enter the  number of strings:
+5
+Enter the string:
+sucheth
+manoj
+bhoom
+lava
+lucy
+
+
+After sorting the array appears like :
+bhoom
+lava
+lucy
+manoj
+sucheth
+---------------------------------------------------------------------------------------------------
+11. Write a C# program to compare (less than, greater than, equal to ) two substrings
+
+using System;
+class program
+{
+    
+    public static void Main()
+    {
+
+        String str1, str2, str;
+        int result;
+        Console.WriteLine("Enter the two strings: ");
+        str1 = Console.ReadLine();
+        str2 = Console.ReadLine();
+        result = String.Compare(str1, str2);
+        str = ((result < 0) ? "less than" : ((result > 0) ? "greater than" : "equal to"));
+        Console.Write("Substring '{0}' in '{1}' is ", str1.Substring(2, 2), str1);
+        Console.Write("{0} ", str);
+        Console.WriteLine("substring '{0}' in '{1}'.", str2.Substring(2, 2), str2);
+    }
+}
+
+output:
+Enter the two strings:
+sucheth
+sucheth
+Substring 'ch' in 'sucheth' is equal to substring 'ch' in 'sucheth'.
+---------------------------------------------------------------------------------------------------
+12. Write a C# program to find the number of times a substring appears in the given string
+
+using System;
+class program
+{
+    
+    public static void Main()
+    {
+
+        string str1;
+        string findstring;
+        int strt = 0;
+        int cnt = -1;
+        int idx = -1;
+        Console.Write("enter the original string : ");
+        str1 = Console.ReadLine();
+        Console.Write("enter the string to be searched for : ");
+        findstring = Console.ReadLine();
+        while (strt != -1)
+        {
+            strt = str1.IndexOf(findstring, idx + 1);
+            cnt += 1;
+            idx = strt;
+        }
+        Console.Write("The string '{0}' occurs " + cnt + " times.\n", findstring);
+    }
+}
+
+output:
+enter the original string : sucheth
+enter the string to be searched for : ch
+The string 'ch' occurs 1 times.
+---------------------------------------------------------------------------------------------------
+13. Write a C# program to check the username and password
+
+using System;
+class program
+{
+    
+    public static void Main()
+    {
+        string username, password;
+        int ctr = 0;
+        do
+        {
+            Console.Write("Input a username: ");
+            username = Console.ReadLine();
+
+            Console.Write("Input a password: ");
+            password = Console.ReadLine();
+
+            if (username != "abcd" || password != "1234")
+                ctr++;
+            else
+                ctr = 1;
+
+        }
+        while ((username != "abcd" || password != "1234") && (ctr != 3));
+
+        if (ctr == 3)
+            Console.Write("\nLogin attemp three or more times. Try later!\n\n");
+        else
+            Console.Write("\nThe password entered successfully!\n\n");
+    }
+}
+
+output:
+Input a username: abcd
+Input a password: 1234
+
+The password entered successfully!
+---------------------------------------------------------------------------------------------------
+14. Write a C# program to read a sentence and replace lowercase characters by uppercase and vice-versa
+using System;
+class program
+{
+    
+    public static void Main()
+    {
+        string str1;
+        char[] arr1;
+        int l, i;
+        l = 0;
+        char ch;
+        Console.Write("\n\nReplace lowercase characters by uppercase and vice-versa :\n");
+        Console.Write("enter the string : ");
+        str1 = Console.ReadLine();
+        l = str1.Length;
+        arr1 = str1.ToCharArray(0, l);  
+        Console.Write("\nAfter conversion, the string is : ");
+        for (i = 0; i < l; i++)
+        {
+            ch = arr1[i];
+            if (Char.IsLower(ch)) 
+                Console.Write(Char.ToUpper(ch)); 
+            else
+                Console.Write(Char.ToLower(ch)); 
+        }
+        Console.Write("\n\n");
+    }
+}
+
+
+
+output:
+Replace lowercase characters by uppercase and vice-versa :
+enter the string : sucheth
+
+After conversion, the string is : SUCHETH
+---------------------------------------------------------------------------------------------------
+15. Write a C# program to check whether a given substring is present in the given string
+using System;
+class program
+{
+    
+    public static void Main()
+    {
+        string str1, str2;
+        bool m;
+
+        Console.Write("\n\nCheck whether a given substring is present in the given strig :\n");
+        Console.Write("Enter the string : ");
+        str1 = Console.ReadLine();
+
+        Console.Write("Enter the substring to  search : ");
+        str2 = Console.ReadLine();
+        m = str1.Contains(str2); 
+        if (m) 
+            Console.Write("The substring exists in the string.\n\n");
+        else
+            Console.Write("The substring is not exists in the string. \n\n");
+    }
+}
+
+output:
+Check whether a given substring is present in the given strig :
+Enter the string : sucheth
+Enter the substring to  search : ku
+The substring is not exists in the string.
+---------------------------------------------------------------------------------------------------
+1. Write a program to handle NullReferenceException and fix the error message "Object reference not set to an instance of an object."
+This exception occurs when there is reference to an object but object is empty or null. For e.g. declared string text = null; and you perform any operation this string.
+2. Write a program to handle  System.DivideByZeroException - This exception occurs when there is error generated by dividing a number with zero.
+3.  Write a program to handle System.InvalidCastException - This exception occurs when there is error generated by invalid typecasting.
+4.  Write a program to handle  System.IO.IOException -This exception occurs when there is Input Output errors.
+5.  Write a program to handle  System.FieldAccessException -This exception occurs when there is error generated by invalid private or protected field access.
+6. Write a program to handle System.IndexOutOfRangeException - This exception occurs when there is errors generated when a method refers to an array index out of range.
+7. Write a program to handle System.ArrayTypeMismatchException - This exception occurs when there is errors generated when type is mismatched with the array type.
+
+
+using System;
+using System.IO;
+class program
+{
+    int result;
+    public void division(int num1, int num2)
+    {
+
+        try
+        {
+            result = num1 / num2;
+        }
+        catch (DivideByZeroException e)
+        {
+            Console.WriteLine("Exception caught: {0}", e);
+        }
+        finally
+        {
+            Console.WriteLine("Result: {0}", result);
+        }
+
+    }
+}
+class Example
+{ 
+        public static void Main()
+        {
+        program p = new program();
+        p.division(25,0);
+        int intNum = 786;
+        object Ob;
+        Ob = intNum;
+        int[] arr = new int[1] ;
+        string str = null;
+        try
+        {
+            if (str.Length > 0)
+            {
+                Console.WriteLine(str);
+            }
+        }
+        catch(NullReferenceException e)
+        {
+            Console.WriteLine(e);
+        }
+        try
+        {
+            Console.WriteLine("Un-boxing a integer number");
+            int num = (short)Ob;
+            arr[2] = 5;
+            
+        }
+        catch (InvalidCastException exp)
+        {
+            Console.WriteLine(exp.Message);
+        }
+        catch(System.IndexOutOfRangeException e)
+        {
+            Console.WriteLine(e);
+        }
+        catch (SystemException e)
+        {
+            Console.WriteLine(e);
+        }
+        try
+        {
+            string[] myStringArray = new string[10];
+            myStringArray.SetValue("Jones", 0);
+            myStringArray.SetValue("John", 1);
+
+            int[] myIntArray = new int[10];
+           Array.Copy(myStringArray,0,myIntArray,0,5);
+        }
+        catch (ArrayTypeMismatchException e)
+        {
+            Console.WriteLine("The Exception is :" + e);
+        }
+        try
+        {
+            File.Open("C:\\nope.txt", FileMode.Open);
+        }
+        catch (IOException)
+        {
+            Console.WriteLine("IO");
+        }
+        Console.ReadLine();
+    }
+}
+
+output:
+
+Exception caught: System.DivideByZeroException: Attempted to divide by zero.
+   at program.division(Int32 num1, Int32 num2) in C:\Users\ST65857\source\repos\ConsoleApp1\ConsoleApp1\Program.cs:line 11
+Result: 0
+
+C:\Users\ST65857\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.exe (process 8720) exited with code -1.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+
+

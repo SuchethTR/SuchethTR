@@ -1,0 +1,79 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.IO;
+using System.Threading;
+using NUnit.Framework;
+namespace Timesheet
+{
+    class Sample
+    {
+        public string username, password;
+        IWebDriver driver = new ChromeDriver();
+        [SetUp]
+        public void Initialize()
+        {
+            driver.Navigate().GoToUrl("https://timesheet.zensar.com/login");
+            driver.Manage().Window.Maximize();
+            Thread.Sleep(1000);
+        }
+
+        [Test]
+        public void ExecuteTest()
+        {
+            StreamReader read = new StreamReader(@"d:\login.txt");
+            string line = read.ReadLine();
+            string[] values = line.Split('|');
+            username = values[0];
+            password = values[1];
+            driver.FindElement(By.Id("userName")).SendKeys(username);
+            Thread.Sleep(1000);
+            Console.Write("username value is entered");
+            driver.FindElement(By.Name("password")).SendKeys(password);
+            Console.Write("password is entered");
+            driver.FindElement(By.XPath("//button[text()='Sign In ']")).Click();
+            Thread.Sleep(10000);
+            /*Console.Write("login button is clicked");
+            IWebElement head = driver.FindElement(By.TagName("h2"));
+            Assert.IsTrue(head.Text.Contains("Timesheet Entry"));
+            Console.WriteLine("Reached Timesheet Entry page");
+            Thread.Sleep(3000);*/
+            driver.FindElement(By.XPath("//button[text()='Close']")).Click();
+            Console.WriteLine("close button is clicked");
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//button[text()='Add Task']")).Click();
+            Thread.Sleep(1000);
+            Console.WriteLine("Add task clicked");
+            driver.FindElement(By.XPath("//option[text()='Select Project']")).Click();
+            Thread.Sleep(1000);
+            Console.WriteLine("proj clicked");
+            driver.FindElement(By.XPath("//option[text()='ADMINISTRATION PRACTICE POOL PROJECT ']")).Click();
+            Console.WriteLine("Selected project from drop down");
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//option[text()='Select Task']")).Click();
+            Thread.Sleep(1000);
+            Console.WriteLine("task clicked");
+            driver.FindElement(By.XPath("//option[text()='TRAINING REVIEW AND CONTROL']")).Click();
+            Thread.Sleep(1000);
+            Console.WriteLine("training clicked");
+            driver.FindElement(By.Id("projectTaskEndDate")).Click();
+            Thread.Sleep(1000);
+            Console.WriteLine("Date is click");
+            driver.FindElement(By.XPath("//button[text()='Add Task']")).Click();
+            Thread.Sleep(1000);
+            Console.WriteLine("add button is clicked");
+            driver.FindElement(By.Id("yes-button")).Click();
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//span[text()='Logout']")).Click();
+            Console.WriteLine("logout is clicked");
+            Thread.Sleep(1000);
+
+        }
+        [TearDown]
+        public void EndTest()
+        {
+            driver.Close();
+        }
+
+    }
+}

@@ -1,0 +1,184 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.IO;
+using System.Threading;
+using NUnit.Framework;
+
+namespace Project
+{
+
+    class Program
+    {
+
+        IWebDriver driver = new ChromeDriver();
+        public string username1, password1, username2, password2, username3, password3;
+        // public string  date;
+        [SetUp]
+        public void Initialize()
+        {
+            driver.Navigate().GoToUrl("https://zenloungeplus.zensar.com/");
+            driver.Manage().Window.Maximize();
+            Thread.Sleep(1000);
+        }
+        [Test]
+        public void TestExecute()
+        {
+            StreamReader reader = new StreamReader(@"D:\zenlounge\zen_login.txt");
+            string line = reader.ReadLine();
+            string[] values = line.Split('|');
+            username1 = values[0];
+            password1 = values[1];
+            IWebElement body = driver.FindElement(By.TagName("h1"));
+            Assert.IsTrue(body.Text.Contains("Welcome to your one time login for all Zensar applications"));
+            Console.WriteLine("Reached login page");
+            driver.FindElement(By.Id("username")).Clear();
+            driver.FindElement(By.Id("username")).SendKeys(username1);
+            Thread.Sleep(1000);
+            Console.WriteLine("username is entered");
+            driver.FindElement(By.Id("password")).Clear();
+            driver.FindElement(By.Id("password")).SendKeys(password1);
+            Thread.Sleep(1000);
+            Console.WriteLine("password is entered");
+            driver.FindElement(By.Name("submit")).Click();
+            Thread.Sleep(3000);
+            driver.FindElement(By.Id("closeId")).Click();
+            Thread.Sleep(1000);
+            Console.WriteLine("close button is clicked");
+            IWebElement pro = driver.FindElement(By.Id("userNameDiv"));
+            Assert.IsTrue(pro.Text.Contains("Suchetakumar T R"));
+            Console.WriteLine("Reached home profile page");
+            driver.FindElement(By.XPath("/html/body/div[3]/section/div/div/div[3]/div/div[1]/section/div/div[2]/div/div/div[3]/a")).Click();
+            Thread.Sleep(10000);
+            Console.WriteLine("view peofile hyperlink is clicked");
+            driver.FindElement(By.XPath("/html/body/div[1]/div/div/nav/div[3]/div/div/ul/li[4]/a/div/div")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("clicked on application toggle");
+            driver.FindElement(By.XPath("/html/body/div[1]/div/div/nav/div[3]/div/div/ul/li[4]/ul/div/li[2]/a")).Click();
+            Thread.Sleep(5000);
+            Console.WriteLine("clicked on Associate Self-Service option");
+            driver.SwitchTo().Window(driver.WindowHandles[1]);//new window is started loading
+            StreamReader rd = new StreamReader(@"D:\zenlounge\associate_login.txt");
+            string ln = rd.ReadLine();
+            string[] value = ln.Split('|');
+            username2 = value[0];
+            password2 = value[1];
+            driver.FindElement(By.Id("unamebean")).SendKeys(username2);
+            Thread.Sleep(1000);
+            driver.FindElement(By.Id("pwdbean")).SendKeys(password2);
+            Thread.Sleep(1000);
+            driver.FindElement(By.Id("SubmitButton")).Click();
+            Thread.Sleep(3000);
+            driver.FindElement(By.XPath("/html/body/form/span[2]/div/div[3]/div[1]/div[2]/table[2]/tbody/tr/td/div/table/tbody/tr/td[1]/table/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/ul/li/a")).Click();
+            Thread.Sleep(3000);
+            Console.WriteLine("Zensar Associate Self Service is clicked");
+            driver.FindElement(By.XPath("/html/body/form/span[2]/div/div[3]/div[1]/div[2]/table[2]/tbody/tr/td/div/table/tbody/tr/td[1]/table/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/ul/li/ul/li[1]/a")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("All Actions Awaiting Your Attention is clicked");
+            driver.FindElement(By.Id("N3:EditEnabled:0")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("update is clicked");
+            driver.FindElement(By.XPath("/html/body/form/span[2]/div/div[3]/div[2]/table/tbody/tr[1]/td[2]/table/tbody/tr/td[2]/button")).Click();
+            Thread.Sleep(1000);
+            Console.WriteLine("No button is clicked");
+            driver.Navigate().Back();
+            driver.Navigate().Refresh();
+            driver.FindElement(By.XPath("/html/body/form/span[2]/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[3]/a")).Click();
+            Thread.Sleep(2000);
+            driver.FindElement(By.XPath("/html/body/form/span[2]/div/div[3]/div[1]/div[2]/table[2]/tbody/tr/td/div/table/tbody/tr/td[1]/table/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/ul/li/ul/li[2]/a")).Click();
+            Thread.Sleep(5000);
+            driver.FindElement(By.Id("HrBackButton_uixr")).Click();
+            Thread.Sleep(3000);
+            Console.WriteLine("Back button is pressed");
+            driver.FindElement(By.XPath("/html/body/form/span[2]/div/div[3]/div[1]/div[2]/table[2]/tbody/tr/td/div/table/tbody/tr/td[1]/table/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/ul/li/ul/li[3]/a")).Click();
+            Thread.Sleep(4000);
+            Console.WriteLine("Extra information is click");
+            driver.FindElement(By.Id("HrNext_uixr")).Click();
+            Thread.Sleep(3000);
+            Console.WriteLine("Next button is clicked");
+            driver.FindElement(By.Id("HrBackButton")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("back button is clicked");
+            driver.FindElement(By.Id("HrSitEitBack_uixr")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("back button is clicked");
+            driver.FindElement(By.XPath("/html/body/form/span[2]/div/div[3]/div[1]/div[2]/table[2]/tbody/tr/td/div/table/tbody/tr/td[1]/table/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/ul/li/ul/li[4]/a")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("Training is clicked");
+            driver.FindElement(By.XPath("/html/body/form/span[2]/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[3]/a")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("home toggle is clicked");
+            driver.FindElement(By.XPath("/html/body/form/span[2]/div/div[3]/div[1]/div[2]/table[2]/tbody/tr/td/div/table/tbody/tr/td[1]/table/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/ul/li/ul/li[5]/a")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("Documnet of Record is clicked");
+            driver.FindElement(By.XPath("/html/body/form/span[2]/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/table/tbody/tr/td[3]/a")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("home toggle is clicked");
+            driver.FindElement(By.XPath("/html/body/form/span[2]/div/div[3]/div[1]/div[2]/table[2]/tbody/tr/td/div/table/tbody/tr/td[1]/table/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/ul/li/ul/li[6]/a")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("leave management is clicked");
+            driver.FindElement(By.XPath("/html/body/form/span[2]/div/div[3]/div[1]/div[2]/font/a")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("opening leave management link");
+            driver.SwitchTo().Window(driver.WindowHandles[2]);//new window is started loading
+            driver.Navigate().Refresh();
+            /* IWebElement bd = driver.FindElement(By.TagName("h2"));
+               Assert.IsTrue(bd.Text.Contains("Login to your Account"));
+               Console.WriteLine("Reached leave management login page");*/
+            StreamReader le = new StreamReader(@"D:\zenlounge\leave_login.txt");
+            string mn = le.ReadLine();
+            string[] up = mn.Split('|');
+            username3 = up[0];
+            password3 = up[1];
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-login/ion-content/ion-grid/ion-row/ion-col[1]/div/ion-list/div[1]/input")).SendKeys(username3);
+            Thread.Sleep(1000);
+            Console.WriteLine("Username is entered");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-login/ion-content/ion-grid/ion-row/ion-col[1]/div/ion-list/div[2]/input")).SendKeys(password3);
+            Thread.Sleep(1000);
+            Console.WriteLine("password is entered");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-login/ion-content/ion-grid/ion-row/ion-col[1]/div/ion-list/ion-row/button")).Click();
+            Thread.Sleep(3000);
+            Console.WriteLine("login button is clicked");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/ion-content/ion-grid/ion-row/ion-col[2]/ion-col/div/div/ion-row[1]/ion-col/ion-list/ion-item/ion-select")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("clicked on drop down");
+            driver.FindElement(By.XPath("/html/body/ion-alert/div/div[3]/button[13]/div/div[1]")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("slected Work From Anywhere");
+            driver.FindElement(By.XPath("/html/body/ion-alert/div/div[4]/button[2]/span ")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("ok button is clicked");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/ion-content/ion-grid/ion-row/ion-col[2]/ion-col/div/div/ion-row[2]/ion-col[1]/ion-list/i/img")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("clicked on start date");
+            driver.FindElement(By.XPath("/html/body/ion-modal/div/app-calendar-pop-up/ion-content/ion-calendar/ion-calendar-month/div/div/div[18]/button")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("selected start date");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/ion-content/ion-grid/ion-row/ion-col[2]/ion-col/div/div/ion-row[2]/ion-col[2]/ion-list/i/img")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("clicked on end date");
+            driver.FindElement(By.XPath("/html/body/ion-modal/div/app-calendar-pop-up/ion-content/ion-calendar/ion-calendar-month/div/div/div[18]/button")).Click();
+            Thread.Sleep(10000);
+            Console.WriteLine("selected end date");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/ion-content/ion-grid/ion-row/ion-col[2]/ion-col/div/div/ion-col/div/div/button[2]")).Click();
+            Thread.Sleep(5000);
+            Console.WriteLine("clicked on preview");
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/ion-content/ion-grid/ion-row/ion-col[2]/ion-col/div/div/ion-col/div/div/button[2]")).Click();
+            Thread.Sleep(6000);
+            Console.WriteLine("clicked on apply");
+            driver.Navigate().Refresh();
+            Thread.Sleep(2000);
+            driver.FindElement(By.XPath("/html/body/app-root/ion-router-outlet/app-home/app-header/ion-header/ion-toolbar/ion-grid/ion-row/ion-col[2]/ion-row/div[3]/i/img")).Click();
+            Thread.Sleep(2000);
+            Console.WriteLine("clicked on logout button");
+            driver.FindElement(By.XPath("/html/body/ion-alert/div/div[3]/button[1]/span")).Click();
+            Thread.Sleep(5000);
+            Console.WriteLine("clicked on ok button");
+        }
+        [TearDown]
+        public void EndTest()
+        {
+            driver.Close();
+        }
+    }
+}

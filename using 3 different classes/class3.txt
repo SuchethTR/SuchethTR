@@ -1,0 +1,20 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.IO;
+using System.Threading;
+using NUnit.Framework;
+
+namespace autodemo
+{
+    class Class3:Class1
+    {
+        
+        [TearDown]
+        public void EndTest(IWebDriver Driver)
+        {
+            Driver = new ChromeDriver();
+            Driver.Quit();
+        }
+    }
+}

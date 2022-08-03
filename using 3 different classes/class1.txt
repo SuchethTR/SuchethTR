@@ -1,0 +1,25 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.IO;
+using System.Threading;
+using NUnit.Framework;
+
+
+namespace autodemo
+{
+    public class Class1
+    {
+        
+        
+        [SetUp]
+        public IWebDriver Initialize(IWebDriver Driver)
+        {
+            Driver = new ChromeDriver();
+            Driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Process.aspx");
+            Thread.Sleep(1000);
+            return Driver;
+        }
+    }
+}
